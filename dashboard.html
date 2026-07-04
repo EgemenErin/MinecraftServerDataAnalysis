@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MC Server Stats</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="player_stats.js"></script>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface2: #1c2128;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --green: #3fb950;
+      --red: #f85149;
+      --yellow: #d29922;
+      --purple: #bc8cff;
+      --mono: "Cascadia Code", "Consolas", "Courier New", monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--mono);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      background: var(--surface);
+    }
+
+    header h1 { font-size: 1.1rem; font-weight: 600; color: var(--green); }
+    header h1 span { color: var(--muted); font-weight: 400; }
+    .meta { font-size: 0.75rem; color: var(--muted); margin-left: auto; }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      padding: 1rem 1.5rem 0;
+    }
+
+    .tab {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 0.8rem;
+      padding: 0.4rem 0.85rem;
+      cursor: pointer;
+      border-radius: 4px 4px 0 0;
+    }
+
+    .tab.active {
+      background: var(--surface);
+      color: var(--accent);
+      border-bottom-color: var(--surface);
+    }
+
+    main { padding: 1.5rem; }
+    .view { display: none; }
+    .view.active { display: block; }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    label { color: var(--muted); font-size: 0.85rem; }
+
+    select {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      font-family: inherit;
+      font-size: 0.9rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      min-width: 220px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem;
+    }
+
+    .card .label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .card .value { font-size: 1.5rem; font-weight: 600; }
+    .card .value.green { color: var(--green); }
+    .card .value.red { color: var(--red); }
+    .card .value.yellow { color: var(--yellow); }
+    .card .value.blue { color: var(--accent); }
+
+    .panels {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem;
+    }
+
+    .panel h3 {
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .list-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid var(--border);
+      gap: 1rem;
+    }
+
+    .list-row:last-child { border-bottom: none; }
+    .list-row .count { color: var(--green); flex-shrink: 0; }
+
+    .chart-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .chart-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem;
+    }
+
+    .chart-box h3 {
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .chart-wrap { position: relative; height: 280px; }
+    .chart-wrap.tall { height: 360px; }
+
+    .error {
+      background: #3d1f1f;
+      border: 1px solid var(--red);
+      color: var(--red);
+      padding: 1rem;
+      border-radius: 6px;
+      margin: 1.5rem;
+    }
+
+    .load-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: inherit;
+      padding: 0.4rem 0.75rem;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+
+    .load-btn:hover { border-color: var(--accent); }
+
+    /* Report card */
+    .report-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--purple);
+      border-radius: 8px;
+      padding: 1.5rem;
+      max-width: 720px;
+    }
+
+    .report-card .title {
+      font-size: 1.4rem;
+      color: var(--purple);
+      margin-bottom: 0.25rem;
+    }
+
+    .report-card .tagline {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .report-card .summary {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+
+    .report-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .report-highlights .mini {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.6rem 0.75rem;
+    }
+
+    .report-highlights .mini .label { font-size: 0.65rem; color: var(--muted); }
+    .report-highlights .mini .val { font-size: 1rem; color: var(--green); }
+
+    .ratio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .ratio-item {
+      font-size: 0.75rem;
+      color: var(--muted);
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.5rem 0.75rem;
+    }
+
+    .ratio-item strong { color: var(--yellow); }
+
+    /* Awards */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .award-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .award-card .trophy { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .award-card .award-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .award-card .winner {
+      font-size: 1.2rem;
+      color: var(--yellow);
+      margin: 0.5rem 0 0.25rem;
+    }
+
+    .award-card .award-value { font-size: 0.85rem; color: var(--green); }
+
+    /* Death hall of shame */
+    .death-msg {
+      font-size: 0.82rem;
+      color: var(--text);
+      font-style: italic;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .death-msg .who { color: var(--red); font-style: normal; }
+    .death-msg .cause-tag {
+      font-size: 0.7rem;
+      color: var(--muted);
+      font-style: normal;
+      margin-left: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 0.85rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    .section-title:first-child { margin-top: 0; }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    .checkbox-label input { accent-color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>mc-stats <span>// server dashboard</span></h1>
+    <div class="meta" id="meta"></div>
+  </header>
+
+  <div id="error-box" class="error" style="display:none;">
+    Could not load player_stats.js — re-run analyze_stats.py, then refresh.
+    <button class="load-btn" onclick="document.getElementById('file-input').click()">Load JSON manually</button>
+    <input type="file" id="file-input" accept=".json,.js" hidden>
+  </div>
+
+  <div id="app" style="display:none;">
+    <nav class="tabs">
+      <button class="tab active" data-view="player">Player</button>
+      <button class="tab" data-view="leaderboard">Leaderboard</button>
+      <button class="tab" data-view="report">Report Card</button>
+      <button class="tab" data-view="deaths">Deaths</button>
+      <button class="tab" data-view="awards">Awards</button>
+      <button class="tab" data-view="radar">Radar</button>
+      <button class="tab" data-view="quests">Quests</button>
+      <button class="tab" data-view="bosses">Bosses</button>
+    </nav>
+
+    <main>
+      <section id="player-view" class="view active">
+        <div class="controls">
+          <label for="player-select">Player</label>
+          <select id="player-select"></select>
+        </div>
+        <div class="cards" id="stat-cards"></div>
+        <div class="panels" id="detail-panels"></div>
+      </section>
+
+      <section id="leaderboard-view" class="view">
+        <div class="chart-grid">
+          <div class="chart-box">
+            <h3>Playtime (hours)</h3>
+            <div class="chart-wrap"><canvas id="chart-playtime"></canvas></div>
+          </div>
+          <div class="chart-box">
+            <h3>Mob Kills</h3>
+            <div class="chart-wrap"><canvas id="chart-kills"></canvas></div>
+          </div>
+          <div class="chart-box">
+            <h3>Deaths</h3>
+            <div class="chart-wrap"><canvas id="chart-deaths"></canvas></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="report-view" class="view">
+        <div class="controls">
+          <label for="report-select">Player</label>
+          <select id="report-select"></select>
+        </div>
+        <div id="report-content"></div>
+      </section>
+
+      <section id="deaths-view" class="view">
+        <div class="chart-grid">
+          <div class="chart-box">
+            <h3>Most Deaths</h3>
+            <div class="chart-wrap"><canvas id="chart-most-deaths"></canvas></div>
+          </div>
+          <div class="chart-box">
+            <h3>Common Death Causes (server-wide)</h3>
+            <div class="chart-wrap"><canvas id="chart-death-causes"></canvas></div>
+          </div>
+        </div>
+        <div class="panels" style="margin-top:1.5rem;">
+          <div class="panel">
+            <h3>Hall of Shame</h3>
+            <div id="embarrassing-deaths"></div>
+          </div>
+          <div class="panel">
+            <h3>Per-Player Death Profiles</h3>
+            <div class="controls" style="margin-bottom:0.75rem;">
+              <label for="death-select">Player</label>
+              <select id="death-select"></select>
+            </div>
+            <div id="death-profile"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="awards-view" class="view">
+        <div class="awards-grid" id="awards-grid"></div>
+      </section>
+
+      <section id="radar-view" class="view">
+        <div class="controls">
+          <label for="radar-select">Player</label>
+          <select id="radar-select"></select>
+          <label class="checkbox-label">
+            <input type="checkbox" id="radar-avg-toggle" checked>
+            Show server average
+          </label>
+        </div>
+        <div class="chart-box" style="max-width:520px;">
+          <h3>Playstyle Radar</h3>
+          <div class="chart-wrap tall"><canvas id="chart-radar"></canvas></div>
+        </div>
+      </section>
+
+      <section id="quests-view" class="view">
+        <div class="controls">
+          <label for="quest-select">Player</label>
+          <select id="quest-select"></select>
+        </div>
+        <div class="cards" id="quest-summary-cards"></div>
+        <div class="panels">
+          <div class="panel">
+            <h3>Chapter Progress</h3>
+            <div id="quest-chapters"></div>
+          </div>
+          <div class="panel">
+            <h3>Slowest Quests</h3>
+            <div id="quest-slowest"></div>
+          </div>
+        </div>
+        <div class="section-title">Server-wide: zero completions (hardest / hidden?)</div>
+        <div class="panel" id="quest-hardest"></div>
+      </section>
+
+      <section id="bosses-view" class="view">
+        <div class="controls">
+          <label for="boss-select">Player</label>
+          <select id="boss-select"></select>
+        </div>
+        <div class="cards" id="boss-summary-cards"></div>
+        <div class="panels">
+          <div class="panel">
+            <h3>Player Boss Kills</h3>
+            <div id="boss-kills-list"></div>
+          </div>
+          <div class="panel">
+            <h3>Server Boss Kill Leaders</h3>
+            <div id="boss-hunters"></div>
+          </div>
+        </div>
+        <div class="chart-grid" style="margin-top:1.5rem;">
+          <div class="chart-box">
+            <h3>Top Bosses Server-wide</h3>
+            <div class="chart-wrap"><canvas id="chart-boss-kills"></canvas></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    let DATA = null;
+    let charts = {};
+
+    const chartDefaults = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: {
+          ticks: { color: "#8b949e", font: { family: "Consolas, monospace", size: 11 } },
+          grid: { color: "#21262d" },
+        },
+        y: {
+          ticks: { color: "#8b949e", font: { family: "Consolas, monospace", size: 11 } },
+          grid: { color: "#21262d" },
+        },
+      },
+    };
+
+    const RADAR_AXES = ["combat", "exploration", "building", "farming", "crafting"];
+
+    function fmt(n) {
+      return Number(n).toLocaleString();
+    }
+
+    function esc(s) {
+      return String(s)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function renderList(items) {
+      if (!items || !items.length) {
+        return '<div class="list-row"><span>—</span><span class="count">0</span></div>';
+      }
+      return items.map(i =>
+        `<div class="list-row"><span>${esc(i.name || i.cause)}</span><span class="count">${fmt(i.count)}</span></div>`
+      ).join("");
+    }
+
+    function findPlayer(uuid) {
+      return DATA.players.find(p => p.uuid === uuid);
+    }
+
+    function renderPlayer(player) {
+      document.getElementById("stat-cards").innerHTML = `
+        <div class="card"><div class="label">Playtime</div><div class="value green">${player.playtime_hours}h</div></div>
+        <div class="card"><div class="label">Deaths</div><div class="value red">${fmt(player.deaths)}</div></div>
+        <div class="card"><div class="label">Mob Kills</div><div class="value yellow">${fmt(player.mob_kills)}</div></div>
+        <div class="card"><div class="label">Player Kills</div><div class="value">${fmt(player.player_kills)}</div></div>
+        <div class="card"><div class="label">Damage Dealt</div><div class="value blue">${fmt(player.damage_dealt)}</div></div>
+        <div class="card"><div class="label">Damage Taken</div><div class="value red">${fmt(player.damage_taken)}</div></div>
+        <div class="card"><div class="label">Walked</div><div class="value">${player.distance_km.walked} km</div></div>
+        <div class="card"><div class="label">Sprinted</div><div class="value">${player.distance_km.sprinted} km</div></div>
+        <div class="card"><div class="label">Flown</div><div class="value">${player.distance_km.flown} km</div></div>
+      `;
+
+      document.getElementById("detail-panels").innerHTML = `
+        <div class="panel"><h3>Top Blocks Mined</h3>${renderList(player.top_blocks_mined)}</div>
+        <div class="panel"><h3>Top Mobs Killed</h3>${renderList(player.top_mobs_killed)}</div>
+        <div class="panel"><h3>Top Items Crafted</h3>${renderList(player.top_items_crafted)}</div>
+      `;
+    }
+
+    function renderReportCard(player) {
+      const rc = player.report_card;
+      if (!rc) {
+        document.getElementById("report-content").innerHTML =
+          '<div class="error">No report card data — re-run analyze_stats.py.</div>';
+        return;
+      }
+
+      const ratios = Object.entries(rc.ratios || {}).map(([key, val]) =>
+        `<div class="ratio-item">${esc(key.replace(/_/g, " "))}: <strong>${val}</strong></div>`
+      ).join("");
+
+      const highlights = (rc.highlights || []).map(h =>
+        `<div class="mini"><div class="label">${esc(h.label)}</div><div class="val">${esc(h.value)}</div></div>`
+      ).join("");
+
+      document.getElementById("report-content").innerHTML = `
+        <div class="report-card">
+          <div class="title">${esc(rc.title)}</div>
+          <div class="tagline">${esc(rc.tagline)}</div>
+          <div class="summary">${esc(rc.summary)}</div>
+          <div class="report-highlights">${highlights}</div>
+          <div class="ratio-grid">${ratios}</div>
+        </div>
+      `;
+    }
+
+    function renderDeathProfile(player) {
+      const dp = player.death_profile;
+      if (!dp) {
+        document.getElementById("death-profile").innerHTML = "<p>No death profile data.</p>";
+        return;
+      }
+
+      const nemesis = dp.nemesis
+        ? `${esc(dp.nemesis.name)} (${fmt(dp.nemesis.count)}x)`
+        : "Unknown";
+
+      const recent = dp.most_recent
+        ? `<div class="death-msg">${esc(dp.most_recent.message)}</div>`
+        : '<div class="list-row"><span>No logged deaths</span></div>';
+
+      document.getElementById("death-profile").innerHTML = `
+        <div class="list-row"><span>Stat deaths</span><span class="count">${fmt(dp.total_deaths)}</span></div>
+        <div class="list-row"><span>Logged deaths</span><span class="count">${fmt(dp.log_deaths_parsed)}</span></div>
+        <div class="list-row"><span>Nemesis</span><span class="count">${nemesis}</span></div>
+        <div class="section-title">Most recent</div>
+        ${recent}
+        <div class="section-title">Top causes</div>
+        ${renderList(dp.causes)}
+      `;
+    }
+
+    function renderDeaths() {
+      const ds = DATA.death_stats || {};
+
+      const mostDeaths = (ds.most_deaths || []).slice(0, 12);
+      makeBarChart(
+        "chart-most-deaths",
+        mostDeaths.map(d => d.name),
+        mostDeaths.map(d => d.deaths),
+        "#f85149"
+      );
+
+      const causes = (ds.cause_leaderboard || []).slice(0, 12);
+      makeBarChart(
+        "chart-death-causes",
+        causes.map(c => c.cause),
+        causes.map(c => c.count),
+        "#bc8cff"
+      );
+
+      const shame = ds.embarrassing_deaths || [];
+      document.getElementById("embarrassing-deaths").innerHTML = shame.length
+        ? shame.slice(0, 15).map(d =>
+            `<div class="death-msg">
+              <span class="who">${esc(d.player)}</span> — ${esc(d.message)}
+              <span class="cause-tag">[${esc(d.cause)}]</span>
+            </div>`
+          ).join("")
+        : '<div class="list-row"><span>No embarrassing deaths logged</span></div>';
+    }
+
+    function renderAwards() {
+      const awards = DATA.awards || [];
+      document.getElementById("awards-grid").innerHTML = awards.length
+        ? awards.map(a => `
+            <div class="award-card">
+              <div class="trophy">🏆</div>
+              <div class="award-label">${esc(a.label)}</div>
+              <div class="winner">${esc(a.winner)}</div>
+              <div class="award-value">${esc(a.formatted_value)}</div>
+            </div>
+          `).join("")
+        : '<div class="panel">No awards computed.</div>';
+    }
+
+    function renderQuests(player) {
+      const qp = player.quest_progress || {};
+      document.getElementById("quest-summary-cards").innerHTML = `
+        <div class="card"><div class="label">Completion</div><div class="value green">${qp.completion_pct || 0}%</div></div>
+        <div class="card"><div class="label">Completed</div><div class="value">${fmt(qp.completed || 0)}</div></div>
+        <div class="card"><div class="label">Started</div><div class="value yellow">${fmt(qp.started || 0)}</div></div>
+        <div class="card"><div class="label">Available</div><div class="value">${fmt(qp.total_available || 0)}</div></div>
+      `;
+
+      const chapters = qp.chapters || [];
+      document.getElementById("quest-chapters").innerHTML = chapters.length
+        ? chapters.slice(0, 12).map(c =>
+            `<div class="list-row">
+              <span>${esc(c.chapter_title)} <span class="cause-tag">[${esc(c.chapter_group)}]</span></span>
+              <span class="count">${c.completed}/${c.total} (${c.completion_pct}%)</span>
+            </div>`
+          ).join("")
+        : '<div class="list-row"><span>No chapter data</span></div>';
+
+      const slowest = qp.slowest_quests || [];
+      document.getElementById("quest-slowest").innerHTML = slowest.length
+        ? slowest.map(q =>
+            `<div class="list-row">
+              <span>${esc(q.name)}</span>
+              <span class="count">${q.duration_minutes}m</span>
+            </div>`
+          ).join("")
+        : '<div class="list-row"><span>No timed quest data</span></div>';
+
+      const hardest = (DATA.quest_stats && DATA.quest_stats.hardest_quests) || [];
+      document.getElementById("quest-hardest").innerHTML = hardest.length
+        ? hardest.slice(0, 20).map(q =>
+            `<div class="list-row">
+              <span>${esc(q.name)} <span class="cause-tag">${esc(q.chapter_title)}</span></span>
+              <span class="count">0/${DATA.quest_stats.player_count} players</span>
+            </div>`
+          ).join("")
+        : '<div class="list-row"><span>All quests completed by someone</span></div>';
+    }
+
+    function renderBosses(player) {
+      const bs = player.boss_stats || {};
+      document.getElementById("boss-summary-cards").innerHTML = `
+        <div class="card"><div class="label">Boss Kills</div><div class="value red">${fmt(bs.total_boss_kills || 0)}</div></div>
+        <div class="card"><div class="label">Boss Types</div><div class="value yellow">${(bs.boss_kills || []).length}</div></div>
+        <div class="card"><div class="label">SLB Advancements</div><div class="value">${(bs.advancement_bosses || []).length}</div></div>
+      `;
+
+      const kills = bs.boss_kills || [];
+      document.getElementById("boss-kills-list").innerHTML = kills.length
+        ? kills.map(b =>
+            `<div class="list-row"><span>${esc(b.name)}</span><span class="count">${fmt(b.kills)}</span></div>`
+          ).join("")
+        : '<div class="list-row"><span>No boss kills tracked</span></div>';
+
+      const hunters = (DATA.server_wide_boss_stats && DATA.server_wide_boss_stats.top_boss_hunters) || [];
+      document.getElementById("boss-hunters").innerHTML = hunters.length
+        ? hunters.map(h =>
+            `<div class="list-row"><span>${esc(h.name)}</span><span class="count">${fmt(h.total_boss_kills)}</span></div>`
+          ).join("")
+        : '<div class="list-row"><span>No data</span></div>';
+
+      const topBosses = (DATA.server_wide_boss_stats && DATA.server_wide_boss_stats.top_bosses_by_kills) || [];
+      makeBarChart(
+        "chart-boss-kills",
+        topBosses.slice(0, 12).map(b => b.name),
+        topBosses.slice(0, 12).map(b => b.total_kills),
+        "#f85149"
+      );
+    }
+
+    function renderRadar(player) {
+      const ctx = document.getElementById("chart-radar").getContext("2d");
+      if (charts.radar) charts.radar.destroy();
+
+      const labels = RADAR_AXES.map(a => a.charAt(0).toUpperCase() + a.slice(1));
+      const playerData = RADAR_AXES.map(a => (player.playstyle_radar || {})[a] || 0);
+      const datasets = [{
+        label: player.name,
+        data: playerData,
+        borderColor: "#58a6ff",
+        backgroundColor: "rgba(88, 166, 255, 0.2)",
+        pointBackgroundColor: "#58a6ff",
+        borderWidth: 2,
+      }];
+
+      if (document.getElementById("radar-avg-toggle").checked && DATA.radar_server_average) {
+        datasets.push({
+          label: "Server avg",
+          data: RADAR_AXES.map(a => DATA.radar_server_average[a] || 0),
+          borderColor: "#8b949e",
+          backgroundColor: "rgba(139, 148, 158, 0.1)",
+          pointBackgroundColor: "#8b949e",
+          borderWidth: 1,
+          borderDash: [4, 4],
+        });
+      }
+
+      charts.radar = new Chart(ctx, {
+        type: "radar",
+        data: { labels, datasets },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: true,
+              labels: { color: "#8b949e", font: { family: "Consolas, monospace", size: 11 } },
+            },
+          },
+          scales: {
+            r: {
+              min: 0,
+              max: 100,
+              ticks: { color: "#8b949e", backdropColor: "transparent", stepSize: 25 },
+              grid: { color: "#30363d" },
+              pointLabels: { color: "#c9d1d9", font: { family: "Consolas, monospace", size: 12 } },
+            },
+          },
+        },
+      });
+    }
+
+    function makeBarChart(canvasId, labels, values, color) {
+      const el = document.getElementById(canvasId);
+      if (!el) return;
+      const ctx = el.getContext("2d");
+      if (charts[canvasId]) charts[canvasId].destroy();
+
+      charts[canvasId] = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels,
+          datasets: [{ data: values, backgroundColor: color, borderRadius: 3 }],
+        },
+        options: { ...chartDefaults, indexAxis: "y" },
+      });
+    }
+
+    function renderLeaderboard() {
+      const top = DATA.players.slice(0, 15);
+      const names = top.map(p => p.name);
+      makeBarChart("chart-playtime", names, top.map(p => p.playtime_hours), "#3fb950");
+      makeBarChart("chart-kills", names, top.map(p => p.mob_kills), "#d29922");
+      makeBarChart("chart-deaths", names, top.map(p => p.deaths), "#f85149");
+    }
+
+    function populateSelect(id, players) {
+      const el = document.getElementById(id);
+      el.innerHTML = players.map(p =>
+        `<option value="${p.uuid}">${esc(p.name)}</option>`
+      ).join("");
+      return el;
+    }
+
+    function init(data) {
+      DATA = data;
+      document.getElementById("app").style.display = "block";
+      document.getElementById("error-box").style.display = "none";
+
+      const generated = new Date(data.generated_at).toLocaleString();
+      document.getElementById("meta").textContent =
+        `${data.player_count} players · updated ${generated}`;
+
+      const playerSelect = populateSelect("player-select", data.players);
+      playerSelect.addEventListener("change", () => {
+        const player = findPlayer(playerSelect.value);
+        if (player) renderPlayer(player);
+      });
+
+      const reportSelect = populateSelect("report-select", data.players);
+      reportSelect.addEventListener("change", () => {
+        const player = findPlayer(reportSelect.value);
+        if (player) renderReportCard(player);
+      });
+
+      const deathSelect = populateSelect("death-select", data.players);
+      deathSelect.addEventListener("change", () => {
+        const player = findPlayer(deathSelect.value);
+        if (player) renderDeathProfile(player);
+      });
+
+      const radarSelect = populateSelect("radar-select", data.players);
+      radarSelect.addEventListener("change", () => {
+        const player = findPlayer(radarSelect.value);
+        if (player) renderRadar(player);
+      });
+
+      document.getElementById("radar-avg-toggle").addEventListener("change", () => {
+        const player = findPlayer(radarSelect.value);
+        if (player) renderRadar(player);
+      });
+
+      const questSelect = populateSelect("quest-select", data.players);
+      questSelect.addEventListener("change", () => {
+        const player = findPlayer(questSelect.value);
+        if (player) renderQuests(player);
+      });
+
+      const bossSelect = populateSelect("boss-select", data.players);
+      bossSelect.addEventListener("change", () => {
+        const player = findPlayer(bossSelect.value);
+        if (player) renderBosses(player);
+      });
+
+      renderPlayer(data.players[0]);
+      renderReportCard(data.players[0]);
+      renderDeathProfile(data.players[0]);
+      renderRadar(data.players[0]);
+      renderLeaderboard();
+      renderDeaths();
+      renderAwards();
+      renderQuests(data.players[0]);
+      renderBosses(data.players[0]);
+    }
+
+    document.querySelectorAll(".tab").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
+        document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById(`${btn.dataset.view}-view`).classList.add("active");
+      });
+    });
+
+    document.getElementById("file-input").addEventListener("change", e => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const parsed = JSON.parse(
+            reader.result.replace(/^window\.PLAYER_STATS\s*=\s*/, "").replace(/;\s*$/, "")
+          );
+          init(parsed);
+        } catch (err) {
+          alert("Invalid JSON file");
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    if (window.PLAYER_STATS) {
+      init(window.PLAYER_STATS);
+    } else {
+      document.getElementById("error-box").style.display = "block";
+    }
+  </script>
+</body>
+</html>
