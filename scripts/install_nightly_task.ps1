@@ -15,5 +15,5 @@ Register-ScheduledTask -TaskName $TaskName -Action $Action -Trigger $Trigger `
     -Description "Regenerate Minecraft server stats dashboard and push to GitHub" `
     -Force
 
-Write-Host "Scheduled task '$TaskName' installed — runs daily at 3:00 AM."
+Write-Host "Scheduled task '$TaskName' installed - runs daily at 3:00 AM."
 Write-Host "Test now with: Start-ScheduledTask -TaskName $TaskName"

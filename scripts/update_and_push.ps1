@@ -8,7 +8,7 @@ Set-Location $RepoRoot
 
 $PathsFile = Join-Path $RepoRoot "paths.json"
 if (-not (Test-Path $PathsFile)) {
-    Write-Error "Missing paths.json — copy paths.json.example to paths.json and edit your server paths."
+    Write-Error "Missing paths.json - copy paths.json.example to paths.json and edit your server paths."
 }
 
 $paths = Get-Content $PathsFile -Raw | ConvertFrom-Json
