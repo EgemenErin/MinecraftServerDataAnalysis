@@ -4,339 +4,702 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MC Server Stats</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="player_stats.js"></script>
   <style>
     :root {
-      --bg: #0d1117;
-      --surface: #161b22;
-      --surface2: #1c2128;
-      --border: #30363d;
-      --text: #c9d1d9;
-      --muted: #8b949e;
-      --accent: #58a6ff;
-      --green: #3fb950;
-      --red: #f85149;
-      --yellow: #d29922;
-      --purple: #bc8cff;
-      --mono: "Cascadia Code", "Consolas", "Courier New", monospace;
+      --grass: #7cb342;
+      --grass-dark: #5c8a2a;
+      --dirt: #8b5a2b;
+      --dirt-dark: #6b4f2a;
+      --stone: #3a3a3a;
+      --stone-light: #535353;
+      --stone-dark: #1f1f1f;
+      --stone-border: #2a2a2a;
+      --diamond: #4aedd9;
+      --redstone: #e8392f;
+      --gold: #fcdb05;
+      --xp: #bfff00;
+      --emerald: #17dd62;
+      --amethyst: #b38bff;
+      --ink: #e8e8e8;
+      --ink-dim: #a8a8a8;
+      --font-display: "Press Start 2P", "Consolas", monospace;
+      --font-body: "VT323", "Consolas", monospace;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html, body { image-rendering: pixelated; }
+
     body {
-      font-family: var(--mono);
-      background: var(--bg);
-      color: var(--text);
+      font-family: var(--font-body);
+      background-color: #15110b;
+      background-image:
+        repeating-linear-gradient(0deg, rgba(0,0,0,0.18) 0 2px, transparent 2px 4px),
+        repeating-linear-gradient(90deg, rgba(0,0,0,0.18) 0 2px, transparent 2px 4px),
+        linear-gradient(180deg, #1d160d 0%, #15110b 100%);
+      background-size: 32px 32px, 32px 32px, 100% 100%;
+      color: var(--ink);
       min-height: 100vh;
-      line-height: 1.5;
+      line-height: 1.4;
+      font-size: 18px;
+    }
+
+    /* Atmospheric scanline + vignette overlay */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      background:
+        repeating-linear-gradient(0deg, rgba(0,0,0,0.06) 0 1px, transparent 1px 3px),
+        radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.45) 100%);
+    }
+
+    /* Pixel bevel helpers */
+    .bevel-out {
+      box-shadow:
+        inset 2px 2px 0 0 rgba(255,255,255,0.12),
+        inset -2px -2px 0 0 rgba(0,0,0,0.55),
+        0 0 0 2px var(--stone-border);
+    }
+    .bevel-in {
+      box-shadow:
+        inset 2px 2px 0 0 rgba(0,0,0,0.55),
+        inset -2px -2px 0 0 rgba(255,255,255,0.10),
+        0 0 0 2px var(--stone-border);
     }
 
     header {
-      border-bottom: 1px solid var(--border);
-      padding: 1rem 1.5rem;
+      padding: 0.9rem 1.4rem;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: 1rem;
-      background: var(--surface);
+      background:
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 4px),
+        linear-gradient(180deg, var(--stone-light), var(--stone));
+      border-bottom: 4px solid var(--stone-dark);
+      box-shadow: inset 0 -2px 0 0 var(--grass-dark), 0 4px 0 0 rgba(0,0,0,0.4);
     }
 
-    header h1 { font-size: 1.1rem; font-weight: 600; color: var(--green); }
-    header h1 span { color: var(--muted); font-weight: 400; }
-    .meta { font-size: 0.75rem; color: var(--muted); margin-left: auto; }
+    header h1 {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      color: var(--grass);
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.6);
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    header h1 .grass-cube { font-size: 1.1rem; }
+    header h1 span { color: var(--ink-dim); font-family: var(--font-display); font-size: 0.55rem; }
+    .meta {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: var(--gold);
+      margin-left: auto;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.7);
+    }
 
     .tabs {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.35rem;
-      padding: 1rem 1.5rem 0;
+      gap: 0.4rem;
+      padding: 1rem 1.4rem 0.6rem;
     }
 
     .tab {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-family: inherit;
-      font-size: 0.8rem;
-      padding: 0.4rem 0.85rem;
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      padding: 0.55rem 0.8rem;
       cursor: pointer;
-      border-radius: 4px 4px 0 0;
+      color: var(--ink-dim);
+      background: linear-gradient(180deg, var(--stone-light), var(--stone));
+      border: 2px solid var(--stone-border);
+      box-shadow:
+        inset 2px 2px 0 0 rgba(255,255,255,0.10),
+        inset -2px -2px 0 0 rgba(0,0,0,0.55);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.6);
+      transition: transform 0.08s steps(2), filter 0.08s steps(2);
     }
+    .tab .ico { font-size: 0.8rem; }
+
+    .tab:hover {
+      filter: brightness(1.25);
+      transform: translateY(-2px);
+    }
+    .tab:active { transform: translateY(1px); }
 
     .tab.active {
-      background: var(--surface);
-      color: var(--accent);
-      border-bottom-color: var(--surface);
+      color: var(--ink);
+      background: linear-gradient(180deg, var(--grass), var(--grass-dark));
+      border-color: var(--grass-dark);
+      box-shadow:
+        inset 2px 2px 0 0 rgba(255,255,255,0.25),
+        inset -2px -2px 0 0 rgba(0,0,0,0.45),
+        0 0 10px 0 rgba(124,179,66,0.45);
     }
 
-    main { padding: 1.5rem; }
+    main { padding: 1.4rem; }
     .view { display: none; }
     .view.active { display: block; }
 
     .controls {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
+      gap: 0.8rem;
+      margin-bottom: 1.4rem;
       flex-wrap: wrap;
     }
 
-    label { color: var(--muted); font-size: 0.85rem; }
+    label {
+      font-family: var(--font-display);
+      font-size: 0.55rem;
+      color: var(--ink-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
 
     select {
-      background: var(--surface);
-      color: var(--text);
-      border: 1px solid var(--border);
-      font-family: inherit;
-      font-size: 0.9rem;
-      padding: 0.5rem 0.75rem;
-      border-radius: 4px;
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      color: var(--ink);
+      background: linear-gradient(180deg, var(--stone-light), var(--stone));
+      border: 2px solid var(--stone-border);
+      padding: 0.45rem 0.7rem;
       min-width: 220px;
+      cursor: pointer;
+      box-shadow:
+        inset 2px 2px 0 0 rgba(0,0,0,0.55),
+        inset -2px -2px 0 0 rgba(255,255,255,0.10);
     }
+    select:focus { outline: 2px solid var(--diamond); }
+    select option { background: var(--stone-dark); color: var(--ink); }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+      gap: 0.8rem;
+      margin-bottom: 1.4rem;
     }
 
+    /* Inventory-slot stat card */
     .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1rem;
+      padding: 0.8rem;
+      background:
+        repeating-linear-gradient(45deg, rgba(0,0,0,0.10) 0 2px, transparent 2px 4px),
+        linear-gradient(180deg, var(--stone), var(--stone-dark));
+      border: 2px solid var(--stone-border);
+      box-shadow:
+        inset 2px 2px 0 0 rgba(255,255,255,0.12),
+        inset -2px -2px 0 0 rgba(0,0,0,0.6);
+      transition: transform 0.08s steps(2);
+      animation: slotPop 0.4s steps(4) backwards;
     }
+    .card:hover { transform: translateY(-2px); }
 
     .card .label {
-      font-size: 0.7rem;
+      font-family: var(--font-display);
+      font-size: 0.5rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--muted);
-      margin-bottom: 0.25rem;
+      letter-spacing: 0.04em;
+      color: var(--ink-dim);
+      margin-bottom: 0.4rem;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.6);
     }
 
-    .card .value { font-size: 1.5rem; font-weight: 600; }
-    .card .value.green { color: var(--green); }
-    .card .value.red { color: var(--red); }
-    .card .value.yellow { color: var(--yellow); }
-    .card .value.blue { color: var(--accent); }
+    .card .value {
+      font-family: var(--font-body);
+      font-size: 1.7rem;
+      line-height: 1;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.6);
+    }
+    .card .value.green { color: var(--xp); }
+    .card .value.red { color: var(--redstone); }
+    .card .value.yellow { color: var(--gold); }
+    .card .value.blue { color: var(--diamond); }
 
     .panels {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1rem;
     }
 
+    /* Stone GUI container */
     .panel {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1rem;
+      padding: 0;
+      background: linear-gradient(180deg, var(--stone), var(--stone-dark));
+      border: 2px solid var(--stone-border);
+      box-shadow:
+        inset 2px 2px 0 0 rgba(255,255,255,0.10),
+        inset -2px -2px 0 0 rgba(0,0,0,0.55),
+        0 4px 0 0 rgba(0,0,0,0.4);
+      overflow: hidden;
     }
-
     .panel h3 {
-      font-size: 0.8rem;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
+      display: block;
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      color: var(--gold);
+      margin: 0;
+      padding: 0.5rem 0.9rem;
+      background:
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 4px),
+        linear-gradient(180deg, var(--dirt), var(--dirt-dark));
+      border-bottom: 2px solid var(--stone-border);
       text-transform: uppercase;
       letter-spacing: 0.04em;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.7);
     }
+    .panel > :not(h3) { padding: 0.7rem 0.9rem; }
 
     .list-row {
       display: flex;
       justify-content: space-between;
-      font-size: 0.85rem;
-      padding: 0.3rem 0;
-      border-bottom: 1px solid var(--border);
+      align-items: baseline;
+      font-size: 1.05rem;
+      padding: 0.35rem 0;
+      border-bottom: 2px dotted rgba(168,168,168,0.18);
       gap: 1rem;
     }
-
     .list-row:last-child { border-bottom: none; }
-    .list-row .count { color: var(--green); flex-shrink: 0; }
+    .list-row .count {
+      color: var(--gold);
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      flex-shrink: 0;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.6);
+    }
 
     .chart-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 1.5rem;
+      gap: 1.2rem;
     }
 
     .chart-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1rem;
+      padding: 0;
+      background: linear-gradient(180deg, var(--stone), var(--stone-dark));
+      border: 2px solid var(--stone-border);
+      box-shadow:
+        inset 2px 2px 0 0 rgba(255,255,255,0.10),
+        inset -2px -2px 0 0 rgba(0,0,0,0.55),
+        0 4px 0 0 rgba(0,0,0,0.4);
+      overflow: hidden;
     }
-
     .chart-box h3 {
-      font-size: 0.8rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      color: var(--gold);
+      margin: 0;
+      padding: 0.55rem 0.9rem;
+      background:
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 4px),
+        linear-gradient(180deg, var(--dirt), var(--dirt-dark));
+      border-bottom: 2px solid var(--stone-border);
       text-transform: uppercase;
+      letter-spacing: 0.04em;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.7);
     }
+    .chart-box .chart-wrap { padding: 0.9rem; }
 
     .chart-wrap { position: relative; height: 280px; }
     .chart-wrap.tall { height: 360px; }
 
     .error {
-      background: #3d1f1f;
-      border: 1px solid var(--red);
-      color: var(--red);
+      background:
+        repeating-linear-gradient(45deg, rgba(0,0,0,0.18) 0 2px, transparent 2px 4px),
+        linear-gradient(180deg, #3d1f1f, #2a1414);
+      border: 2px solid var(--redstone);
+      color: var(--redstone);
+      font-family: var(--font-body);
+      font-size: 1.1rem;
       padding: 1rem;
-      border-radius: 6px;
-      margin: 1.5rem;
+      margin: 1.4rem;
+      box-shadow:
+        inset 2px 2px 0 0 rgba(255,255,255,0.10),
+        inset -2px -2px 0 0 rgba(0,0,0,0.6);
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.6);
     }
 
     .load-btn {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-family: inherit;
-      padding: 0.4rem 0.75rem;
+      font-family: var(--font-display);
+      font-size: 0.55rem;
+      color: var(--ink);
+      background: linear-gradient(180deg, var(--stone-light), var(--stone));
+      border: 2px solid var(--stone-border);
+      padding: 0.5rem 0.75rem;
       cursor: pointer;
-      border-radius: 4px;
-      font-size: 0.8rem;
+      margin-left: 0.6rem;
+      box-shadow:
+        inset 2px 2px 0 0 rgba(255,255,255,0.12),
+        inset -2px -2px 0 0 rgba(0,0,0,0.55);
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.6);
+      transition: transform 0.08s steps(2), filter 0.08s steps(2);
     }
+    .load-btn:hover { filter: brightness(1.3); transform: translateY(-2px); }
+    .load-btn:active { transform: translateY(1px); }
 
-    .load-btn:hover { border-color: var(--accent); }
-
-    /* Report card */
+    /* Report card — enchanted book */
     .report-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--purple);
-      border-radius: 8px;
-      padding: 1.5rem;
+      background:
+        repeating-linear-gradient(45deg, rgba(179,139,255,0.05) 0 2px, transparent 2px 4px),
+        linear-gradient(180deg, var(--stone), var(--stone-dark));
+      border: 2px solid var(--stone-border);
+      border-left: 6px solid var(--amethyst);
+      padding: 1.4rem;
       max-width: 720px;
+      box-shadow:
+        inset 2px 2px 0 0 rgba(255,255,255,0.10),
+        inset -2px -2px 0 0 rgba(0,0,0,0.55),
+        -2px 0 12px 0 rgba(179,139,255,0.35);
+      animation: slotPop 0.4s steps(4) backwards;
     }
 
     .report-card .title {
-      font-size: 1.4rem;
-      color: var(--purple);
-      margin-bottom: 0.25rem;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.6), 0 0 10px rgba(252,219,5,0.3);
+      line-height: 1.3;
     }
 
     .report-card .tagline {
-      font-size: 0.8rem;
-      color: var(--muted);
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--amethyst);
       margin-bottom: 1rem;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.6);
     }
 
     .report-card .summary {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 1.25rem;
-      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
+      color: var(--ink);
     }
 
     .report-highlights {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 0.75rem;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 0.6rem;
     }
 
     .report-highlights .mini {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 0.6rem 0.75rem;
+      background: linear-gradient(180deg, var(--stone-light), var(--stone));
+      border: 2px solid var(--stone-border);
+      padding: 0.5rem 0.6rem;
+      box-shadow:
+        inset 2px 2px 0 0 rgba(255,255,255,0.10),
+        inset -2px -2px 0 0 rgba(0,0,0,0.55);
     }
-
-    .report-highlights .mini .label { font-size: 0.65rem; color: var(--muted); }
-    .report-highlights .mini .val { font-size: 1rem; color: var(--green); }
+    .report-highlights .mini .label {
+      font-family: var(--font-display);
+      font-size: 0.45rem;
+      color: var(--ink-dim);
+      text-transform: uppercase;
+    }
+    .report-highlights .mini .val {
+      font-family: var(--font-body);
+      font-size: 1.2rem;
+      color: var(--xp);
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.6);
+    }
 
     .ratio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 0.75rem;
-      margin-top: 1.25rem;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 0.6rem;
+      margin-top: 1.2rem;
     }
 
     .ratio-item {
-      font-size: 0.75rem;
-      color: var(--muted);
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 0.5rem 0.75rem;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--ink-dim);
+      background:
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 4px),
+        linear-gradient(180deg, var(--dirt), var(--dirt-dark));
+      border: 2px solid var(--stone-border);
+      padding: 0.45rem 0.65rem;
+      box-shadow:
+        inset 2px 2px 0 0 rgba(255,255,255,0.08),
+        inset -2px -2px 0 0 rgba(0,0,0,0.55);
+      text-transform: capitalize;
+    }
+    .ratio-item { display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; }
+    .ratio-item .rl { text-transform: none; }
+    .ratio-item strong { color: var(--gold); font-family: var(--font-body); font-size: 1.15rem; }
+
+    /* Report card layout — skin beside the enchanted book */
+    .report-layout {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      max-width: 960px;
+    }
+    .report-layout .report-card { flex: 1 1 auto; max-width: none; }
+
+    .report-skin {
+      flex: 0 0 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background:
+        repeating-linear-gradient(45deg, rgba(179,139,255,0.05) 0 2px, transparent 2px 4px),
+        linear-gradient(180deg, var(--stone), var(--stone-dark));
+      border: 2px solid var(--stone-border);
+      box-shadow:
+        inset 2px 2px 0 0 rgba(255,255,255,0.10),
+        inset -2px -2px 0 0 rgba(0,0,0,0.55);
+      padding: 1rem 0.75rem;
+      position: sticky;
+      top: 1rem;
+    }
+    .skin-frame {
+      width: 100%;
+      min-height: 200px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      background:
+        radial-gradient(ellipse at 50% 90%, rgba(179,139,255,0.22), transparent 65%),
+        linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.05));
+      border: 2px solid var(--stone-border);
+      box-shadow: inset 2px 2px 0 0 rgba(0,0,0,0.55), inset -2px -2px 0 0 rgba(255,255,255,0.06);
+      padding: 0.6rem;
+      margin-bottom: 0.7rem;
+    }
+    .skin-render {
+      image-rendering: pixelated;
+      height: 200px;
+      width: auto;
+      max-width: 100%;
+      filter: drop-shadow(3px 6px 0 rgba(0,0,0,0.55));
+      animation: slotPop 0.4s steps(4) backwards;
+    }
+    .skin-render.skin-missing {
+      display: block;
+      width: 80px;
+      height: 180px;
+      background:
+        linear-gradient(180deg, #4a3a2a 0 30%, #2f6d8c 30% 55%, #35507a 55% 100%);
+      border: 2px solid var(--stone-border);
+    }
+    .skin-render.skin-missing::after {
+      content: "no skin";
+      display: block;
+    }
+    .skin-name {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      color: var(--gold);
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.6);
+      word-break: break-all;
+      margin-bottom: 0.35rem;
+    }
+    .skin-sub {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--amethyst);
+      line-height: 1.25;
     }
 
-    .ratio-item strong { color: var(--yellow); }
+    .rc-icon { margin-right: 0.4rem; }
 
-    /* Awards */
+    .rank-badge {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 0.5rem;
+      letter-spacing: 0.5px;
+      color: #14100a;
+      background: linear-gradient(180deg, var(--gold), #d4b300);
+      border: 2px solid var(--stone-border);
+      padding: 0.35rem 0.6rem;
+      margin-bottom: 1rem;
+      box-shadow: inset 1px 1px 0 rgba(255,255,255,0.4), inset -1px -1px 0 rgba(0,0,0,0.35);
+      text-shadow: none;
+    }
+
+    .section-label {
+      font-family: var(--font-display);
+      font-size: 0.5rem;
+      color: var(--ink-dim);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 1.2rem 0 0.6rem;
+    }
+    .standouts { display: flex; flex-direction: column; gap: 0.55rem; }
+    .standout .so-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.2rem;
+    }
+    .so-label { font-family: var(--font-body); font-size: 1.1rem; color: var(--ink); }
+    .so-rank { font-family: var(--font-body); font-size: 0.95rem; color: var(--ink-dim); }
+    .so-track {
+      height: 12px;
+      background: linear-gradient(180deg, var(--stone-dark), #141414);
+      border: 2px solid var(--stone-border);
+      box-shadow: inset 2px 2px 0 rgba(0,0,0,0.6);
+      overflow: hidden;
+    }
+    .so-fill {
+      height: 100%;
+      background:
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.18) 0 3px, transparent 3px 6px),
+        linear-gradient(180deg, var(--xp), var(--emerald));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+      transition: width 0.5s steps(12);
+    }
+
+    @media (max-width: 640px) {
+      .report-layout { flex-direction: column; }
+      .report-skin { flex-basis: auto; width: 100%; position: static; }
+    }
+
+    /* Awards — trophy pedestal */
     .awards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
       gap: 1rem;
     }
 
     .award-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.25rem;
+      background:
+        repeating-linear-gradient(45deg, rgba(252,219,5,0.05) 0 2px, transparent 2px 4px),
+        linear-gradient(180deg, var(--stone-light), var(--stone));
+      border: 2px solid var(--stone-border);
+      box-shadow:
+        inset 2px 2px 0 0 rgba(255,255,255,0.14),
+        inset -2px -2px 0 0 rgba(0,0,0,0.55),
+        0 0 14px 0 rgba(252,219,5,0.18);
+      padding: 1.2rem 0.8rem;
       text-align: center;
+      animation: slotPop 0.4s steps(4) backwards;
     }
 
-    .award-card .trophy { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .award-card .trophy {
+      font-size: 1.7rem;
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.6));
+    }
     .award-card .award-label {
-      font-size: 0.75rem;
+      font-family: var(--font-display);
+      font-size: 0.5rem;
       text-transform: uppercase;
-      color: var(--muted);
-      letter-spacing: 0.05em;
+      color: var(--ink-dim);
+      letter-spacing: 0.04em;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.6);
     }
-
     .award-card .winner {
-      font-size: 1.2rem;
-      color: var(--yellow);
-      margin: 0.5rem 0 0.25rem;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      color: var(--gold);
+      margin: 0.6rem 0 0.3rem;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.6);
+      word-break: break-word;
     }
-
-    .award-card .award-value { font-size: 0.85rem; color: var(--green); }
+    .award-card .award-value {
+      font-family: var(--font-body);
+      font-size: 1.2rem;
+      color: var(--emerald);
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.6);
+    }
 
     /* Death hall of shame */
     .death-msg {
-      font-size: 0.82rem;
-      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: var(--ink);
       font-style: italic;
       padding: 0.5rem 0;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 2px dotted rgba(232,57,47,0.25);
     }
-
-    .death-msg .who { color: var(--red); font-style: normal; }
+    .death-msg .who { color: var(--redstone); font-style: normal; font-weight: bold; text-shadow: 1px 1px 0 rgba(0,0,0,0.6); }
     .death-msg .cause-tag {
-      font-size: 0.7rem;
-      color: var(--muted);
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 0.45rem;
+      color: var(--ink-dim);
       font-style: normal;
       margin-left: 0.5rem;
+      padding: 0.2rem 0.4rem;
+      background: var(--stone-dark);
+      border: 1px solid var(--stone-border);
+      vertical-align: middle;
     }
 
     .section-title {
-      font-size: 0.85rem;
-      color: var(--accent);
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      color: var(--gold);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin: 1.5rem 0 0.75rem;
+      letter-spacing: 0.04em;
+      margin: 1.4rem 0 0.7rem;
+      padding: 0.4rem 0.7rem;
+      background:
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 4px),
+        linear-gradient(180deg, var(--dirt), var(--dirt-dark));
+      border: 2px solid var(--stone-border);
+      display: inline-block;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.7);
     }
-
     .section-title:first-child { margin-top: 0; }
 
     .checkbox-label {
       display: flex;
       align-items: center;
-      gap: 0.4rem;
-      font-size: 0.85rem;
-      color: var(--muted);
+      gap: 0.45rem;
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: var(--ink-dim);
       cursor: pointer;
     }
+    .checkbox-label input { accent-color: var(--grass); width: 16px; height: 16px; }
 
-    .checkbox-label input { accent-color: var(--accent); }
+    /* Load reveal animation */
+    @keyframes slotPop {
+      0% { opacity: 0; transform: scale(0.9) translateY(6px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .card:nth-child(1) { animation-delay: 0.02s; }
+    .card:nth-child(2) { animation-delay: 0.06s; }
+    .card:nth-child(3) { animation-delay: 0.10s; }
+    .card:nth-child(4) { animation-delay: 0.14s; }
+    .card:nth-child(5) { animation-delay: 0.18s; }
+    .card:nth-child(6) { animation-delay: 0.22s; }
+    .card:nth-child(7) { animation-delay: 0.26s; }
+    .card:nth-child(8) { animation-delay: 0.30s; }
+    .card:nth-child(9) { animation-delay: 0.34s; }
+
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      header h1 { font-size: 0.7rem; }
+      .tab { font-size: 0.5rem; }
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>mc-stats <span>// server dashboard</span></h1>
+    <h1><span class="grass-cube">🟩</span> mc-stats <span>// server dashboard</span></h1>
     <div class="meta" id="meta"></div>
   </header>
 
@@ -348,14 +711,14 @@
 
   <div id="app" style="display:none;">
     <nav class="tabs">
-      <button class="tab active" data-view="player">Player</button>
-      <button class="tab" data-view="leaderboard">Leaderboard</button>
-      <button class="tab" data-view="report">Report Card</button>
-      <button class="tab" data-view="deaths">Deaths</button>
-      <button class="tab" data-view="awards">Awards</button>
-      <button class="tab" data-view="radar">Radar</button>
-      <button class="tab" data-view="quests">Quests</button>
-      <button class="tab" data-view="bosses">Bosses</button>
+      <button class="tab active" data-view="player"><span class="ico">⛏️</span>Player</button>
+      <button class="tab" data-view="leaderboard"><span class="ico">🏆</span>Leaderboard</button>
+      <button class="tab" data-view="report"><span class="ico">📜</span>Report Card</button>
+      <button class="tab" data-view="deaths"><span class="ico">💀</span>Deaths</button>
+      <button class="tab" data-view="awards"><span class="ico">🏅</span>Awards</button>
+      <button class="tab" data-view="radar"><span class="ico">🧭</span>Radar</button>
+      <button class="tab" data-view="quests"><span class="ico">📦</span>Quests</button>
+      <button class="tab" data-view="bosses"><span class="ico">🗡️</span>Bosses</button>
     </nav>
 
     <main>
@@ -371,15 +734,15 @@
       <section id="leaderboard-view" class="view">
         <div class="chart-grid">
           <div class="chart-box">
-            <h3>Playtime (hours)</h3>
+            <h3>⏱ Playtime (hours)</h3>
             <div class="chart-wrap"><canvas id="chart-playtime"></canvas></div>
           </div>
           <div class="chart-box">
-            <h3>Mob Kills</h3>
+            <h3>🗡 Mob Kills</h3>
             <div class="chart-wrap"><canvas id="chart-kills"></canvas></div>
           </div>
           <div class="chart-box">
-            <h3>Deaths</h3>
+            <h3>💀 Deaths</h3>
             <div class="chart-wrap"><canvas id="chart-deaths"></canvas></div>
           </div>
         </div>
@@ -396,21 +759,21 @@
       <section id="deaths-view" class="view">
         <div class="chart-grid">
           <div class="chart-box">
-            <h3>Most Deaths</h3>
+            <h3>☠ Most Deaths</h3>
             <div class="chart-wrap"><canvas id="chart-most-deaths"></canvas></div>
           </div>
           <div class="chart-box">
-            <h3>Common Death Causes (server-wide)</h3>
+            <h3>🩸 Common Death Causes (server-wide)</h3>
             <div class="chart-wrap"><canvas id="chart-death-causes"></canvas></div>
           </div>
         </div>
         <div class="panels" style="margin-top:1.5rem;">
           <div class="panel">
-            <h3>Hall of Shame</h3>
+            <h3>⚰ Hall of Shame</h3>
             <div id="embarrassing-deaths"></div>
           </div>
           <div class="panel">
-            <h3>Per-Player Death Profiles</h3>
+            <h3>🪦 Per-Player Death Profiles</h3>
             <div class="controls" style="margin-bottom:0.75rem;">
               <label for="death-select">Player</label>
               <select id="death-select"></select>
@@ -434,7 +797,7 @@
           </label>
         </div>
         <div class="chart-box" style="max-width:520px;">
-          <h3>Playstyle Radar</h3>
+          <h3>🧭 Playstyle Radar</h3>
           <div class="chart-wrap tall"><canvas id="chart-radar"></canvas></div>
         </div>
       </section>
@@ -447,15 +810,15 @@
         <div class="cards" id="quest-summary-cards"></div>
         <div class="panels">
           <div class="panel">
-            <h3>Chapter Progress</h3>
+            <h3>📦 Chapter Progress</h3>
             <div id="quest-chapters"></div>
           </div>
           <div class="panel">
-            <h3>Slowest Quests</h3>
+            <h3>🐌 Slowest Quests</h3>
             <div id="quest-slowest"></div>
           </div>
         </div>
-        <div class="section-title">Server-wide: zero completions (hardest / hidden?)</div>
+        <div class="section-title">🔍 Server-wide: zero completions (hardest / hidden?)</div>
         <div class="panel" id="quest-hardest"></div>
       </section>
 
@@ -467,17 +830,17 @@
         <div class="cards" id="boss-summary-cards"></div>
         <div class="panels">
           <div class="panel">
-            <h3>Player Boss Kills</h3>
+            <h3>🗡 Player Boss Kills</h3>
             <div id="boss-kills-list"></div>
           </div>
           <div class="panel">
-            <h3>Server Boss Kill Leaders</h3>
+            <h3>🏆 Server Boss Kill Leaders</h3>
             <div id="boss-hunters"></div>
           </div>
         </div>
         <div class="chart-grid" style="margin-top:1.5rem;">
           <div class="chart-box">
-            <h3>Top Bosses Server-wide</h3>
+            <h3>🐲 Top Bosses Server-wide</h3>
             <div class="chart-wrap"><canvas id="chart-boss-kills"></canvas></div>
           </div>
         </div>
@@ -495,12 +858,12 @@
       plugins: { legend: { display: false } },
       scales: {
         x: {
-          ticks: { color: "#8b949e", font: { family: "Consolas, monospace", size: 11 } },
-          grid: { color: "#21262d" },
+          ticks: { color: "#a8a8a8", font: { family: "VT323, monospace", size: 15 } },
+          grid: { color: "#2a2a2a" },
         },
         y: {
-          ticks: { color: "#8b949e", font: { family: "Consolas, monospace", size: 11 } },
-          grid: { color: "#21262d" },
+          ticks: { color: "#a8a8a8", font: { family: "VT323, monospace", size: 15 } },
+          grid: { color: "#2a2a2a" },
         },
       },
     };
@@ -534,22 +897,37 @@
 
     function renderPlayer(player) {
       document.getElementById("stat-cards").innerHTML = `
-        <div class="card"><div class="label">Playtime</div><div class="value green">${player.playtime_hours}h</div></div>
-        <div class="card"><div class="label">Deaths</div><div class="value red">${fmt(player.deaths)}</div></div>
-        <div class="card"><div class="label">Mob Kills</div><div class="value yellow">${fmt(player.mob_kills)}</div></div>
-        <div class="card"><div class="label">Player Kills</div><div class="value">${fmt(player.player_kills)}</div></div>
-        <div class="card"><div class="label">Damage Dealt</div><div class="value blue">${fmt(player.damage_dealt)}</div></div>
-        <div class="card"><div class="label">Damage Taken</div><div class="value red">${fmt(player.damage_taken)}</div></div>
-        <div class="card"><div class="label">Walked</div><div class="value">${player.distance_km.walked} km</div></div>
-        <div class="card"><div class="label">Sprinted</div><div class="value">${player.distance_km.sprinted} km</div></div>
-        <div class="card"><div class="label">Flown</div><div class="value">${player.distance_km.flown} km</div></div>
+        <div class="card"><div class="label">⏱ Playtime</div><div class="value green">${player.playtime_hours}h</div></div>
+        <div class="card"><div class="label">💀 Deaths</div><div class="value red">${fmt(player.deaths)}</div></div>
+        <div class="card"><div class="label">🗡 Mob Kills</div><div class="value yellow">${fmt(player.mob_kills)}</div></div>
+        <div class="card"><div class="label">⚔ Player Kills</div><div class="value">${fmt(player.player_kills)}</div></div>
+        <div class="card"><div class="label">💥 Damage Dealt</div><div class="value blue">${fmt(player.damage_dealt)}</div></div>
+        <div class="card"><div class="label">🩸 Damage Taken</div><div class="value red">${fmt(player.damage_taken)}</div></div>
+        <div class="card"><div class="label">🚶 Walked</div><div class="value">${player.distance_km.walked} km</div></div>
+        <div class="card"><div class="label">🏃 Sprinted</div><div class="value">${player.distance_km.sprinted} km</div></div>
+        <div class="card"><div class="label">🪽 Flown</div><div class="value">${player.distance_km.flown} km</div></div>
       `;
 
       document.getElementById("detail-panels").innerHTML = `
-        <div class="panel"><h3>Top Blocks Mined</h3>${renderList(player.top_blocks_mined)}</div>
-        <div class="panel"><h3>Top Mobs Killed</h3>${renderList(player.top_mobs_killed)}</div>
-        <div class="panel"><h3>Top Items Crafted</h3>${renderList(player.top_items_crafted)}</div>
+        <div class="panel"><h3>⛏ Top Blocks Mined</h3>${renderList(player.top_blocks_mined)}</div>
+        <div class="panel"><h3>🧟 Top Mobs Killed</h3>${renderList(player.top_mobs_killed)}</div>
+        <div class="panel"><h3>🛠 Top Items Crafted</h3>${renderList(player.top_items_crafted)}</div>
       `;
+    }
+
+    const RATIO_LABELS = {
+      damage_dealt_to_taken: "Damage dealt : taken",
+      blocks_placed_to_mined: "Build : mine ratio",
+      blocks_mined_per_km_walked: "Blocks mined / km",
+      kills_per_death: "Kills per death",
+      items_crafted_to_picked_up: "Craft : loot ratio",
+    };
+
+    function skinUrl(player) {
+      // mc-heads returns a default Steve/Alex render for unknown players,
+      // so this degrades gracefully for offline-mode / renamed accounts.
+      const id = (player.name || player.uuid || "").trim();
+      return `https://mc-heads.net/body/${encodeURIComponent(id)}/right`;
     }
 
     function renderReportCard(player) {
@@ -560,21 +938,58 @@
         return;
       }
 
-      const ratios = Object.entries(rc.ratios || {}).map(([key, val]) =>
-        `<div class="ratio-item">${esc(key.replace(/_/g, " "))}: <strong>${val}</strong></div>`
-      ).join("");
+      const ratios = Object.entries(rc.ratios || {}).map(([key, val]) => {
+        const label = RATIO_LABELS[key] || key.replace(/_/g, " ");
+        return `<div class="ratio-item"><span class="rl">${esc(label)}</span><strong>${esc(String(val))}</strong></div>`;
+      }).join("");
 
       const highlights = (rc.highlights || []).map(h =>
         `<div class="mini"><div class="label">${esc(h.label)}</div><div class="val">${esc(h.value)}</div></div>`
       ).join("");
 
+      const standouts = (rc.standouts || []).map(s => {
+        const pct = Math.max(0, Math.min(100, Number(s.percentile) || 0));
+        return `
+          <div class="standout">
+            <div class="so-head">
+              <span class="so-label">${esc(s.label)}</span>
+              <span class="so-rank">#${esc(String(s.rank))} of ${esc(String(s.of))} · top ${esc(String(s.top_pct))}%</span>
+            </div>
+            <div class="so-track"><div class="so-fill" style="width:${pct}%"></div></div>
+          </div>`;
+      }).join("");
+
+      const standoutsBlock = standouts
+        ? `<div class="standouts-wrap">
+             <div class="section-label">What makes them them</div>
+             <div class="standouts">${standouts}</div>
+           </div>`
+        : "";
+
+      const icon = rc.icon ? `<span class="rc-icon">${esc(rc.icon)}</span>` : "";
+      const rankBadge = rc.rank_line
+        ? `<div class="rank-badge">${esc(rc.rank_line)}</div>` : "";
+
       document.getElementById("report-content").innerHTML = `
-        <div class="report-card">
-          <div class="title">${esc(rc.title)}</div>
-          <div class="tagline">${esc(rc.tagline)}</div>
-          <div class="summary">${esc(rc.summary)}</div>
-          <div class="report-highlights">${highlights}</div>
-          <div class="ratio-grid">${ratios}</div>
+        <div class="report-layout">
+          <aside class="report-skin">
+            <div class="skin-frame">
+              <img class="skin-render" alt="${esc(player.name)} skin"
+                   src="${skinUrl(player)}"
+                   onerror="this.classList.add('skin-missing');this.removeAttribute('src');">
+            </div>
+            <div class="skin-name">${esc(player.name)}</div>
+            <div class="skin-sub">${esc(rc.tagline)}</div>
+          </aside>
+          <div class="report-card">
+            <div class="title">${icon}${esc(rc.title)}</div>
+            <div class="tagline">${esc(rc.tagline)}</div>
+            ${rankBadge}
+            <div class="summary">${esc(rc.summary)}</div>
+            ${standoutsBlock}
+            <div class="report-highlights">${highlights}</div>
+            <div class="ratio-grid">${ratios}</div>
+          </div>
         </div>
       `;
     }
@@ -613,7 +1028,7 @@
         "chart-most-deaths",
         mostDeaths.map(d => d.name),
         mostDeaths.map(d => d.deaths),
-        "#f85149"
+        "#e8392f"
       );
 
       const causes = (ds.cause_leaderboard || []).slice(0, 12);
@@ -621,7 +1036,7 @@
         "chart-death-causes",
         causes.map(c => c.cause),
         causes.map(c => c.count),
-        "#bc8cff"
+        "#4aedd9"
       );
 
       const shame = ds.embarrassing_deaths || [];
@@ -637,25 +1052,26 @@
 
     function renderAwards() {
       const awards = DATA.awards || [];
+      const sprites = ["🏆", "🥇", "💎", "👑", "⚡", "🔥", "🌟", "🛡️", "💰", "🏹", "💎", "🎖️"];
       document.getElementById("awards-grid").innerHTML = awards.length
-        ? awards.map(a => `
+        ? awards.map((a, i) => `
             <div class="award-card">
-              <div class="trophy">🏆</div>
+              <div class="trophy">${sprites[i % sprites.length]}</div>
               <div class="award-label">${esc(a.label)}</div>
               <div class="winner">${esc(a.winner)}</div>
               <div class="award-value">${esc(a.formatted_value)}</div>
             </div>
           `).join("")
-        : '<div class="panel">No awards computed.</div>';
+        : '<div class="panel"><h3>No awards computed</h3></div>';
     }
 
     function renderQuests(player) {
       const qp = player.quest_progress || {};
       document.getElementById("quest-summary-cards").innerHTML = `
-        <div class="card"><div class="label">Completion</div><div class="value green">${qp.completion_pct || 0}%</div></div>
-        <div class="card"><div class="label">Completed</div><div class="value">${fmt(qp.completed || 0)}</div></div>
-        <div class="card"><div class="label">Started</div><div class="value yellow">${fmt(qp.started || 0)}</div></div>
-        <div class="card"><div class="label">Available</div><div class="value">${fmt(qp.total_available || 0)}</div></div>
+        <div class="card"><div class="label">✅ Completion</div><div class="value green">${qp.completion_pct || 0}%</div></div>
+        <div class="card"><div class="label">📜 Completed</div><div class="value">${fmt(qp.completed || 0)}</div></div>
+        <div class="card"><div class="label">⏳ Started</div><div class="value yellow">${fmt(qp.started || 0)}</div></div>
+        <div class="card"><div class="label">📦 Available</div><div class="value">${fmt(qp.total_available || 0)}</div></div>
       `;
 
       const chapters = qp.chapters || [];
@@ -692,9 +1108,9 @@
     function renderBosses(player) {
       const bs = player.boss_stats || {};
       document.getElementById("boss-summary-cards").innerHTML = `
-        <div class="card"><div class="label">Boss Kills</div><div class="value red">${fmt(bs.total_boss_kills || 0)}</div></div>
-        <div class="card"><div class="label">Boss Types</div><div class="value yellow">${(bs.boss_kills || []).length}</div></div>
-        <div class="card"><div class="label">SLB Advancements</div><div class="value">${(bs.advancement_bosses || []).length}</div></div>
+        <div class="card"><div class="label">☠ Boss Kills</div><div class="value red">${fmt(bs.total_boss_kills || 0)}</div></div>
+        <div class="card"><div class="label">🐲 Boss Types</div><div class="value yellow">${(bs.boss_kills || []).length}</div></div>
+        <div class="card"><div class="label">🌟 SLB Advancements</div><div class="value">${(bs.advancement_bosses || []).length}</div></div>
       `;
 
       const kills = bs.boss_kills || [];
@@ -716,7 +1132,7 @@
         "chart-boss-kills",
         topBosses.slice(0, 12).map(b => b.name),
         topBosses.slice(0, 12).map(b => b.total_kills),
-        "#f85149"
+        "#e8392f"
       );
     }
 
@@ -729,9 +1145,9 @@
       const datasets = [{
         label: player.name,
         data: playerData,
-        borderColor: "#58a6ff",
-        backgroundColor: "rgba(88, 166, 255, 0.2)",
-        pointBackgroundColor: "#58a6ff",
+        borderColor: "#4aedd9",
+        backgroundColor: "rgba(74, 237, 217, 0.2)",
+        pointBackgroundColor: "#4aedd9",
         borderWidth: 2,
       }];
 
@@ -739,9 +1155,9 @@
         datasets.push({
           label: "Server avg",
           data: RADAR_AXES.map(a => DATA.radar_server_average[a] || 0),
-          borderColor: "#8b949e",
-          backgroundColor: "rgba(139, 148, 158, 0.1)",
-          pointBackgroundColor: "#8b949e",
+          borderColor: "#fcdb05",
+          backgroundColor: "rgba(252, 219, 5, 0.08)",
+          pointBackgroundColor: "#fcdb05",
           borderWidth: 1,
           borderDash: [4, 4],
         });
@@ -756,16 +1172,17 @@
           plugins: {
             legend: {
               display: true,
-              labels: { color: "#8b949e", font: { family: "Consolas, monospace", size: 11 } },
+              labels: { color: "#a8a8a8", font: { family: "VT323, monospace", size: 15 } },
             },
           },
           scales: {
             r: {
               min: 0,
               max: 100,
-              ticks: { color: "#8b949e", backdropColor: "transparent", stepSize: 25 },
-              grid: { color: "#30363d" },
-              pointLabels: { color: "#c9d1d9", font: { family: "Consolas, monospace", size: 12 } },
+              ticks: { color: "#a8a8a8", backdropColor: "transparent", stepSize: 25, font: { family: "VT323, monospace", size: 13 } },
+              grid: { color: "#2a2a2a" },
+              angleLines: { color: "#2a2a2a" },
+              pointLabels: { color: "#fcdb05", font: { family: "Press Start 2P, monospace", size: 8 } },
             },
           },
         },
@@ -778,22 +1195,43 @@
       const ctx = el.getContext("2d");
       if (charts[canvasId]) charts[canvasId].destroy();
 
+      // Darken a hex color for the carved-block bottom edge.
+      const edge = shade(color, -0.4);
+
       charts[canvasId] = new Chart(ctx, {
         type: "bar",
         data: {
           labels,
-          datasets: [{ data: values, backgroundColor: color, borderRadius: 3 }],
+          datasets: [{
+            data: values,
+            backgroundColor: color,
+            borderColor: edge,
+            borderWidth: 1,
+            borderRadius: 0,
+            borderSkipped: false,
+          }],
         },
         options: { ...chartDefaults, indexAxis: "y" },
       });
     }
 
+    function shade(hex, amt) {
+      const c = hex.replace("#", "");
+      if (c.length !== 6) return hex;
+      const num = parseInt(c, 16);
+      let r = (num >> 16) & 255, g = (num >> 8) & 255, b = num & 255;
+      r = Math.max(0, Math.min(255, Math.round(r + r * amt)));
+      g = Math.max(0, Math.min(255, Math.round(g + g * amt)));
+      b = Math.max(0, Math.min(255, Math.round(b + b * amt)));
+      return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    }
+
     function renderLeaderboard() {
       const top = DATA.players.slice(0, 15);
       const names = top.map(p => p.name);
-      makeBarChart("chart-playtime", names, top.map(p => p.playtime_hours), "#3fb950");
-      makeBarChart("chart-kills", names, top.map(p => p.mob_kills), "#d29922");
-      makeBarChart("chart-deaths", names, top.map(p => p.deaths), "#f85149");
+      makeBarChart("chart-playtime", names, top.map(p => p.playtime_hours), "#7cb342");
+      makeBarChart("chart-kills", names, top.map(p => p.mob_kills), "#17dd62");
+      makeBarChart("chart-deaths", names, top.map(p => p.deaths), "#e8392f");
     }
 
     function populateSelect(id, players) {

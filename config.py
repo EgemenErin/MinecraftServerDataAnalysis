@@ -3,35 +3,75 @@ Editable server lore config — tweak titles and awards without touching core lo
 """
 
 # Dominant playstyle axis -> title shown on the report card.
-# Keys must match: combat, mining, building, exploration, crafting, farming, balanced
+# The dominant axis is chosen by how much a player STANDS OUT from the rest of
+# the server (population-relative ranking), not by raw totals — so titles are
+# spread across the whole roster instead of everyone being a miner.
+# Keys must match the axes in report_card.AXES, plus "balanced".
 TITLE_CONFIG: dict[str, dict[str, str]] = {
     "combat": {
         "title": "Knight of House Ace",
-        "tagline": "High combat, low building",
+        "tagline": "Lives for the fight, dies for the drama",
+        "icon": "\u2694\ufe0f",
     },
     "mining": {
         "title": "Devout of the Church of Tonton",
-        "tagline": "High mining, low combat",
+        "tagline": "Prays to the deepslate, tithes in cobblestone",
+        "icon": "\u26cf\ufe0f",
     },
     "building": {
         "title": "Kluk Artisan",
-        "tagline": "High building, low combat",
+        "tagline": "Places more than they break — a rare civility",
+        "icon": "\U0001f9f1",
     },
     "exploration": {
         "title": "Wandering Politician's Scout",
-        "tagline": "High exploration, low everything else",
+        "tagline": "Never in the same chunk twice",
+        "icon": "\U0001f9ed",
     },
     "crafting": {
         "title": "Apprentice of the Grand Workbench",
-        "tagline": "Lives at the crafting table",
+        "tagline": "The crafting grid is a second home",
+        "icon": "\U0001f6e0\ufe0f",
     },
     "farming": {
         "title": "Keeper of the Sacred Crops",
         "tagline": "The hoe never rests",
+        "icon": "\U0001f33e",
+    },
+    "pvp": {
+        "title": "Server Menace",
+        "tagline": "A clear and present danger to their fellow player",
+        "icon": "\U0001f5e1\ufe0f",
+    },
+    "boss": {
+        "title": "Slayer of the Old Gods",
+        "tagline": "Bosses have filed a restraining order",
+        "icon": "\U0001f409",
+    },
+    "daredevil": {
+        "title": "The Eternal Respawner",
+        "tagline": "Death is merely a minor inconvenience",
+        "icon": "\U0001f480",
+    },
+    "hoarding": {
+        "title": "Dragon of the Hoard",
+        "tagline": "Picks up everything, parts with nothing",
+        "icon": "\U0001f4b0",
+    },
+    "questing": {
+        "title": "Chronicler of the Great Book",
+        "tagline": "Lives one checkbox at a time",
+        "icon": "\U0001f4d6",
+    },
+    "homebody": {
+        "title": "Hermit of the Hollow",
+        "tagline": "Logs the hours without ever leaving the base",
+        "icon": "\U0001f3e1",
     },
     "balanced": {
         "title": "Chaotic Neutral Adventurer",
-        "tagline": "Jack of all trades, master of none",
+        "tagline": "Master of none, dabbler in everything",
+        "icon": "\U0001f3b2",
     },
 }
 

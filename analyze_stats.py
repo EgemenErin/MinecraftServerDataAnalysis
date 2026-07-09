@@ -14,8 +14,9 @@ from pathlib import Path
 
 import pandas as pd
 
+import report_card
 from boss_parser import build_player_boss_stats, build_server_boss_stats
-from config import AWARDS_CONFIG, BOSS_ENTITY_HINTS, EMBARRASSING_CAUSES, TITLE_CONFIG
+from config import AWARDS_CONFIG, BOSS_ENTITY_HINTS, EMBARRASSING_CAUSES
 from quest_parser import analyze_quests
 
 TICKS_PER_HOUR = 72000
@@ -465,113 +466,6 @@ def build_death_profiles(
     return cause_counter, embarrassing
 
 
-def generate_summary(name: str, metrics: dict, ratios: dict, dominant: str) -> str:
-    walked = metrics["distance_km_total"]
-    mined = metrics["blocks_mined"]
-    placed = metrics["blocks_placed"]
-    dealt = metrics["damage_dealt"]
-    taken = metrics["damage_taken"]
-    crafted = metrics["items_crafted"]
-    picked = metrics["items_picked_up"]
-
-    parts: list[str] = []
-
-    if walked >= 20 and mined < walked * 50:
-        parts.append(
-            f"You walked {walked:.0f}km and only mined {mined:,} blocks — "
-            "are you touring the server or building something?"
-        )
-    elif mined > 10000:
-        parts.append(
-            f"{mined:,} blocks mined. The bedrock fears you."
-        )
-    elif walked < 5 and metrics["playtime_hours"] > 10:
-        parts.append(
-            f"{metrics['playtime_hours']:.0f} hours logged but barely {walked:.1f}km traveled — "
-            "homebody energy."
-        )
-
-    if ratios["damage_dealt_to_taken"] >= 2:
-        parts.append("You deal far more pain than you receive. Respectfully terrifying.")
-    elif ratios["damage_dealt_to_taken"] <= 0.5 and taken > 0:
-        parts.append("You absorb damage like a communal punching bag. Bold strategy.")
-
-    if placed > mined * 1.2 and placed > 1000:
-        parts.append("Builder detected: you place more than you destroy. Civilized.")
-    elif ratios["blocks_placed_to_mined"] < 0.15 and mined > 500:
-        parts.append("Pure demolition vibes — mining without putting anything back.")
-
-    if picked > 0 and ratios["items_crafted_to_picked_up"] < 0.05 and picked > 5000:
-        parts.append(
-            f"{picked:,} items picked up, almost none crafted. "
-            "Are you running a warehouse or playing Minecraft?"
-        )
-    elif crafted > 2000:
-        parts.append(f"{crafted:,} crafts. The crafting table sends its regards.")
-
-    if not parts:
-        axis = TITLE_CONFIG.get(dominant, TITLE_CONFIG["balanced"])
-        parts.append(
-            f"{name} keeps a low profile — a true {axis['title']} in the making."
-        )
-
-    return " ".join(parts[:3])
-
-
-def assign_title(dominant: str) -> dict:
-    info = TITLE_CONFIG.get(dominant, TITLE_CONFIG["balanced"])
-    return {
-        "key": dominant,
-        "title": info["title"],
-        "tagline": info["tagline"],
-    }
-
-
-def compute_report_card(name: str, metrics: dict) -> dict:
-    walked_km = max(metrics["distance_km_total"], 0.01)
-    ratios = {
-        "blocks_mined_per_km_walked": safe_ratio(metrics["blocks_mined"], walked_km),
-        "damage_dealt_to_taken": safe_ratio(metrics["damage_dealt"], max(metrics["damage_taken"], 1)),
-        "blocks_placed_to_mined": safe_ratio(metrics["blocks_placed"], max(metrics["blocks_mined"], 1)),
-        "items_crafted_to_picked_up": safe_ratio(
-            metrics["items_crafted"], max(metrics["items_picked_up"], 1)
-        ),
-    }
-
-    axis_scores = {
-        "combat": metrics["mob_kills"] + metrics["damage_dealt"] / 500 + metrics["player_kills"] * 5,
-        "mining": metrics["blocks_mined"],
-        "building": metrics["blocks_placed"],
-        "exploration": metrics["distance_km_total"] + metrics["distance_km"]["flown"] * 0.5,
-        "crafting": metrics["items_crafted"],
-        "farming": metrics["farming_score"],
-    }
-
-    max_score = max(axis_scores.values()) if axis_scores else 0
-    if max_score <= 0:
-        dominant = "balanced"
-    else:
-        top_axes = [k for k, v in axis_scores.items() if v >= max_score * 0.85]
-        dominant = top_axes[0] if len(top_axes) == 1 else "balanced"
-
-    title = assign_title(dominant)
-    summary = generate_summary(name, metrics, ratios, dominant)
-
-    return {
-        "title": title["title"],
-        "title_key": title["key"],
-        "tagline": title["tagline"],
-        "summary": summary,
-        "ratios": ratios,
-        "highlights": [
-            {"label": "Playtime", "value": f"{metrics['playtime_hours']:.1f}h"},
-            {"label": "Mob Kills", "value": f"{metrics['mob_kills']:,}"},
-            {"label": "Blocks Mined", "value": f"{metrics['blocks_mined']:,}"},
-            {"label": "Distance", "value": f"{metrics['distance_km_total']:.0f} km"},
-        ],
-    }
-
-
 def normalize_radar(raw_scores: dict[str, float], server_max: dict[str, float]) -> dict[str, int]:
     result: dict[str, int] = {}
     for axis, value in raw_scores.items():
@@ -748,8 +642,11 @@ def finalize_players(players: list[dict]) -> dict[str, int]:
         ceiling = server_max[axis] or 1
         server_average[axis] = min(100, round((avg / ceiling) * 100))
 
-    for player in players:
-        player["report_card"] = compute_report_card(player["name"], player["_metrics"])
+    report_entries = [{"name": p["name"], **p["_metrics"]} for p in players]
+    report_cards = report_card.build_report_cards(report_entries)
+
+    for player, card in zip(players, report_cards):
+        player["report_card"] = card
         player["playstyle_radar"] = normalize_radar(
             raw_by_player[player["uuid"]], server_max
         )
