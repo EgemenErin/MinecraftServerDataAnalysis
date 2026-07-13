@@ -17,6 +17,7 @@ import pandas as pd
 import report_card
 from boss_parser import build_player_boss_stats, build_server_boss_stats
 from config import AWARDS_CONFIG, BOSS_ENTITY_HINTS, EMBARRASSING_CAUSES
+from gear_parser import build_player_gear, empty_gear
 from quest_parser import analyze_quests
 
 TICKS_PER_HOUR = 72000
@@ -185,6 +186,12 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=None,
         help="Per-player FTB Quests progress (default: server-root/world/ftbquests)",
+    )
+    parser.add_argument(
+        "--playerdata-dir",
+        type=Path,
+        default=None,
+        help="Per-player NBT .dat files for gear (default: server-root/world/playerdata)",
     )
     return parser.parse_args()
 
@@ -583,6 +590,7 @@ def parse_player_stats(uuid: str, name: str, raw: dict) -> dict:
         "sprint_km": sprinted_km,
         "quest_completion_pct": 0.0,
         "total_boss_kills": 0,
+        "gear_score": 0,
     }
 
     player = {
@@ -690,6 +698,7 @@ def main() -> int:
     quests_config_dir = (args.quests_config_dir or server_root / "config" / "ftbquests" / "quests").resolve()
     world_quests_dir = (args.world_quests_dir or server_root / "world" / "ftbquests").resolve()
     advancements_dir = server_root / "world" / "advancements"
+    playerdata_dir = (args.playerdata_dir or server_root / "world" / "playerdata").resolve()
 
     if not stats_dir.is_dir():
         print(f"Error: stats directory not found: {stats_dir}", file=sys.stderr)
@@ -737,6 +746,10 @@ def main() -> int:
         )
         player["boss_stats"] = boss_stats
         player["_metrics"]["total_boss_kills"] = boss_stats["total_boss_kills"]
+
+        gear = build_player_gear(uuid, playerdata_dir) if playerdata_dir.is_dir() else empty_gear()
+        player["gear"] = gear
+        player["_metrics"]["gear_score"] = gear["gear_score"]
         boss_rows.append(
             {
                 "uuid": uuid,
@@ -762,6 +775,26 @@ def main() -> int:
 
     log_deaths = parse_logs(logs_dir if logs_dir.is_dir() else None)
     cause_counter, embarrassing = build_death_profiles(players, log_deaths, name_to_uuid)
+
+    known_names = {p["name"] for p in players}
+    # Only count log kills where BOTH sides are known players; the log heuristic
+    # otherwise tags capitalized mob names (Zombie, Skeleton, ...) as "pvp".
+    pvp_kills = [
+        d for d in log_deaths
+        if d.get("cause") == "pvp"
+        and d.get("killer") in known_names
+        and d.get("victim") in known_names
+    ]
+    killer_counter: Counter[str] = Counter(d["killer"] for d in pvp_kills)
+    pvp_killers = [
+        {"name": name, "kills": count}
+        for name, count in killer_counter.most_common(15)
+    ]
+    pvp_feed = [
+        {"killer": d["killer"], "victim": d["victim"], "message": d["message"]}
+        for d in pvp_kills[-25:][::-1]
+    ]
+
     awards = compute_awards(players)
     radar_average = finalize_players(players)
 
@@ -790,6 +823,11 @@ def main() -> int:
                 for p in sorted(players, key=lambda x: x["deaths"], reverse=True)[:10]
             ],
             "embarrassing_deaths": embarrassing[:20],
+        },
+        "pvp_stats": {
+            "total_pvp_kills": len(pvp_kills),
+            "top_killers": pvp_killers,
+            "kill_feed": pvp_feed,
         },
         "awards": awards,
         "radar_server_average": radar_average,

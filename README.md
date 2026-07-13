@@ -81,6 +81,8 @@ Edit `config.py` — titles, awards, boss entity hints, embarrassing death categ
 | File | Purpose |
 |------|---------|
 | `analyze_stats.py` | Main processor |
+| `gear_parser.py` | Reads worn armor/weapon + enchants from playerdata NBT |
+| `nbt_reader.py` | Minimal dependency-free NBT reader |
 | `dashboard.html` | Dashboard UI |
 | `player_stats.js` | Data consumed by the dashboard (auto-generated) |
 | `paths.json` | Local server paths (gitignored) |

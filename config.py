@@ -175,6 +175,12 @@ AWARDS_CONFIG: list[dict[str, str]] = [
         "stat": "player_kills",
         "direction": "max",
     },
+    {
+        "id": "best_gear",
+        "label": "Best Geared",
+        "stat": "gear_score",
+        "direction": "max",
+    },
 ]
 
 # Entity id substrings treated as boss-like kills in stats.

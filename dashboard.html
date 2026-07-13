@@ -675,6 +675,362 @@
     }
     .checkbox-label input { accent-color: var(--grass); width: 16px; height: 16px; }
 
+    /* ===== Leaderboard: metric switcher ===== */
+    .lb-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.4rem;
+    }
+    .lb-metric {
+      font-family: var(--font-display);
+      font-size: 0.5rem;
+      padding: 0.5rem 0.7rem;
+      cursor: pointer;
+      color: var(--ink-dim);
+      background: linear-gradient(180deg, var(--stone-light), var(--stone));
+      border: 2px solid var(--stone-border);
+      box-shadow:
+        inset 2px 2px 0 0 rgba(255,255,255,0.10),
+        inset -2px -2px 0 0 rgba(0,0,0,0.55);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.6);
+      transition: transform 0.08s steps(2), filter 0.08s steps(2);
+    }
+    .lb-metric .ico { font-size: 0.75rem; }
+    .lb-metric:hover { filter: brightness(1.25); transform: translateY(-2px); }
+    .lb-metric:active { transform: translateY(1px); }
+    .lb-metric.active {
+      color: #14100a;
+      background: linear-gradient(180deg, var(--gold), #d4b300);
+      border-color: #d4b300;
+      text-shadow: none;
+      box-shadow:
+        inset 2px 2px 0 0 rgba(255,255,255,0.35),
+        inset -2px -2px 0 0 rgba(0,0,0,0.35),
+        0 0 10px 0 rgba(252,219,5,0.4);
+    }
+
+    /* ===== Leaderboard: podium ===== */
+    .podium {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 0.8rem;
+      margin: 0.5rem auto 2rem;
+      max-width: 720px;
+    }
+    .podium-col {
+      flex: 1 1 0;
+      max-width: 33%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: podiumRise 0.5s steps(6) backwards;
+    }
+    .podium-col.p1 { animation-delay: 0.20s; }
+    .podium-col.p2 { animation-delay: 0.05s; }
+    .podium-col.p3 { animation-delay: 0.12s; }
+
+    .podium-figure {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      margin-bottom: 0.5rem;
+      width: 100%;
+    }
+    .podium-medal { font-size: 1.4rem; filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.6)); }
+    .p1 .podium-medal { font-size: 1.9rem; }
+    .podium-skin-frame {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      width: 100%;
+      background:
+        radial-gradient(ellipse at 50% 92%, rgba(252,219,5,0.16), transparent 65%);
+    }
+    .podium-skin {
+      image-rendering: pixelated;
+      width: auto;
+      filter: drop-shadow(3px 6px 0 rgba(0,0,0,0.55));
+    }
+    .p1 .podium-skin { height: 150px; }
+    .p2 .podium-skin, .p3 .podium-skin { height: 120px; }
+    .podium-skin.skin-missing {
+      width: 54px; height: 120px;
+      background: linear-gradient(180deg, #4a3a2a 0 30%, #2f6d8c 30% 55%, #35507a 55% 100%);
+      border: 2px solid var(--stone-border);
+    }
+    .p1 .podium-skin.skin-missing { height: 150px; }
+    .podium-name {
+      font-family: var(--font-display);
+      font-size: 0.55rem;
+      color: var(--gold);
+      text-align: center;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.6);
+      word-break: break-word;
+      line-height: 1.3;
+    }
+    .podium-value {
+      font-family: var(--font-body);
+      font-size: 1.2rem;
+      color: var(--emerald);
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.6);
+    }
+
+    .podium-base {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 0.5rem;
+      font-family: var(--font-display);
+      color: rgba(0,0,0,0.55);
+      border: 2px solid var(--stone-border);
+      box-shadow:
+        inset 3px 3px 0 0 rgba(255,255,255,0.25),
+        inset -3px -3px 0 0 rgba(0,0,0,0.4);
+    }
+    .podium-base .base-num { font-size: 1.6rem; text-shadow: 1px 1px 0 rgba(255,255,255,0.25); }
+    .p1 .podium-base {
+      height: 130px;
+      background:
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.10) 0 3px, transparent 3px 6px),
+        linear-gradient(180deg, var(--gold), #c99e05);
+    }
+    .p1 .podium-base .base-num { font-size: 2.2rem; }
+    .p2 .podium-base {
+      height: 95px;
+      background:
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.10) 0 3px, transparent 3px 6px),
+        linear-gradient(180deg, #cfd4da, #9aa1ab);
+    }
+    .p3 .podium-base {
+      height: 68px;
+      background:
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.10) 0 3px, transparent 3px 6px),
+        linear-gradient(180deg, #d08b4f, #a5652f);
+    }
+
+    /* ===== Leaderboard: the rest ===== */
+    .lb-rest-panel { margin-bottom: 0.5rem; }
+    .lb-row {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.4rem 0;
+      border-bottom: 2px dotted rgba(168,168,168,0.18);
+    }
+    .lb-row:last-child { border-bottom: none; }
+    .lb-rank {
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      color: var(--ink-dim);
+      width: 2.4rem;
+      flex-shrink: 0;
+      text-align: right;
+    }
+    .lb-head {
+      width: 34px;
+      height: 34px;
+      image-rendering: pixelated;
+      border: 2px solid var(--stone-border);
+      flex-shrink: 0;
+      box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
+      background: var(--stone-dark);
+    }
+    .lb-pname {
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      color: var(--ink);
+      flex-shrink: 0;
+      width: 9rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .lb-bar-track {
+      flex: 1 1 auto;
+      height: 12px;
+      min-width: 40px;
+      background: linear-gradient(180deg, var(--stone-dark), #141414);
+      border: 2px solid var(--stone-border);
+      box-shadow: inset 2px 2px 0 rgba(0,0,0,0.6);
+      overflow: hidden;
+    }
+    .lb-bar-fill {
+      height: 100%;
+      background:
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.18) 0 3px, transparent 3px 6px),
+        linear-gradient(180deg, var(--xp), var(--emerald));
+      transition: width 0.5s steps(12);
+    }
+    .lb-val {
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      width: 6rem;
+      text-align: right;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.6);
+    }
+
+    /* ===== Leaderboard: hall of records ===== */
+    .records-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 0.8rem;
+    }
+    .record-card {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      background:
+        repeating-linear-gradient(45deg, rgba(252,219,5,0.05) 0 2px, transparent 2px 4px),
+        linear-gradient(180deg, var(--stone-light), var(--stone));
+      border: 2px solid var(--stone-border);
+      box-shadow:
+        inset 2px 2px 0 0 rgba(255,255,255,0.12),
+        inset -2px -2px 0 0 rgba(0,0,0,0.55);
+      padding: 0.7rem;
+      animation: slotPop 0.4s steps(4) backwards;
+    }
+    .record-head {
+      width: 44px;
+      height: 44px;
+      image-rendering: pixelated;
+      border: 2px solid var(--stone-border);
+      flex-shrink: 0;
+      background: var(--stone-dark);
+    }
+    .record-body { min-width: 0; flex: 1 1 auto; }
+    .record-label {
+      font-family: var(--font-display);
+      font-size: 0.45rem;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      letter-spacing: 0.03em;
+      line-height: 1.4;
+    }
+    .record-winner {
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      color: var(--gold);
+      margin: 0.25rem 0;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.6);
+      word-break: break-word;
+    }
+    .record-value {
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      color: var(--emerald);
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.6);
+    }
+
+    /* ===== Gear loadout ===== */
+    .gear-piece {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      padding: 0.55rem 0;
+      border-bottom: 2px dotted rgba(168,168,168,0.18);
+    }
+    .gear-piece:last-child { border-bottom: none; }
+    .gear-piece-icon {
+      font-size: 1.3rem;
+      width: 1.8rem;
+      text-align: center;
+      flex-shrink: 0;
+      filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.6));
+    }
+    .gear-piece-body { flex: 1 1 auto; min-width: 0; }
+    .gear-piece-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+    .gear-piece-name { font-family: var(--font-body); font-size: 1.15rem; color: var(--ink); }
+    .gear-piece-role {
+      font-family: var(--font-display);
+      font-size: 0.4rem;
+      color: var(--ink-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+    .ench-chips { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.35rem; }
+    .ench-chip {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--amethyst);
+      background:
+        repeating-linear-gradient(45deg, rgba(179,139,255,0.08) 0 2px, transparent 2px 4px),
+        linear-gradient(180deg, var(--stone), var(--stone-dark));
+      border: 2px solid var(--stone-border);
+      padding: 0.1rem 0.4rem;
+      box-shadow: inset 1px 1px 0 rgba(255,255,255,0.08);
+      text-shadow: 0 0 6px rgba(179,139,255,0.35);
+    }
+    .ench-none { font-family: var(--font-body); font-size: 0.95rem; color: var(--ink-dim); font-style: italic; }
+
+    /* Reused ranked rows (gear/pvp/building lists) */
+    .rank-list-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.4rem 0;
+      border-bottom: 2px dotted rgba(168,168,168,0.18);
+    }
+    .rank-list-row:last-child { border-bottom: none; }
+    .rank-list-row .rl-rank {
+      font-family: var(--font-display);
+      font-size: 0.55rem;
+      color: var(--ink-dim);
+      width: 2rem;
+      flex-shrink: 0;
+      text-align: right;
+    }
+    .rank-list-row .rl-head {
+      width: 30px; height: 30px;
+      image-rendering: pixelated;
+      border: 2px solid var(--stone-border);
+      flex-shrink: 0;
+      background: var(--stone-dark);
+    }
+    .rank-list-row .rl-name { font-family: var(--font-body); font-size: 1.1rem; color: var(--ink); flex: 1 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .rank-list-row .rl-val { font-family: var(--font-body); font-size: 1.1rem; color: var(--gold); flex-shrink: 0; text-shadow: 1px 1px 0 rgba(0,0,0,0.6); }
+    .rank-list-row.me { background: rgba(124,179,66,0.10); box-shadow: inset 3px 0 0 var(--grass); }
+
+    /* PvP kill feed */
+    .kill-line {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: var(--ink-dim);
+      padding: 0.35rem 0;
+      border-bottom: 2px dotted rgba(232,57,47,0.22);
+    }
+    .kill-line:last-child { border-bottom: none; }
+    .kill-line .killer { color: var(--redstone); font-weight: bold; text-shadow: 1px 1px 0 rgba(0,0,0,0.6); }
+    .kill-line .victim { color: var(--ink); }
+
+    @keyframes podiumRise {
+      0% { opacity: 0; transform: translateY(24px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 560px) {
+      .podium { gap: 0.3rem; }
+      .p1 .podium-skin { height: 110px; }
+      .p2 .podium-skin, .p3 .podium-skin { height: 88px; }
+      .podium-name { font-size: 0.45rem; }
+      .lb-pname { width: 6rem; }
+      .lb-val { width: 4.5rem; font-size: 1rem; }
+    }
+
     /* Load reveal animation */
     @keyframes slotPop {
       0% { opacity: 0; transform: scale(0.9) translateY(6px); }
@@ -713,6 +1069,9 @@
     <nav class="tabs">
       <button class="tab active" data-view="player"><span class="ico">⛏️</span>Player</button>
       <button class="tab" data-view="leaderboard"><span class="ico">🏆</span>Leaderboard</button>
+      <button class="tab" data-view="gear"><span class="ico">🛡️</span>Gear</button>
+      <button class="tab" data-view="pvp"><span class="ico">⚔️</span>PvP</button>
+      <button class="tab" data-view="building"><span class="ico">🏗️</span>Building</button>
       <button class="tab" data-view="report"><span class="ico">📜</span>Report Card</button>
       <button class="tab" data-view="deaths"><span class="ico">💀</span>Deaths</button>
       <button class="tab" data-view="awards"><span class="ico">🏅</span>Awards</button>
@@ -732,18 +1091,78 @@
       </section>
 
       <section id="leaderboard-view" class="view">
+        <div class="lb-metrics" id="lb-metrics"></div>
+        <div class="podium" id="lb-podium"></div>
+        <div class="panel lb-rest-panel">
+          <h3 id="lb-rest-title">The Rest of the Pack</h3>
+          <div id="lb-rest"></div>
+        </div>
+        <div class="section-title">🏅 Hall of Records — who's the best at what</div>
+        <div class="records-grid" id="lb-records"></div>
+      </section>
+
+      <section id="gear-view" class="view">
+        <div class="controls">
+          <label for="gear-select">Player</label>
+          <select id="gear-select"></select>
+        </div>
+        <div class="cards" id="gear-summary-cards"></div>
+        <div class="panels">
+          <div class="panel">
+            <h3>🛡 Loadout</h3>
+            <div id="gear-loadout"></div>
+          </div>
+          <div class="panel">
+            <h3>🏆 Best Geared — Server Ranking</h3>
+            <div id="gear-ranking"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pvp-view" class="view">
+        <div class="cards" id="pvp-summary-cards"></div>
         <div class="chart-grid">
           <div class="chart-box">
-            <h3>⏱ Playtime (hours)</h3>
-            <div class="chart-wrap"><canvas id="chart-playtime"></canvas></div>
+            <h3>⚔ Top Player Killers (kill log)</h3>
+            <div class="chart-wrap"><canvas id="chart-pvp-killers"></canvas></div>
           </div>
           <div class="chart-box">
-            <h3>🗡 Mob Kills</h3>
-            <div class="chart-wrap"><canvas id="chart-kills"></canvas></div>
+            <h3>💥 Top Damage Dealt</h3>
+            <div class="chart-wrap"><canvas id="chart-pvp-damage"></canvas></div>
+          </div>
+        </div>
+        <div class="panels" style="margin-top:1.5rem;">
+          <div class="panel">
+            <h3>🗡 Most Wanted (stat kills)</h3>
+            <div id="pvp-most-wanted"></div>
+          </div>
+          <div class="panel">
+            <h3>📜 Recent Kill Feed</h3>
+            <div id="pvp-feed"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="building-view" class="view">
+        <div class="cards" id="building-summary-cards"></div>
+        <div class="chart-grid">
+          <div class="chart-box">
+            <h3>🧱 Top Builders (blocks placed)</h3>
+            <div class="chart-wrap"><canvas id="chart-build-placed"></canvas></div>
           </div>
           <div class="chart-box">
-            <h3>💀 Deaths</h3>
-            <div class="chart-wrap"><canvas id="chart-deaths"></canvas></div>
+            <h3>⛏ Top Miners (blocks mined)</h3>
+            <div class="chart-wrap"><canvas id="chart-build-mined"></canvas></div>
+          </div>
+        </div>
+        <div class="panels" style="margin-top:1.5rem;">
+          <div class="panel">
+            <h3>🛠 Top Crafters</h3>
+            <div id="building-crafters"></div>
+          </div>
+          <div class="panel">
+            <h3>⚖ Best Build : Mine Ratio</h3>
+            <div id="building-ratio"></div>
           </div>
         </div>
       </section>
@@ -928,6 +1347,13 @@
       // so this degrades gracefully for offline-mode / renamed accounts.
       const id = (player.name || player.uuid || "").trim();
       return `https://mc-heads.net/body/${encodeURIComponent(id)}/right`;
+    }
+
+    function headUrl(nameOrPlayer, size = 48) {
+      const id = (typeof nameOrPlayer === "string"
+        ? nameOrPlayer
+        : (nameOrPlayer.name || nameOrPlayer.uuid || "")).trim();
+      return `https://mc-heads.net/avatar/${encodeURIComponent(id)}/${size}`;
     }
 
     function renderReportCard(player) {
@@ -1226,12 +1652,243 @@
       return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
     }
 
+    const LEADERBOARD_METRICS = [
+      { id: "playtime",     label: "Playtime",   icon: "⏱", get: p => p.playtime_hours || 0,                fmt: v => fmt(v) + "h" },
+      { id: "mob_kills",    label: "Mob Kills",  icon: "🗡", get: p => p.mob_kills || 0 },
+      { id: "gear_score",   label: "Gear Score", icon: "🛡", get: p => (p.gear && p.gear.gear_score) || 0 },
+      { id: "pvp_kills",    label: "PvP Kills",  icon: "⚔", get: p => p.player_kills || 0 },
+      { id: "boss_kills",   label: "Boss Kills", icon: "🐲", get: p => (p.boss_stats && p.boss_stats.total_boss_kills) || 0 },
+      { id: "blocks_mined", label: "Blocks Mined", icon: "⛏", get: p => (p.totals && p.totals.blocks_mined) || p.total_blocks_mined || 0 },
+      { id: "blocks_placed",label: "Blocks Placed", icon: "🧱", get: p => (p.totals && p.totals.blocks_placed) || 0 },
+      { id: "distance",     label: "Distance",   icon: "🥾", get: p => p.distance_km_total || 0,             fmt: v => fmt(v) + " km" },
+      { id: "quests",       label: "Quests",     icon: "📜", get: p => (p.quest_progress && p.quest_progress.completed) || 0 },
+      { id: "crafted",      label: "Items Crafted", icon: "🛠", get: p => (p.totals && p.totals.items_crafted) || 0 },
+      { id: "farming",      label: "Farming",    icon: "🌾", get: p => (p.totals && p.totals.farming_score) || 0 },
+      { id: "deaths",       label: "Deaths",     icon: "💀", get: p => p.deaths || 0 },
+    ];
+
+    const RECORD_ICONS = {
+      most_richest_ores: "💎", most_diamonds: "💠", most_emeralds: "🟢",
+      most_boss_kills: "🐲", most_blocks_placed: "🧱", most_deaths: "💀",
+      longest_distance: "🥾", speed_demon: "⚡", most_quests: "📜",
+      most_pvp: "⚔️", biggest_looter: "🧰", biggest_hoarder: "📦",
+      most_underground: "🕳️", biggest_sleeper: "🛏️", most_villager_chatter: "🧑‍🌾",
+      least_efficient_hunter: "🩹",
+    };
+
+    let currentMetric = LEADERBOARD_METRICS[0].id;
+
     function renderLeaderboard() {
-      const top = DATA.players.slice(0, 15);
-      const names = top.map(p => p.name);
-      makeBarChart("chart-playtime", names, top.map(p => p.playtime_hours), "#7cb342");
-      makeBarChart("chart-kills", names, top.map(p => p.mob_kills), "#17dd62");
-      makeBarChart("chart-deaths", names, top.map(p => p.deaths), "#e8392f");
+      renderLeaderboardMetrics();
+      renderLeaderboardBoard();
+      renderLeaderboardRecords();
+    }
+
+    function renderLeaderboardMetrics() {
+      const wrap = document.getElementById("lb-metrics");
+      wrap.innerHTML = LEADERBOARD_METRICS.map(m =>
+        `<button class="lb-metric${m.id === currentMetric ? " active" : ""}" data-metric="${m.id}">
+           <span class="ico">${m.icon}</span>${esc(m.label)}
+         </button>`
+      ).join("");
+      wrap.querySelectorAll(".lb-metric").forEach(btn => {
+        btn.addEventListener("click", () => {
+          currentMetric = btn.dataset.metric;
+          wrap.querySelectorAll(".lb-metric").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          renderLeaderboardBoard();
+        });
+      });
+    }
+
+    function renderLeaderboardBoard() {
+      const metric = LEADERBOARD_METRICS.find(m => m.id === currentMetric);
+      const fmtVal = metric.fmt || (v => fmt(v));
+      const ranked = DATA.players
+        .map(p => ({ p, v: Number(metric.get(p)) || 0 }))
+        .sort((a, b) => b.v - a.v);
+
+      const top3 = ranked.slice(0, 3);
+      const maxVal = top3.length ? Math.max(top3[0].v, 1) : 1;
+
+      // Visual podium order: 2nd (left), 1st (center), 3rd (right)
+      const order = [1, 0, 2];
+      const medals = { 0: "🥇", 1: "🥈", 2: "🥉" };
+      document.getElementById("lb-podium").innerHTML = order.map(idx => {
+        const entry = top3[idx];
+        if (!entry) return "";
+        const place = idx + 1;
+        return `
+          <div class="podium-col p${place}">
+            <div class="podium-figure">
+              <div class="podium-medal">${medals[idx]}</div>
+              <div class="podium-skin-frame">
+                <img class="podium-skin" alt="${esc(entry.p.name)}"
+                     src="${skinUrl(entry.p)}"
+                     onerror="this.classList.add('skin-missing');this.removeAttribute('src');">
+              </div>
+              <div class="podium-name">${esc(entry.p.name)}</div>
+              <div class="podium-value">${esc(fmtVal(entry.v))}</div>
+            </div>
+            <div class="podium-base"><span class="base-num">${place}</span></div>
+          </div>`;
+      }).join("");
+
+      const rest = ranked.slice(3, 25);
+      document.getElementById("lb-rest-title").textContent =
+        `${metric.icon} ${metric.label} — Full Ranking`;
+      document.getElementById("lb-rest").innerHTML = rest.length
+        ? rest.map((entry, i) => {
+            const pct = Math.max(2, Math.round((entry.v / maxVal) * 100));
+            return `
+              <div class="lb-row">
+                <span class="lb-rank">#${i + 4}</span>
+                <img class="lb-head" alt="" loading="lazy" src="${headUrl(entry.p, 34)}">
+                <span class="lb-pname">${esc(entry.p.name)}</span>
+                <span class="lb-bar-track"><span class="lb-bar-fill" style="width:${pct}%"></span></span>
+                <span class="lb-val">${esc(fmtVal(entry.v))}</span>
+              </div>`;
+          }).join("")
+        : '<div class="list-row"><span>No other players ranked</span></div>';
+    }
+
+    function renderLeaderboardRecords() {
+      const awards = DATA.awards || [];
+      document.getElementById("lb-records").innerHTML = awards.length
+        ? awards.map(a => `
+            <div class="record-card">
+              <img class="record-head" alt="" loading="lazy" src="${headUrl(a.winner, 44)}">
+              <div class="record-body">
+                <div class="record-label">${RECORD_ICONS[a.id] || "🏅"} ${esc(a.label)}</div>
+                <div class="record-winner">${esc(a.winner)}</div>
+                <div class="record-value">${esc(a.formatted_value)}</div>
+              </div>
+            </div>
+          `).join("")
+        : '<div class="list-row"><span>No records computed</span></div>';
+    }
+
+    function rankedRows(ranked, fmtVal, highlightUuid) {
+      if (!ranked.length) return '<div class="list-row"><span>No data</span></div>';
+      return ranked.map((e, i) => `
+        <div class="rank-list-row${e.p.uuid === highlightUuid ? " me" : ""}">
+          <span class="rl-rank">#${i + 1}</span>
+          <img class="rl-head" alt="" loading="lazy" src="${headUrl(e.p, 30)}">
+          <span class="rl-name">${esc(e.p.name)}</span>
+          <span class="rl-val">${esc(fmtVal(e.v))}</span>
+        </div>`).join("");
+    }
+
+    function rankBy(getter) {
+      return DATA.players
+        .map(p => ({ p, v: Number(getter(p)) || 0 }))
+        .sort((a, b) => b.v - a.v);
+    }
+
+    function renderGear(player) {
+      const g = player.gear || {};
+      document.getElementById("gear-summary-cards").innerHTML = `
+        <div class="card"><div class="label">🛡 Gear Score</div><div class="value blue">${fmt(g.gear_score || 0)}</div></div>
+        <div class="card"><div class="label">🧥 Armor Pieces</div><div class="value yellow">${g.armor_pieces || 0}/4</div></div>
+        <div class="card"><div class="label">✨ Enchant Levels</div><div class="value" style="color:var(--amethyst)">${fmt(g.total_enchant_levels || 0)}</div></div>
+        <div class="card"><div class="label">🏅 Full Set</div><div class="value ${g.full_set ? "green" : "red"}">${g.full_set ? "YES" : "NO"}</div></div>
+        <div class="card"><div class="label">🧪 XP Level</div><div class="value green">${fmt(g.xp_level || 0)}</div></div>
+      `;
+
+      const pieces = g.pieces || [];
+      document.getElementById("gear-loadout").innerHTML = pieces.length
+        ? pieces.map(pc => {
+            const chips = (pc.enchants || []).length
+              ? `<div class="ench-chips">${pc.enchants.map(e =>
+                   `<span class="ench-chip">${esc(e.name)} ${romanOr(e.lvl)}</span>`).join("")}</div>`
+              : '<div class="ench-chips"><span class="ench-none">No enchantments</span></div>';
+            return `
+              <div class="gear-piece">
+                <div class="gear-piece-icon">${esc(pc.icon || "🎒")}</div>
+                <div class="gear-piece-body">
+                  <div class="gear-piece-head">
+                    <span class="gear-piece-name">${esc(pc.name)}</span>
+                    <span class="gear-piece-role">${esc(pc.role)}</span>
+                  </div>
+                  ${chips}
+                </div>
+              </div>`;
+          }).join("")
+        : (g.has_data
+            ? '<div class="list-row"><span>No armor or weapons equipped</span></div>'
+            : '<div class="list-row"><span>No saved player data found</span></div>');
+
+      const ranked = rankBy(p => (p.gear && p.gear.gear_score) || 0).slice(0, 25);
+      document.getElementById("gear-ranking").innerHTML =
+        rankedRows(ranked, v => fmt(v), player.uuid);
+    }
+
+    function romanOr(n) {
+      const map = { 1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI", 7: "VII", 8: "VIII", 9: "IX", 10: "X" };
+      return map[n] || n;
+    }
+
+    function renderPvP() {
+      const ps = DATA.pvp_stats || {};
+      const totalStatKills = DATA.players.reduce((s, p) => s + (p.player_kills || 0), 0);
+      const mostWanted = rankBy(p => p.player_kills || 0).filter(e => e.v > 0);
+      document.getElementById("pvp-summary-cards").innerHTML = `
+        <div class="card"><div class="label">⚔ PvP Kills (logs)</div><div class="value red">${fmt(ps.total_pvp_kills || 0)}</div></div>
+        <div class="card"><div class="label">🗡 PvP Kills (stats)</div><div class="value yellow">${fmt(totalStatKills)}</div></div>
+        <div class="card"><div class="label">👑 Deadliest</div><div class="value">${esc((mostWanted[0] && mostWanted[0].p.name) || "—")}</div></div>
+        <div class="card"><div class="label">🎯 Active Killers</div><div class="value blue">${(ps.top_killers || []).length}</div></div>
+      `;
+
+      const killers = (ps.top_killers || []).slice(0, 12);
+      makeBarChart("chart-pvp-killers", killers.map(k => k.name), killers.map(k => k.kills), "#e8392f");
+
+      const dmg = rankBy(p => p.damage_dealt || 0).slice(0, 12);
+      makeBarChart("chart-pvp-damage", dmg.map(e => e.p.name), dmg.map(e => e.v), "#fcdb05");
+
+      document.getElementById("pvp-most-wanted").innerHTML =
+        rankedRows(mostWanted.slice(0, 15), v => fmt(v));
+
+      const feed = ps.kill_feed || [];
+      document.getElementById("pvp-feed").innerHTML = feed.length
+        ? feed.map(k =>
+            `<div class="kill-line"><span class="killer">${esc(k.killer)}</span> slew <span class="victim">${esc(k.victim)}</span></div>`
+          ).join("")
+        : '<div class="kill-line">No PvP kills recorded in the logs</div>';
+    }
+
+    function renderBuilding() {
+      const placedRanked = rankBy(p => (p.totals && p.totals.blocks_placed) || 0);
+      const minedRanked = rankBy(p => (p.totals && p.totals.blocks_mined) || p.total_blocks_mined || 0);
+      const craftedRanked = rankBy(p => (p.totals && p.totals.items_crafted) || 0);
+
+      const totalPlaced = placedRanked.reduce((s, e) => s + e.v, 0);
+      const totalMined = minedRanked.reduce((s, e) => s + e.v, 0);
+      document.getElementById("building-summary-cards").innerHTML = `
+        <div class="card"><div class="label">🧱 Blocks Placed</div><div class="value green">${fmt(totalPlaced)}</div></div>
+        <div class="card"><div class="label">⛏ Blocks Mined</div><div class="value yellow">${fmt(totalMined)}</div></div>
+        <div class="card"><div class="label">🏗 Top Builder</div><div class="value">${esc((placedRanked[0] && placedRanked[0].p.name) || "—")}</div></div>
+        <div class="card"><div class="label">⚖ Server Build:Mine</div><div class="value blue">${totalMined ? (totalPlaced / totalMined).toFixed(2) : "—"}</div></div>
+      `;
+
+      const topPlaced = placedRanked.slice(0, 12);
+      makeBarChart("chart-build-placed", topPlaced.map(e => e.p.name), topPlaced.map(e => e.v), "#7cb342");
+      const topMined = minedRanked.slice(0, 12);
+      makeBarChart("chart-build-mined", topMined.map(e => e.p.name), topMined.map(e => e.v), "#fcdb05");
+
+      document.getElementById("building-crafters").innerHTML =
+        rankedRows(craftedRanked.slice(0, 15), v => fmt(v));
+
+      const ratioRanked = DATA.players
+        .map(p => {
+          const placed = (p.totals && p.totals.blocks_placed) || 0;
+          const mined = (p.totals && p.totals.blocks_mined) || p.total_blocks_mined || 0;
+          return { p, v: mined > 0 ? placed / mined : 0 };
+        })
+        .filter(e => ((e.p.totals && e.p.totals.blocks_placed) || 0) >= 100)
+        .sort((a, b) => b.v - a.v)
+        .slice(0, 15);
+      document.getElementById("building-ratio").innerHTML =
+        rankedRows(ratioRanked, v => v.toFixed(2));
     }
 
     function populateSelect(id, players) {
@@ -1292,11 +1949,20 @@
         if (player) renderBosses(player);
       });
 
+      const gearSelect = populateSelect("gear-select", data.players);
+      gearSelect.addEventListener("change", () => {
+        const player = findPlayer(gearSelect.value);
+        if (player) renderGear(player);
+      });
+
       renderPlayer(data.players[0]);
       renderReportCard(data.players[0]);
       renderDeathProfile(data.players[0]);
       renderRadar(data.players[0]);
       renderLeaderboard();
+      renderGear(data.players[0]);
+      renderPvP();
+      renderBuilding();
       renderDeaths();
       renderAwards();
       renderQuests(data.players[0]);
