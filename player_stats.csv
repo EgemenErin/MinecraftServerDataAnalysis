@@ -1,14 +1,14 @@
 name,uuid,playtime_hours,deaths,mob_kills,player_kills,damage_dealt,damage_taken,blocks_mined,blocks_placed,walked_km,sprinted_km,flown_km,report_title
-___ESDEATH__,89828089-a31e-360f-97d7-c61936333eb0,133.18,28,2398,0,286894,61599,51567,18432,205.23,172.95,125.17,Apprentice of the Grand Workbench
-Lesasmth,3a95880d-6395-34da-9b55-ed130c1d73e6,107.8,97,2391,13,436454,94306,131237,65719,207.15,167.31,212.65,Kluk Artisan
+___ESDEATH__,89828089-a31e-360f-97d7-c61936333eb0,141.96,28,2414,0,288794,62728,52707,19201,217.14,181.85,128.06,Apprentice of the Grand Workbench
+Lesasmth,3a95880d-6395-34da-9b55-ed130c1d73e6,111.97,97,2395,13,437734,96354,134623,66025,210.36,169.74,215.29,Kluk Artisan
 J1N,abc8c2c3-f0e2-31f2-a372-eee23b1ffce4,79.0,25,2547,19,433914,73770,156325,17439,177.74,139.59,148.27,Keeper of the Sacred Crops
-EgemenEriin,3a136867-97a5-37cf-84d9-2a1213879405,68.26,24,1039,15,197392,37109,58455,8802,69.9,122.2,206.58,Server Menace
-04th,49487142-e365-3f0b-a9f7-578d8ba68e32,62.18,44,2824,9,538472,81979,62094,6601,66.25,116.14,225.45,Knight of House Ace
+EgemenEriin,3a136867-97a5-37cf-84d9-2a1213879405,71.55,24,1040,15,197455,37110,58469,9030,71.64,123.42,221.05,Server Menace
+04th,49487142-e365-3f0b-a9f7-578d8ba68e32,62.66,44,2824,9,538472,82259,62217,6724,66.46,116.57,226.05,Knight of House Ace
 OrYa980,2a7c6167-86b8-3d1f-acf7-00d35b6f4880,61.34,2,1655,1,339123,34725,16688,18838,122.35,83.04,98.05,Slayer of the Old Gods
-Titiczek,734ff855-4f77-3f41-ac4c-9dcb2496d79f,49.19,26,607,0,128929,59910,305797,14950,113.86,42.47,127.8,Devout of the Church of Tonton
-GhostPanta,fb20bf8c-4a52-3911-bf3a-ebeb3fc4ecfe,43.42,3,285,0,49640,10687,15350,4761,120.84,41.75,84.6,Slayer of the Old Gods
+Titiczek,734ff855-4f77-3f41-ac4c-9dcb2496d79f,51.09,26,685,0,148806,64925,307510,15768,117.16,44.1,133.75,Devout of the Church of Tonton
+GhostPanta,fb20bf8c-4a52-3911-bf3a-ebeb3fc4ecfe,45.82,3,285,0,49640,10756,15364,4772,124.74,42.61,85.4,Slayer of the Old Gods
 morsthedaddy,a2e455ea-c106-3919-8b4a-ab2136d50eac,27.85,22,589,0,105576,32034,10270,7250,49.17,45.71,72.78,Chronicler of the Great Book
-NaMorenke2137,fcfa3698-1562-3abb-9eb7-96b94401f350,27.46,17,120,0,23275,20455,15244,8017,59.19,52.07,46.2,Keeper of the Sacred Crops
+NaMorenke2137,fcfa3698-1562-3abb-9eb7-96b94401f350,27.5,17,120,0,23275,20455,15244,8017,59.2,52.07,46.2,Keeper of the Sacred Crops
 Werka,98c9fd7f-01a9-34a1-bb7a-9479c9bc0785,26.1,3,333,0,62268,22492,8612,4009,58.64,22.01,22.94,Hermit of the Hollow
 242b,dd07590b-f54b-396f-9e90-a28985537828,22.23,14,428,10,73321,18396,16232,4086,42.21,30.07,41.0,Server Menace
 penisilin,331eb79e-1be2-3476-83f8-81ee98cabf1a,14.3,38,119,4,23458,13460,19877,4356,38.54,13.06,1.26,Hermit of the Hollow
@@ -19,7 +19,7 @@ a660f9aa-7539-4ed4-96b6-86fb99d12f6d,a660f9aa-7539-4ed4-96b6-86fb99d12f6d,4.32,3
 z0mix,2bf0da04-4ae2-3804-806c-a32e16ca798c,3.62,7,78,0,15718,4325,1741,766,7.19,5.38,6.32,The Eternal Respawner
 AmSikici06,d90d1214-16f0-33fd-a8ae-6b011dfbca56,1.05,7,2,2,381,2014,451,623,2.78,1.7,2.47,The Eternal Respawner
 chuj123,5d0ce1e7-62db-3ad6-9105-cefe1afcb3ff,0.7,2,0,0,394,648,19,3,0.98,0.68,1.05,Dragon of the Hoard
-SimsMaster96,a5541c1c-aefd-3c65-a7e3-e572c519e8fb,0.61,0,10,0,1620,297,342,11,2.39,1.9,2.01,Chaotic Neutral Adventurer
+SimsMaster96,a5541c1c-aefd-3c65-a7e3-e572c519e8fb,0.61,0,10,0,1620,297,342,11,2.39,1.9,2.01,Dragon of the Hoard
 majcios,568df217-3bc0-357b-841e-0bc94bfbdb3c,0.53,1,1,0,230,480,44,1,0.78,1.79,1.57,The Eternal Respawner
 kutas11,0585880f-ec6c-3f60-8de1-67d9e3de54c6,0.51,2,3,0,306,730,23,22,0.91,1.03,1.3,Dragon of the Hoard
 slipqnott,cab7ee7d-66dd-39ce-b138-e23e05319b2d,0.49,0,0,0,0,251,0,0,1.01,0.46,0.18,Dragon of the Hoard
@@ -27,7 +27,9 @@ hubcioo,cf74d94f-381a-37d4-86d4-0ce51d67a8ad,0.43,0,9,0,1669,402,39,12,1.08,1.21
 wielkikoks,918b27d0-25e0-3f68-82d1-aba465cc6fcc,0.35,1,6,0,1050,440,223,5,0.77,0.6,1.07,The Eternal Respawner
 Frenchie,df8d3fb7-f834-3fe4-8794-0461f591f843,0.34,0,2,1,453,302,145,13,0.58,1.41,4.4,Server Menace
 Faldelte,72c1a0dd-daea-3b64-8d59-1ac20fee6d65,0.23,0,3,1,598,416,87,2,0.5,0.59,1.62,Dragon of the Hoard
+ElviraD,e0d0062a-9193-32b1-b341-61a68a107fb6,0.15,0,0,0,19,50,0,0,0.13,0.06,0.02,Chaotic Neutral Adventurer
 arnav,3812ac26-304f-34e8-a593-079718d691f3,0.02,0,0,0,0,0,0,0,0.02,0.0,0.0,Chaotic Neutral Adventurer
 milennna,12c1010c-75de-3475-a07e-24d3acfa6c2f,0.01,0,0,0,0,0,0,0,0.0,0.0,0.0,Chaotic Neutral Adventurer
 LesaSmth,b65e8e19-0157-3bbc-b423-668f5c06a400,0.01,0,0,0,0,0,0,0,0.01,0.01,0.01,Chaotic Neutral Adventurer
+vanbouch,a69d8ec0-2c3e-3167-89a9-7ab29e99dfd1,0.0,0,0,0,0,0,0,0,0.0,0.0,0.0,Chaotic Neutral Adventurer
 nitkahes,fb5a515f-1271-356b-8dee-d124ca7f6345,0.0,0,0,0,0,0,0,0,0.0,0.0,0.0,Chaotic Neutral Adventurer
