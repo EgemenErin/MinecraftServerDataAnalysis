@@ -3,8 +3,8 @@ Population-relative report cards.
 
 The old logic picked a player's title from whichever raw axis score was biggest.
 Because ``blocks_mined`` is routinely in the 100k+ range while every other axis
-sits in the hundreds, mining won for almost everyone and the whole server ended
-up as "Devout of the Church of Tonton".
+sits in the hundreds, mining won for almost everyone and titles collapsed into
+a single archetype.
 
 This module instead ranks every player against the rest of the server on each
 axis and assigns the title for the axis where they stand out the most. That
@@ -54,7 +54,7 @@ AXIS_LABEL: dict[str, str] = {
 }
 
 # A player must clear this percentile on their best axis to earn a themed title;
-# otherwise they are a "balanced" Chaotic Neutral Adventurer.
+# otherwise they are a balanced All-Rounder.
 DOMINANCE_THRESHOLD = 55.0
 # Axes above this percentile are shown as "what makes you you" standouts.
 STANDOUT_THRESHOLD = 60.0

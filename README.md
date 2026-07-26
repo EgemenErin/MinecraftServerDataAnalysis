@@ -72,9 +72,9 @@ Default schedule: **3:00 AM daily** — regenerates stats from your server folde
 
 Send them the GitHub Pages link. They just refresh the page after your nightly job runs — no server or Python needed on their side.
 
-## Customize lore & awards
+## Customize titles & awards
 
-Edit `config.py` — titles, awards, boss entity hints, embarrassing death categories.
+Edit `config.py` — report-card titles, awards, boss entity hints, embarrassing death categories.
 
 ## Project layout
 

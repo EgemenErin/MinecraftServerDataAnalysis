@@ -1448,9 +1448,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "Knight of House Ace",
+        "title": "Combat Specialist",
         "title_key": "combat",
-        "tagline": "Lives for the fight, dies for the drama",
+        "tagline": "Built for battle from the first login",
         "icon": "\u2694\ufe0f",
         "rank_line": "#1 of 36 in Combat \u00b7 top 3%",
         "summary": "A career built on violence \u2014 6,509 mobs cut down and 489,863 damage dealt. Also ranks #1 of 36 in Homebody (top 3%). Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -2323,9 +2323,9 @@ window.PLAYER_STATS = {
         "causes": []
       },
       "report_card": {
-        "title": "Kluk Artisan",
+        "title": "Master Builder",
         "title_key": "building",
-        "tagline": "Places more than they break \u2014 a rare civility",
+        "tagline": "Places more blocks than they break",
         "icon": "\ud83e\uddf1",
         "rank_line": "#1 of 36 in Building \u00b7 top 3%",
         "summary": "70,442 blocks placed \u2014 an actual builder among a server of vandals. Also ranks #1 of 36 in Exploration (top 3%). Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -3195,9 +3195,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "Keeper of the Sacred Crops",
+        "title": "Farmer",
         "title_key": "farming",
-        "tagline": "The hoe never rests",
+        "tagline": "Fields and crops in good hands",
         "icon": "\ud83c\udf3e",
         "rank_line": "#1 of 36 in Farming \u00b7 top 3%",
         "summary": "A farming score of 12,552 \u2014 the crops are safe in devoted hands. Also ranks #1 of 36 in PvP (top 3%). Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -4088,9 +4088,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "Server Menace",
+        "title": "PvP Menace",
         "title_key": "pvp",
-        "tagline": "A clear and present danger to their fellow player",
+        "tagline": "A clear danger to fellow players",
         "icon": "\ud83d\udde1\ufe0f",
         "rank_line": "#2 of 36 in PvP \u00b7 top 6%",
         "summary": "15 player kills. Fellow members log off when they log on. Also ranks #2 of 36 in Questing (top 6%). Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -4998,9 +4998,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "Knight of House Ace",
+        "title": "Combat Specialist",
         "title_key": "combat",
-        "tagline": "Lives for the fight, dies for the drama",
+        "tagline": "Built for battle from the first login",
         "icon": "\u2694\ufe0f",
         "rank_line": "#2 of 36 in Combat \u00b7 top 6%",
         "summary": "A career built on violence \u2014 3,225 mobs cut down and 658,763 damage dealt. Also ranks #3 of 36 in Exploration (top 8%). Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -5883,9 +5883,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "Slayer of the Old Gods",
+        "title": "Boss Hunter",
         "title_key": "boss",
-        "tagline": "Bosses have filed a restraining order",
+        "tagline": "Bosses know this name",
         "icon": "\ud83d\udc09",
         "rank_line": "#1 of 36 in Boss Slaying \u00b7 top 3%",
         "summary": "234 bosses put in the ground. The pantheon is running low. Also ranks #3 of 36 in Building (top 8%). Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -6654,9 +6654,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "Devout of the Church of Tonton",
+        "title": "Deep Miner",
         "title_key": "mining",
-        "tagline": "Prays to the deepslate, tithes in cobblestone",
+        "tagline": "Never met a vein they didn't strip",
         "icon": "\u26cf\ufe0f",
         "rank_line": "#1 of 36 in Mining \u00b7 top 3%",
         "summary": "338,103 blocks torn from the earth. The bedrock has learned to fear them. Also ranks #1 of 36 in Boss Slaying (top 3%). Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -7477,9 +7477,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "Slayer of the Old Gods",
+        "title": "Boss Hunter",
         "title_key": "boss",
-        "tagline": "Bosses have filed a restraining order",
+        "tagline": "Bosses know this name",
         "icon": "\ud83d\udc09",
         "rank_line": "#7 of 36 in Boss Slaying \u00b7 top 19%",
         "summary": "41 bosses put in the ground. The pantheon is running low. Also ranks #8 of 36 in Exploration (top 22%). Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -8255,9 +8255,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "Hermit of the Hollow",
+        "title": "Base Dweller",
         "title_key": "homebody",
-        "tagline": "Logs the hours without ever leaving the base",
+        "tagline": "Logs hours without leaving base",
         "icon": "\ud83c\udfe1",
         "rank_line": "#4 of 36 in Homebody \u00b7 top 11%",
         "summary": "30 hours logged, barely 118 km traveled. Why leave a good base? Also ranks #9 of 36 in Boss Slaying (top 25%). Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -8999,9 +8999,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "Chronicler of the Great Book",
+        "title": "Quest Chaser",
         "title_key": "questing",
-        "tagline": "Lives one checkbox at a time",
+        "tagline": "One quest checkbox at a time",
         "icon": "\ud83d\udcd6",
         "rank_line": "#2 of 36 in Questing \u00b7 top 6%",
         "summary": "12% of the quest book cleared \u2014 a checkbox enthusiast of the highest order. Also ranks #4 of 36 in Farming (top 11%). Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -9759,9 +9759,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "Keeper of the Sacred Crops",
+        "title": "Farmer",
         "title_key": "farming",
-        "tagline": "The hoe never rests",
+        "tagline": "Fields and crops in good hands",
         "icon": "\ud83c\udf3e",
         "rank_line": "#3 of 36 in Farming \u00b7 top 8%",
         "summary": "A farming score of 5,952 \u2014 the crops are safe in devoted hands. Also ranks #7 of 36 in Crafting (top 19%).",
@@ -10545,9 +10545,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "Server Menace",
+        "title": "PvP Menace",
         "title_key": "pvp",
-        "tagline": "A clear and present danger to their fellow player",
+        "tagline": "A clear danger to fellow players",
         "icon": "\ud83d\udde1\ufe0f",
         "rank_line": "#4 of 36 in PvP \u00b7 top 11%",
         "summary": "10 player kills. Fellow members log off when they log on. Also ranks #9 of 36 in Homebody (top 25%). Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -11253,9 +11253,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "Hermit of the Hollow",
+        "title": "Base Dweller",
         "title_key": "homebody",
-        "tagline": "Logs the hours without ever leaving the base",
+        "tagline": "Logs hours without leaving base",
         "icon": "\ud83c\udfe1",
         "rank_line": "#3 of 36 in Homebody \u00b7 top 8%",
         "summary": "14 hours logged, barely 53 km traveled. Why leave a good base? Also ranks #3 of 36 in Recklessness (top 8%).",
@@ -11968,9 +11968,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "Hermit of the Hollow",
+        "title": "Base Dweller",
         "title_key": "homebody",
-        "tagline": "Logs the hours without ever leaving the base",
+        "tagline": "Logs hours without leaving base",
         "icon": "\ud83c\udfe1",
         "rank_line": "#2 of 36 in Homebody \u00b7 top 6%",
         "summary": "7 hours logged, barely 24 km traveled. Why leave a good base? Also ranks #2 of 36 in Recklessness (top 6%). Absorbs damage like a communal punching bag. Bold strategy.",
@@ -12686,9 +12686,9 @@ window.PLAYER_STATS = {
         "causes": []
       },
       "report_card": {
-        "title": "Hermit of the Hollow",
+        "title": "Base Dweller",
         "title_key": "homebody",
-        "tagline": "Logs the hours without ever leaving the base",
+        "tagline": "Logs hours without leaving base",
         "icon": "\ud83c\udfe1",
         "rank_line": "#6 of 36 in Homebody \u00b7 top 17%",
         "summary": "7 hours logged, barely 31 km traveled. Why leave a good base? Also ranks #14 of 36 in Combat (top 39%). Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -13428,9 +13428,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "Dragon of the Hoard",
+        "title": "Treasure Hoarder",
         "title_key": "hoarding",
-        "tagline": "Picks up everything, parts with nothing",
+        "tagline": "Collects everything, drops nothing",
         "icon": "\ud83d\udcb0",
         "rank_line": "#4 of 36 in Hoarding \u00b7 top 11%",
         "summary": "Hauls in far more than they ever use \u2014 a walking, breathing storage unit. Also ranks #5 of 36 in Homebody (top 14%). Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -13965,9 +13965,9 @@ window.PLAYER_STATS = {
         "causes": []
       },
       "report_card": {
-        "title": "The Eternal Respawner",
+        "title": "Frequent Respawner",
         "title_key": "daredevil",
-        "tagline": "Death is merely a minor inconvenience",
+        "tagline": "Death is a minor inconvenience",
         "icon": "\ud83d\udc80",
         "rank_line": "#14 of 36 in Recklessness \u00b7 top 39%",
         "summary": "3 deaths and counting \u2014 allergic to staying alive, immune to learning. Also ranks #15 of 36 in Exploration (top 42%). Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -14670,9 +14670,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "The Eternal Respawner",
+        "title": "Frequent Respawner",
         "title_key": "daredevil",
-        "tagline": "Death is merely a minor inconvenience",
+        "tagline": "Death is a minor inconvenience",
         "icon": "\ud83d\udc80",
         "rank_line": "#6 of 36 in Recklessness \u00b7 top 17%",
         "summary": "7 deaths and counting \u2014 allergic to staying alive, immune to learning. Also ranks #11 of 36 in Homebody (top 31%). Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -15407,9 +15407,9 @@ window.PLAYER_STATS = {
         "causes": []
       },
       "report_card": {
-        "title": "Dragon of the Hoard",
+        "title": "Treasure Hoarder",
         "title_key": "hoarding",
-        "tagline": "Picks up everything, parts with nothing",
+        "tagline": "Collects everything, drops nothing",
         "icon": "\ud83d\udcb0",
         "rank_line": "#6 of 36 in Hoarding \u00b7 top 17%",
         "summary": "Hauls in far more than they ever use \u2014 a walking, breathing storage unit. Also ranks #7 of 36 in Recklessness (top 19%). Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -16074,9 +16074,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "The Eternal Respawner",
+        "title": "Frequent Respawner",
         "title_key": "daredevil",
-        "tagline": "Death is merely a minor inconvenience",
+        "tagline": "Death is a minor inconvenience",
         "icon": "\ud83d\udc80",
         "rank_line": "#1 of 36 in Recklessness \u00b7 top 3%",
         "summary": "7 deaths and counting \u2014 allergic to staying alive, immune to learning. Also ranks #7 of 36 in PvP (top 19%). Absorbs damage like a communal punching bag. Bold strategy.",
@@ -16625,9 +16625,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "Dragon of the Hoard",
+        "title": "Treasure Hoarder",
         "title_key": "hoarding",
-        "tagline": "Picks up everything, parts with nothing",
+        "tagline": "Collects everything, drops nothing",
         "icon": "\ud83d\udcb0",
         "rank_line": "#1 of 36 in Hoarding \u00b7 top 3%",
         "summary": "Hauls in far more than they ever use \u2014 a walking, breathing storage unit. Also ranks #8 of 36 in Homebody (top 22%). Absorbs damage like a communal punching bag. Bold strategy.",
@@ -17201,9 +17201,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "Dragon of the Hoard",
+        "title": "Treasure Hoarder",
         "title_key": "hoarding",
-        "tagline": "Picks up everything, parts with nothing",
+        "tagline": "Collects everything, drops nothing",
         "icon": "\ud83d\udcb0",
         "rank_line": "#2 of 36 in Hoarding \u00b7 top 6%",
         "summary": "Hauls in far more than they ever use \u2014 a walking, breathing storage unit. Also ranks #4 of 36 in Recklessness (top 11%).",
@@ -17872,9 +17872,9 @@ window.PLAYER_STATS = {
         "causes": []
       },
       "report_card": {
-        "title": "Keeper of the Sacred Crops",
+        "title": "Farmer",
         "title_key": "farming",
-        "tagline": "The hoe never rests",
+        "tagline": "Fields and crops in good hands",
         "icon": "\ud83c\udf3e",
         "rank_line": "#15 of 36 in Farming \u00b7 top 42%",
         "summary": "A farming score of 211 \u2014 the crops are safe in devoted hands. Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -18451,9 +18451,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "The Eternal Respawner",
+        "title": "Frequent Respawner",
         "title_key": "daredevil",
-        "tagline": "Death is merely a minor inconvenience",
+        "tagline": "Death is a minor inconvenience",
         "icon": "\ud83d\udc80",
         "rank_line": "#8 of 36 in Recklessness \u00b7 top 22%",
         "summary": "1 deaths and counting \u2014 allergic to staying alive, immune to learning. Absorbs damage like a communal punching bag. Bold strategy.",
@@ -19032,9 +19032,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "Dragon of the Hoard",
+        "title": "Treasure Hoarder",
         "title_key": "hoarding",
-        "tagline": "Picks up everything, parts with nothing",
+        "tagline": "Collects everything, drops nothing",
         "icon": "\ud83d\udcb0",
         "rank_line": "#3 of 36 in Hoarding \u00b7 top 8%",
         "summary": "Hauls in far more than they ever use \u2014 a walking, breathing storage unit. Also ranks #4 of 36 in Recklessness (top 11%). Absorbs damage like a communal punching bag. Bold strategy.",
@@ -19656,9 +19656,9 @@ window.PLAYER_STATS = {
         "causes": []
       },
       "report_card": {
-        "title": "Chaotic Neutral Adventurer",
+        "title": "All-Rounder",
         "title_key": "balanced",
-        "tagline": "Master of none, dabbler in everything",
+        "tagline": "Jack of all trades, master of none",
         "icon": "\ud83c\udfb2",
         "rank_line": "No dominant axis \u2014 balanced across 36 players",
         "summary": "No single obsession \u2014 hubcioo dabbles in a bit of everything and masters none. Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -20279,9 +20279,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "The Eternal Respawner",
+        "title": "Frequent Respawner",
         "title_key": "daredevil",
-        "tagline": "Death is merely a minor inconvenience",
+        "tagline": "Death is a minor inconvenience",
         "icon": "\ud83d\udc80",
         "rank_line": "#8 of 36 in Recklessness \u00b7 top 22%",
         "summary": "1 deaths and counting \u2014 allergic to staying alive, immune to learning. Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -20929,9 +20929,9 @@ window.PLAYER_STATS = {
         "causes": []
       },
       "report_card": {
-        "title": "Server Menace",
+        "title": "PvP Menace",
         "title_key": "pvp",
-        "tagline": "A clear and present danger to their fellow player",
+        "tagline": "A clear danger to fellow players",
         "icon": "\ud83d\udde1\ufe0f",
         "rank_line": "#9 of 36 in PvP \u00b7 top 25%",
         "summary": "1 player kills. Fellow members log off when they log on.",
@@ -21498,9 +21498,9 @@ window.PLAYER_STATS = {
         "causes": []
       },
       "report_card": {
-        "title": "Dragon of the Hoard",
+        "title": "Treasure Hoarder",
         "title_key": "hoarding",
-        "tagline": "Picks up everything, parts with nothing",
+        "tagline": "Collects everything, drops nothing",
         "icon": "\ud83d\udcb0",
         "rank_line": "#11 of 36 in Hoarding \u00b7 top 31%",
         "summary": "Hauls in far more than they ever use \u2014 a walking, breathing storage unit. Deals far more than they absorb \u2014 respectfully terrifying.",
@@ -22153,9 +22153,9 @@ window.PLAYER_STATS = {
         "causes": []
       },
       "report_card": {
-        "title": "Dragon of the Hoard",
+        "title": "Treasure Hoarder",
         "title_key": "hoarding",
-        "tagline": "Picks up everything, parts with nothing",
+        "tagline": "Collects everything, drops nothing",
         "icon": "\ud83d\udcb0",
         "rank_line": "#5 of 36 in Hoarding \u00b7 top 14%",
         "summary": "Hauls in far more than they ever use \u2014 a walking, breathing storage unit. Also ranks #9 of 36 in PvP (top 25%).",
@@ -22638,9 +22638,9 @@ window.PLAYER_STATS = {
         "causes": []
       },
       "report_card": {
-        "title": "Chaotic Neutral Adventurer",
+        "title": "All-Rounder",
         "title_key": "balanced",
-        "tagline": "Master of none, dabbler in everything",
+        "tagline": "Jack of all trades, master of none",
         "icon": "\ud83c\udfb2",
         "rank_line": "No dominant axis \u2014 balanced across 36 players",
         "summary": "No single obsession \u2014 ElviraD dabbles in a bit of everything and masters none. Absorbs damage like a communal punching bag. Bold strategy.",
@@ -23098,9 +23098,9 @@ window.PLAYER_STATS = {
         "causes": []
       },
       "report_card": {
-        "title": "Chaotic Neutral Adventurer",
+        "title": "All-Rounder",
         "title_key": "balanced",
-        "tagline": "Master of none, dabbler in everything",
+        "tagline": "Jack of all trades, master of none",
         "icon": "\ud83c\udfb2",
         "rank_line": "No dominant axis \u2014 balanced across 36 players",
         "summary": "No single obsession \u2014 arnav dabbles in a bit of everything and masters none.",
@@ -23558,9 +23558,9 @@ window.PLAYER_STATS = {
         "causes": []
       },
       "report_card": {
-        "title": "Chaotic Neutral Adventurer",
+        "title": "All-Rounder",
         "title_key": "balanced",
-        "tagline": "Master of none, dabbler in everything",
+        "tagline": "Jack of all trades, master of none",
         "icon": "\ud83c\udfb2",
         "rank_line": "No dominant axis \u2014 balanced across 36 players",
         "summary": "No single obsession \u2014 milennna dabbles in a bit of everything and masters none.",
@@ -24060,9 +24060,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "Chaotic Neutral Adventurer",
+        "title": "All-Rounder",
         "title_key": "balanced",
-        "tagline": "Master of none, dabbler in everything",
+        "tagline": "Jack of all trades, master of none",
         "icon": "\ud83c\udfb2",
         "rank_line": "No dominant axis \u2014 balanced across 36 players",
         "summary": "No single obsession \u2014 LesaSmth dabbles in a bit of everything and masters none.",
@@ -24480,9 +24480,9 @@ window.PLAYER_STATS = {
         ]
       },
       "report_card": {
-        "title": "Chaotic Neutral Adventurer",
+        "title": "All-Rounder",
         "title_key": "balanced",
-        "tagline": "Master of none, dabbler in everything",
+        "tagline": "Jack of all trades, master of none",
         "icon": "\ud83c\udfb2",
         "rank_line": "No dominant axis \u2014 balanced across 36 players",
         "summary": "No single obsession \u2014 vanbouch dabbles in a bit of everything and masters none.",
@@ -24882,9 +24882,9 @@ window.PLAYER_STATS = {
         "causes": []
       },
       "report_card": {
-        "title": "Chaotic Neutral Adventurer",
+        "title": "All-Rounder",
         "title_key": "balanced",
-        "tagline": "Master of none, dabbler in everything",
+        "tagline": "Jack of all trades, master of none",
         "icon": "\ud83c\udfb2",
         "rank_line": "No dominant axis \u2014 balanced across 36 players",
         "summary": "No single obsession \u2014 nitkahes dabbles in a bit of everything and masters none.",
