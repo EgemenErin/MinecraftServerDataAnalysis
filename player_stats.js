@@ -1,5 +1,5 @@
 window.PLAYER_STATS = {
-  "generated_at": "2026-08-13T01:00:15.320392+00:00",
+  "generated_at": "2026-08-15T01:00:16.445833+00:00",
   "stats_dir": "C:\\Users\\egeme\\Desktop\\aaaa\\world\\stats",
   "logs_dir": "C:\\Users\\egeme\\Desktop\\aaaa\\logs",
   "quests_config_dir": "C:\\Users\\egeme\\Desktop\\aaaa\\config\\ftbquests\\quests",
@@ -1144,15 +1144,15 @@ window.PLAYER_STATS = {
         ],
         "slowest_quests": [
           {
-            "quest_id": "3802FD7B1D890F05",
-            "name": "Obtain 64x Spruce Log",
+            "quest_id": "6F82D69ADBCC8359",
+            "name": "Obtain 64x Jungle Log",
             "chapter_title": "logs",
             "duration_minutes": 17259.1,
             "completed_at": "2026-07-08T22:26:14.904000+00:00"
           },
           {
-            "quest_id": "6F82D69ADBCC8359",
-            "name": "Obtain 64x Jungle Log",
+            "quest_id": "3802FD7B1D890F05",
+            "name": "Obtain 64x Spruce Log",
             "chapter_title": "logs",
             "duration_minutes": 17259.1,
             "completed_at": "2026-07-08T22:26:14.904000+00:00"
@@ -1172,8 +1172,8 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-05T20:24:15.764000+00:00"
           },
           {
-            "quest_id": "2B3A8B5088974991",
-            "name": "Oak Log",
+            "quest_id": "1C181629E0F717F3",
+            "name": "Obtain 64x Oak Log",
             "chapter_title": "logs",
             "duration_minutes": 10221.1,
             "completed_at": "2026-07-04T14:20:10.756000+00:00"
@@ -1181,39 +1181,39 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "4B5B12608410AFDB",
-            "name": "Acacia Log",
-            "chapter_title": "logs",
+            "quest_id": "4B36B93A3D2162D9",
+            "name": "Carmot can be crafted into armor and tools. It is comparable to Diamond. When crafted into armor, it provides bonus shielding, and when crafted into tools, it provides bonus Fortune.",
+            "chapter_title": "ore_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-03T18:48:27.700000+00:00"
+            "completed_at": "2026-07-07T10:13:18.179000+00:00"
           },
           {
-            "quest_id": "7FCE2D65AC550E39",
-            "name": "7FCE2D65AC550E39",
+            "quest_id": "5B1EC51A4B266BA7",
+            "name": "5B1EC51A4B266BA7",
             "chapter_title": "fhats",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-07T12:17:09.988000+00:00"
+            "completed_at": "2026-07-05T17:36:51.341000+00:00"
           },
           {
-            "quest_id": "0D64E14EFF4193E9",
-            "name": "Snail",
-            "chapter_title": "fwildlife",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-27T14:52:21.053000+00:00"
-          },
-          {
-            "quest_id": "4EDB5B9CB1811FA8",
-            "name": "4EDB5B9CB1811FA8",
+            "quest_id": "36A169346164CC57",
+            "name": "36A169346164CC57",
             "chapter_title": "fhats",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-27T14:55:41.212000+00:00"
+            "completed_at": "2026-07-05T16:45:56.998000+00:00"
           },
           {
-            "quest_id": "0AC26AB0BD69B08C",
-            "name": "Ash Barrens",
-            "chapter_title": "5nfether_exploration",
+            "quest_id": "3B29A0D77E13DBC9",
+            "name": "3B29A0D77E13DBC9",
+            "chapter_title": "fhats",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T09:43:42.265000+00:00"
+            "completed_at": "2026-07-05T17:36:57.877000+00:00"
+          },
+          {
+            "quest_id": "1A4FDEDCB07A6CC5",
+            "name": "Do The Panic",
+            "chapter_title": "faccessories",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-05T19:17:24.920000+00:00"
           }
         ]
       },
@@ -2008,13 +2008,6 @@ window.PLAYER_STATS = {
         ],
         "slowest_quests": [
           {
-            "quest_id": "3F58E33E8FC62773",
-            "name": "Obtain 64x Cherry Log",
-            "chapter_title": "logs",
-            "duration_minutes": 9615.1,
-            "completed_at": "2026-07-04T22:58:18.148000+00:00"
-          },
-          {
             "quest_id": "4AB3A613D067E00F",
             "name": "Dark Oak Log",
             "chapter_title": "logs",
@@ -2022,11 +2015,11 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-04T22:58:18.148000+00:00"
           },
           {
-            "quest_id": "05F78B79F34E7C9B",
-            "name": "Obtain 16x Raw Salmon",
-            "chapter_title": "fish",
-            "duration_minutes": 8650.5,
-            "completed_at": "2026-07-04T00:30:15.341000+00:00"
+            "quest_id": "3F58E33E8FC62773",
+            "name": "Obtain 64x Cherry Log",
+            "chapter_title": "logs",
+            "duration_minutes": 9615.1,
+            "completed_at": "2026-07-04T22:58:18.148000+00:00"
           },
           {
             "quest_id": "3E4BA5B190455DE0",
@@ -2036,8 +2029,15 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-04T00:30:15.341000+00:00"
           },
           {
-            "quest_id": "6F216314B808D974",
-            "name": "Obtain 64x Coal",
+            "quest_id": "05F78B79F34E7C9B",
+            "name": "Obtain 16x Raw Salmon",
+            "chapter_title": "fish",
+            "duration_minutes": 8650.5,
+            "completed_at": "2026-07-04T00:30:15.341000+00:00"
+          },
+          {
+            "quest_id": "416A2B30A9072E6C",
+            "name": "Click to learn more!",
             "chapter_title": "ore_collection",
             "duration_minutes": 8510.7,
             "completed_at": "2026-07-03T22:55:46.537000+00:00"
@@ -2045,39 +2045,39 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "4B5B12608410AFDB",
-            "name": "Acacia Log",
+            "quest_id": "36A169346164CC57",
+            "name": "36A169346164CC57",
+            "chapter_title": "fhats",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-06-28T09:28:42.159000+00:00"
+          },
+          {
+            "quest_id": "3DC7D215249A871E",
+            "name": "3DC7D215249A871E",
+            "chapter_title": "fhats",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-06-29T11:37:44.058000+00:00"
+          },
+          {
+            "quest_id": "1F4BDE19F5A52CE8",
+            "name": "Acacia Sapling",
             "chapter_title": "logs",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-27T17:03:02.032000+00:00"
+            "completed_at": "2026-06-27T17:49:49.313000+00:00"
           },
           {
-            "quest_id": "13AAFBCC57618CEE",
-            "name": "Even cuter when it\u2019s raining!",
-            "chapter_title": "ribbits_collection",
+            "quest_id": "5A96B9AFBBB5B7F7",
+            "name": "5A96B9AFBBB5B7F7",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-30T03:35:04.624000+00:00"
+            "completed_at": "2026-06-28T02:16:11.349000+00:00"
           },
           {
-            "quest_id": "0D64E14EFF4193E9",
-            "name": "Snail",
-            "chapter_title": "fwildlife",
+            "quest_id": "3B05A40BC4FE5B16",
+            "name": "Crop Collection",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-30T02:59:09.235000+00:00"
-          },
-          {
-            "quest_id": "0AC26AB0BD69B08C",
-            "name": "Ash Barrens",
-            "chapter_title": "5nfether_exploration",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-06T22:33:57.719000+00:00"
-          },
-          {
-            "quest_id": "35ED99F39CEB1A51",
-            "name": "Found in forest, plains, swamp, birch forest, meadow, sunflower plains, and river biomes.",
-            "chapter_title": "fvinery",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-07T19:09:33.599000+00:00"
+            "completed_at": "2026-06-28T06:00:57.475000+00:00"
           }
         ]
       },
@@ -2883,15 +2883,15 @@ window.PLAYER_STATS = {
         ],
         "slowest_quests": [
           {
-            "quest_id": "2B3A8B5088974991",
-            "name": "Oak Log",
+            "quest_id": "1C181629E0F717F3",
+            "name": "Obtain 64x Oak Log",
             "chapter_title": "logs",
             "duration_minutes": 17390.1,
             "completed_at": "2026-07-08T23:06:59.803000+00:00"
           },
           {
-            "quest_id": "1C181629E0F717F3",
-            "name": "Obtain 64x Oak Log",
+            "quest_id": "2B3A8B5088974991",
+            "name": "Oak Log",
             "chapter_title": "logs",
             "duration_minutes": 17390.1,
             "completed_at": "2026-07-08T23:06:59.803000+00:00"
@@ -2920,39 +2920,39 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "4B5B12608410AFDB",
-            "name": "Acacia Log",
+            "quest_id": "1F4BDE19F5A52CE8",
+            "name": "Acacia Sapling",
             "chapter_title": "logs",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-27T16:14:36.631000+00:00"
+            "completed_at": "2026-06-29T20:09:45.121000+00:00"
           },
           {
-            "quest_id": "4B28D56BDBA89C08",
-            "name": "Click to learn more!",
-            "chapter_title": "painting",
+            "quest_id": "3B05A40BC4FE5B16",
+            "name": "Crop Collection",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T21:02:30.193000+00:00"
+            "completed_at": "2026-06-29T20:37:48.160000+00:00"
           },
           {
-            "quest_id": "0D64E14EFF4193E9",
-            "name": "Snail",
-            "chapter_title": "fwildlife",
+            "quest_id": "392513276CA215ED",
+            "name": "392513276CA215ED",
+            "chapter_title": "bounty_board",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-01T22:40:47.398000+00:00"
+            "completed_at": "2026-07-03T16:31:56.640000+00:00"
           },
           {
-            "quest_id": "018095157B50E009",
-            "name": "018095157B50E009",
-            "chapter_title": "fhats",
+            "quest_id": "27A437E0DD31E72C",
+            "name": "27A437E0DD31E72C",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-01T23:04:16.310000+00:00"
+            "completed_at": "2026-07-01T16:22:11.889000+00:00"
           },
           {
-            "quest_id": "1D511B5A4B939BEC",
-            "name": "Coral Snake",
-            "chapter_title": "fwildlife",
+            "quest_id": "47CB42E86FA3AF53",
+            "name": "Obtain 1x Cod",
+            "chapter_title": "fish",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-27T15:49:53.498000+00:00"
+            "completed_at": "2026-07-01T16:13:03.928000+00:00"
           }
         ]
       },
@@ -3784,39 +3784,39 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "4B5B12608410AFDB",
-            "name": "Acacia Log",
-            "chapter_title": "logs",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-29T14:42:39.551000+00:00"
-          },
-          {
-            "quest_id": "0D64E14EFF4193E9",
-            "name": "Snail",
-            "chapter_title": "fwildlife",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-29T19:51:54.915000+00:00"
-          },
-          {
-            "quest_id": "0AC26AB0BD69B08C",
-            "name": "Ash Barrens",
-            "chapter_title": "5nfether_exploration",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-06T22:34:47.713000+00:00"
-          },
-          {
-            "quest_id": "4FBBD01AC52C4458",
-            "name": "4FBBD01AC52C4458",
-            "chapter_title": "seed_collection",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-02T20:50:22.569000+00:00"
-          },
-          {
-            "quest_id": "018095157B50E009",
-            "name": "018095157B50E009",
+            "quest_id": "5B1EC51A4B266BA7",
+            "name": "5B1EC51A4B266BA7",
             "chapter_title": "fhats",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-29T12:22:08.916000+00:00"
+            "completed_at": "2026-07-02T21:25:12.222000+00:00"
+          },
+          {
+            "quest_id": "36A169346164CC57",
+            "name": "36A169346164CC57",
+            "chapter_title": "fhats",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-03T23:13:31.247000+00:00"
+          },
+          {
+            "quest_id": "1A4FDEDCB07A6CC5",
+            "name": "Do The Panic",
+            "chapter_title": "faccessories",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-03T12:58:37.087000+00:00"
+          },
+          {
+            "quest_id": "3DC7D215249A871E",
+            "name": "3DC7D215249A871E",
+            "chapter_title": "fhats",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-03T23:12:15.701000+00:00"
+          },
+          {
+            "quest_id": "3B29A0D77E13DBC9",
+            "name": "3B29A0D77E13DBC9",
+            "chapter_title": "fhats",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-08T00:06:00.956000+00:00"
           }
         ]
       },
@@ -4633,15 +4633,15 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-07T19:46:34.534000+00:00"
           },
           {
-            "quest_id": "3802FD7B1D890F05",
-            "name": "Obtain 64x Spruce Log",
+            "quest_id": "6F82D69ADBCC8359",
+            "name": "Obtain 64x Jungle Log",
             "chapter_title": "logs",
             "duration_minutes": 1369.4,
             "completed_at": "2026-07-08T17:57:25.818000+00:00"
           },
           {
-            "quest_id": "6F82D69ADBCC8359",
-            "name": "Obtain 64x Jungle Log",
+            "quest_id": "3802FD7B1D890F05",
+            "name": "Obtain 64x Spruce Log",
             "chapter_title": "logs",
             "duration_minutes": 1369.4,
             "completed_at": "2026-07-08T17:57:25.818000+00:00"
@@ -4656,39 +4656,39 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-05T17:54:13.488000+00:00"
-          },
-          {
-            "quest_id": "4EA5BC2174E48794",
-            "name": "Obtain 512x Oak Log",
-            "chapter_title": "logs",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-05T20:11:44.666000+00:00"
-          },
-          {
-            "quest_id": "34481B0189DB421D",
-            "name": "Panda",
-            "chapter_title": "fwildlife",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-07T19:39:06.533000+00:00"
-          },
-          {
-            "quest_id": "6F40D1A39E7939DC",
-            "name": "Adjusts rotational speed or extends contraptions.",
+            "quest_id": "1EEE514C2E5C054A",
+            "name": "A key ingredient for early-game recipes.",
             "chapter_title": "6cfreate",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-05T18:27:01.596000+00:00"
+            "completed_at": "2026-07-05T18:24:13.429000+00:00"
           },
           {
-            "quest_id": "41CFE324EF44E896",
-            "name": "Obtain 256x Coal",
+            "quest_id": "20654B9BFF057B93",
+            "name": "20654B9BFF057B93",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-08T16:13:50.254000+00:00"
+          },
+          {
+            "quest_id": "377386FF0295D5D0",
+            "name": "Found in the Mountains.",
             "chapter_title": "ore_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-07T17:38:01.584000+00:00"
+            "completed_at": "2026-07-07T17:34:13.283000+00:00"
+          },
+          {
+            "quest_id": "26F7BAEBEAD14210",
+            "name": "Spruce Log",
+            "chapter_title": "logs",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-07T19:08:03.751000+00:00"
+          },
+          {
+            "quest_id": "0ABF361080FFC001",
+            "name": "Sheep",
+            "chapter_title": "fwildlife",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-08T17:32:23.671000+00:00"
           }
         ]
       },
@@ -5254,19 +5254,19 @@ window.PLAYER_STATS = {
             "completion_pct": 3.6
           },
           {
-            "chapter_id": "51ED1F23CA0FB835",
-            "chapter_title": "ffarmers_delight",
-            "chapter_group": "Food and Drink",
-            "completed": 11,
-            "total": 428,
-            "completion_pct": 2.6
-          },
-          {
             "chapter_id": "0FBFF172010B19F1",
             "chapter_title": "ffamiliar_clothes",
             "chapter_group": "Accessories and Novelties",
             "completed": 2,
             "total": 78,
+            "completion_pct": 2.6
+          },
+          {
+            "chapter_id": "51ED1F23CA0FB835",
+            "chapter_title": "ffarmers_delight",
+            "chapter_group": "Food and Drink",
+            "completed": 11,
+            "total": 428,
             "completion_pct": 2.6
           },
           {
@@ -5413,39 +5413,39 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "4B5B12608410AFDB",
-            "name": "Acacia Log",
-            "chapter_title": "logs",
+            "quest_id": "4B36B93A3D2162D9",
+            "name": "Carmot can be crafted into armor and tools. It is comparable to Diamond. When crafted into armor, it provides bonus shielding, and when crafted into tools, it provides bonus Fortune.",
+            "chapter_title": "ore_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-27T14:43:46.901000+00:00"
+            "completed_at": "2026-06-29T12:18:40.415000+00:00"
           },
           {
-            "quest_id": "0D64E14EFF4193E9",
-            "name": "Snail",
-            "chapter_title": "fwildlife",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-27T15:13:33.631000+00:00"
-          },
-          {
-            "quest_id": "4EDB5B9CB1811FA8",
-            "name": "4EDB5B9CB1811FA8",
+            "quest_id": "5B1EC51A4B266BA7",
+            "name": "5B1EC51A4B266BA7",
             "chapter_title": "fhats",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-02T12:15:28.311000+00:00"
+            "completed_at": "2026-07-02T12:15:07.260000+00:00"
           },
           {
-            "quest_id": "0AC26AB0BD69B08C",
-            "name": "Ash Barrens",
-            "chapter_title": "5nfether_exploration",
+            "quest_id": "36A169346164CC57",
+            "name": "36A169346164CC57",
+            "chapter_title": "fhats",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-02T11:55:39.379000+00:00"
+            "completed_at": "2026-07-02T12:14:02.911000+00:00"
           },
           {
-            "quest_id": "007F01507E98D70F",
-            "name": "Click to learn more!",
-            "chapter_title": "fwelcome_to_bigchadguys_plus",
+            "quest_id": "3DC7D215249A871E",
+            "name": "3DC7D215249A871E",
+            "chapter_title": "fhats",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-27T10:16:06.593000+00:00"
+            "completed_at": "2026-07-02T12:15:07.261000+00:00"
+          },
+          {
+            "quest_id": "3B29A0D77E13DBC9",
+            "name": "3B29A0D77E13DBC9",
+            "chapter_title": "fhats",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-02T12:15:09.574000+00:00"
           }
         ]
       },
@@ -6067,14 +6067,6 @@ window.PLAYER_STATS = {
             "completion_pct": 5.8
           },
           {
-            "chapter_id": "76AB52FE499A836F",
-            "chapter_title": "logs",
-            "chapter_group": "Agriculture",
-            "completed": 20,
-            "total": 350,
-            "completion_pct": 5.7
-          },
-          {
             "chapter_id": "0FF296B863079F98",
             "chapter_title": "fherbal_brews",
             "chapter_group": "Food and Drink",
@@ -6083,17 +6075,25 @@ window.PLAYER_STATS = {
             "completion_pct": 5.7
           },
           {
-            "chapter_id": "1DA322FC3635C840",
-            "chapter_title": "fuseful_tools",
-            "chapter_group": "Homemaking",
-            "completed": 4,
-            "total": 73,
-            "completion_pct": 5.5
+            "chapter_id": "76AB52FE499A836F",
+            "chapter_title": "logs",
+            "chapter_group": "Agriculture",
+            "completed": 20,
+            "total": 350,
+            "completion_pct": 5.7
           },
           {
             "chapter_id": "0C16AD35A6E01EE7",
             "chapter_title": "5nfether_exploration",
             "chapter_group": "The Nether",
+            "completed": 4,
+            "total": 73,
+            "completion_pct": 5.5
+          },
+          {
+            "chapter_id": "1DA322FC3635C840",
+            "chapter_title": "fuseful_tools",
+            "chapter_group": "Homemaking",
             "completed": 4,
             "total": 73,
             "completion_pct": 5.5
@@ -6297,8 +6297,8 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-04T23:14:34.702000+00:00"
           },
           {
-            "quest_id": "2B3A8B5088974991",
-            "name": "Oak Log",
+            "quest_id": "1C181629E0F717F3",
+            "name": "Obtain 64x Oak Log",
             "chapter_title": "logs",
             "duration_minutes": 3347.6,
             "completed_at": "2026-07-04T20:02:41.464000+00:00"
@@ -6306,39 +6306,39 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "0D64E14EFF4193E9",
-            "name": "Snail",
-            "chapter_title": "fwildlife",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-06T13:50:10.905000+00:00"
-          },
-          {
-            "quest_id": "4FBBD01AC52C4458",
-            "name": "4FBBD01AC52C4458",
-            "chapter_title": "seed_collection",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-06T21:40:19.371000+00:00"
-          },
-          {
-            "quest_id": "77FE403F46E39AD1",
-            "name": "77FE403F46E39AD1",
-            "chapter_title": "seed_collection",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-04T19:11:51.754000+00:00"
-          },
-          {
-            "quest_id": "018095157B50E009",
-            "name": "018095157B50E009",
-            "chapter_title": "fhats",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-04T19:07:48.988000+00:00"
-          },
-          {
-            "quest_id": "7CEFBC0A87723957",
-            "name": "Star Platinum can be crafted into armor and tools. Its armor offers slightly lower defense than Diamond but provides bonus attack damage and knockback resistance.",
+            "quest_id": "4B36B93A3D2162D9",
+            "name": "Carmot can be crafted into armor and tools. It is comparable to Diamond. When crafted into armor, it provides bonus shielding, and when crafted into tools, it provides bonus Fortune.",
             "chapter_title": "ore_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-07T11:05:11.236000+00:00"
+            "completed_at": "2026-07-05T13:41:55.755000+00:00"
+          },
+          {
+            "quest_id": "1A4FDEDCB07A6CC5",
+            "name": "Do The Panic",
+            "chapter_title": "faccessories",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-05T18:36:10.946000+00:00"
+          },
+          {
+            "quest_id": "392513276CA215ED",
+            "name": "392513276CA215ED",
+            "chapter_title": "bounty_board",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-07T11:25:24.081000+00:00"
+          },
+          {
+            "quest_id": "3B05A40BC4FE5B16",
+            "name": "Crop Collection",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-02T12:48:19.390000+00:00"
+          },
+          {
+            "quest_id": "27A437E0DD31E72C",
+            "name": "27A437E0DD31E72C",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-04T19:49:37.868000+00:00"
           }
         ]
       },
@@ -6984,17 +6984,17 @@ window.PLAYER_STATS = {
             "completion_pct": 3.7
           },
           {
-            "chapter_id": "2D92B9A145392017",
-            "chapter_title": "faircraft",
-            "chapter_group": "Transportation",
+            "chapter_id": "15ED4D25CDFDB41A",
+            "chapter_title": "building_the_portal",
+            "chapter_group": "The End",
             "completed": 2,
             "total": 66,
             "completion_pct": 3.0
           },
           {
-            "chapter_id": "15ED4D25CDFDB41A",
-            "chapter_title": "building_the_portal",
-            "chapter_group": "The End",
+            "chapter_id": "2D92B9A145392017",
+            "chapter_title": "faircraft",
+            "chapter_group": "Transportation",
             "completed": 2,
             "total": 66,
             "completion_pct": 3.0
@@ -7154,15 +7154,15 @@ window.PLAYER_STATS = {
         ],
         "slowest_quests": [
           {
-            "quest_id": "17E6639759BD4420",
-            "name": "17E6639759BD4420",
+            "quest_id": "5B6CC2F899C64AA3",
+            "name": "5B6CC2F899C64AA3",
             "chapter_title": "bounty_board",
             "duration_minutes": 15995.4,
             "completed_at": "2026-07-08T14:58:59.754000+00:00"
           },
           {
-            "quest_id": "5B6CC2F899C64AA3",
-            "name": "5B6CC2F899C64AA3",
+            "quest_id": "17E6639759BD4420",
+            "name": "17E6639759BD4420",
             "chapter_title": "bounty_board",
             "duration_minutes": 15995.4,
             "completed_at": "2026-07-08T14:58:59.754000+00:00"
@@ -7191,39 +7191,39 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "7BF848EF09142D32",
-            "name": "Move those items!",
-            "chapter_title": "6cfreate",
+            "quest_id": "5A96B9AFBBB5B7F7",
+            "name": "5A96B9AFBBB5B7F7",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-29T20:52:29.169000+00:00"
+            "completed_at": "2026-06-26T21:31:06.651000+00:00"
           },
           {
-            "quest_id": "0D64E14EFF4193E9",
-            "name": "Snail",
+            "quest_id": "27A437E0DD31E72C",
+            "name": "27A437E0DD31E72C",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-01T22:47:44.154000+00:00"
+          },
+          {
+            "quest_id": "17EB70714F35E19B",
+            "name": "Combine with Copper to create Bronze!",
+            "chapter_title": "ore_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-06-27T15:45:10.708000+00:00"
+          },
+          {
+            "quest_id": "47CB42E86FA3AF53",
+            "name": "Obtain 1x Cod",
+            "chapter_title": "fish",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-01T22:12:15.292000+00:00"
+          },
+          {
+            "quest_id": "03C89833B5140782",
+            "name": "Otter",
             "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-26T21:31:08.814000+00:00"
-          },
-          {
-            "quest_id": "4FBBD01AC52C4458",
-            "name": "4FBBD01AC52C4458",
-            "chapter_title": "seed_collection",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-07T00:35:50.147000+00:00"
-          },
-          {
-            "quest_id": "77FE403F46E39AD1",
-            "name": "77FE403F46E39AD1",
-            "chapter_title": "seed_collection",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-26T22:34:03.879000+00:00"
-          },
-          {
-            "quest_id": "018095157B50E009",
-            "name": "018095157B50E009",
-            "chapter_title": "fhats",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-03T20:11:01.447000+00:00"
+            "completed_at": "2026-06-27T14:58:18.059000+00:00"
           }
         ]
       },
@@ -7991,13 +7991,6 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-08T20:58:08.549000+00:00"
           },
           {
-            "quest_id": "19C9693E4A645D1B",
-            "name": "Obtain 256x Raw Iron",
-            "chapter_title": "ore_collection",
-            "duration_minutes": 4244.1,
-            "completed_at": "2026-07-08T20:58:08.549000+00:00"
-          },
-          {
             "quest_id": "558FD3B7276D1F1F",
             "name": "Obtain 256x Raw Copper",
             "chapter_title": "ore_collection",
@@ -8005,8 +7998,15 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-08T20:58:08.549000+00:00"
           },
           {
-            "quest_id": "6F216314B808D974",
-            "name": "Obtain 64x Coal",
+            "quest_id": "19C9693E4A645D1B",
+            "name": "Obtain 256x Raw Iron",
+            "chapter_title": "ore_collection",
+            "duration_minutes": 4244.1,
+            "completed_at": "2026-07-08T20:58:08.549000+00:00"
+          },
+          {
+            "quest_id": "416A2B30A9072E6C",
+            "name": "Click to learn more!",
             "chapter_title": "ore_collection",
             "duration_minutes": 1434.6,
             "completed_at": "2026-07-05T22:03:06.087000+00:00"
@@ -8014,39 +8014,39 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
+            "quest_id": "20654B9BFF057B93",
+            "name": "20654B9BFF057B93",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-07T19:11:13.300000+00:00"
+          },
+          {
+            "quest_id": "5B1EC51A4B266BA7",
+            "name": "5B1EC51A4B266BA7",
+            "chapter_title": "fhats",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-06T17:52:41.485000+00:00"
+          },
+          {
+            "quest_id": "44175DA89394A054",
+            "name": "44175DA89394A054",
             "chapter_title": "fplushies",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-04T21:30:48.950000+00:00"
+            "completed_at": "2026-07-06T15:41:20.197000+00:00"
           },
           {
-            "quest_id": "4B5B12608410AFDB",
-            "name": "Acacia Log",
+            "quest_id": "0ABF361080FFC001",
+            "name": "Sheep",
+            "chapter_title": "fwildlife",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-05T23:06:30.456000+00:00"
+          },
+          {
+            "quest_id": "1F4BDE19F5A52CE8",
+            "name": "Acacia Sapling",
             "chapter_title": "logs",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-06T17:12:26.054000+00:00"
-          },
-          {
-            "quest_id": "383601CC52A44E77",
-            "name": "383601CC52A44E77",
-            "chapter_title": "fhats",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-07T22:46:47.602000+00:00"
-          },
-          {
-            "quest_id": "756738BDA0701CBF",
-            "name": "756738BDA0701CBF",
-            "chapter_title": "fhats",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-06T17:51:54.178000+00:00"
-          },
-          {
-            "quest_id": "05FD88F325B0D4D1",
-            "name": "Spawns mainly in mountainous biomes.",
-            "chapter_title": "fherbal_brews",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-06T17:25:05.844000+00:00"
+            "completed_at": "2026-07-06T17:12:40.207000+00:00"
           }
         ]
       },
@@ -8721,19 +8721,19 @@ window.PLAYER_STATS = {
             "completion_pct": 2.3
           },
           {
-            "chapter_id": "44397D6BEAF25251",
-            "chapter_title": "5efnd_exploration",
-            "chapter_group": "The End",
-            "completed": 1,
-            "total": 76,
-            "completion_pct": 1.3
-          },
-          {
             "chapter_id": "0FBFF172010B19F1",
             "chapter_title": "ffamiliar_clothes",
             "chapter_group": "Accessories and Novelties",
             "completed": 1,
             "total": 78,
+            "completion_pct": 1.3
+          },
+          {
+            "chapter_id": "44397D6BEAF25251",
+            "chapter_title": "5efnd_exploration",
+            "chapter_group": "The End",
+            "completed": 1,
+            "total": 76,
             "completion_pct": 1.3
           },
           {
@@ -8763,15 +8763,15 @@ window.PLAYER_STATS = {
         ],
         "slowest_quests": [
           {
-            "quest_id": "05F78B79F34E7C9B",
-            "name": "Obtain 16x Raw Salmon",
+            "quest_id": "3E4BA5B190455DE0",
+            "name": "Obtain 16x Raw Cod",
             "chapter_title": "fish",
             "duration_minutes": 10828.0,
             "completed_at": "2026-07-05T10:38:46.980000+00:00"
           },
           {
-            "quest_id": "3E4BA5B190455DE0",
-            "name": "Obtain 16x Raw Cod",
+            "quest_id": "05F78B79F34E7C9B",
+            "name": "Obtain 16x Raw Salmon",
             "chapter_title": "fish",
             "duration_minutes": 10828.0,
             "completed_at": "2026-07-05T10:38:46.980000+00:00"
@@ -8791,7 +8791,7 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-05T09:20:47.870000+00:00"
           },
           {
-            "quest_id": "748350BAD620944D",
+            "quest_id": "58A736969145DD88",
             "name": "Animal Breeding VI",
             "chapter_title": "fwildlife",
             "duration_minutes": 8959.6,
@@ -8800,39 +8800,39 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "4B5B12608410AFDB",
-            "name": "Acacia Log",
+            "quest_id": "4B36B93A3D2162D9",
+            "name": "Carmot can be crafted into armor and tools. It is comparable to Diamond. When crafted into armor, it provides bonus shielding, and when crafted into tools, it provides bonus Fortune.",
+            "chapter_title": "ore_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-06-30T19:44:37.224000+00:00"
+          },
+          {
+            "quest_id": "5B1EC51A4B266BA7",
+            "name": "5B1EC51A4B266BA7",
+            "chapter_title": "fhats",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-06-29T09:23:27.742000+00:00"
+          },
+          {
+            "quest_id": "1F4BDE19F5A52CE8",
+            "name": "Acacia Sapling",
             "chapter_title": "logs",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-04T19:25:49.012000+00:00"
+            "completed_at": "2026-06-29T20:38:58.025000+00:00"
           },
           {
-            "quest_id": "0D64E14EFF4193E9",
-            "name": "Snail",
-            "chapter_title": "fwildlife",
+            "quest_id": "5A96B9AFBBB5B7F7",
+            "name": "5A96B9AFBBB5B7F7",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-27T22:02:22.275000+00:00"
+            "completed_at": "2026-06-27T21:46:13.865000+00:00"
           },
           {
-            "quest_id": "34481B0189DB421D",
-            "name": "Panda",
-            "chapter_title": "fwildlife",
+            "quest_id": "3B05A40BC4FE5B16",
+            "name": "Crop Collection",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-05T19:39:20.430000+00:00"
-          },
-          {
-            "quest_id": "007F01507E98D70F",
-            "name": "Click to learn more!",
-            "chapter_title": "fwelcome_to_bigchadguys_plus",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-27T21:42:06.973000+00:00"
-          },
-          {
-            "quest_id": "35ED99F39CEB1A51",
-            "name": "Found in forest, plains, swamp, birch forest, meadow, sunflower plains, and river biomes.",
-            "chapter_title": "fvinery",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-28T18:05:38.406000+00:00"
+            "completed_at": "2026-06-28T22:25:11.607000+00:00"
           }
         ]
       },
@@ -9345,19 +9345,19 @@ window.PLAYER_STATS = {
             "completion_pct": 2.3
           },
           {
-            "chapter_id": "77409DA4D0918CF8",
-            "chapter_title": "fvinery",
-            "chapter_group": "Food and Drink",
-            "completed": 3,
-            "total": 137,
-            "completion_pct": 2.2
-          },
-          {
             "chapter_id": "673ABD4569E4C55E",
             "chapter_title": "fish",
             "chapter_group": "Fishing",
             "completed": 2,
             "total": 90,
+            "completion_pct": 2.2
+          },
+          {
+            "chapter_id": "77409DA4D0918CF8",
+            "chapter_title": "fvinery",
+            "chapter_group": "Food and Drink",
+            "completed": 3,
+            "total": 137,
             "completion_pct": 2.2
           },
           {
@@ -9544,39 +9544,39 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "0D64E14EFF4193E9",
-            "name": "Snail",
-            "chapter_title": "fwildlife",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-01T22:50:44.969000+00:00"
-          },
-          {
-            "quest_id": "007F01507E98D70F",
-            "name": "Click to learn more!",
-            "chapter_title": "fwelcome_to_bigchadguys_plus",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-30T21:28:38.402000+00:00"
-          },
-          {
-            "quest_id": "35ED99F39CEB1A51",
-            "name": "Found in forest, plains, swamp, birch forest, meadow, sunflower plains, and river biomes.",
-            "chapter_title": "fvinery",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-01T22:46:09.309000+00:00"
-          },
-          {
-            "quest_id": "152CCF469F52F6F3",
-            "name": "A required ingredient for crafting the Mythril Drill.",
+            "quest_id": "4B36B93A3D2162D9",
+            "name": "Carmot can be crafted into armor and tools. It is comparable to Diamond. When crafted into armor, it provides bonus shielding, and when crafted into tools, it provides bonus Fortune.",
             "chapter_title": "ore_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-04T21:26:54.468000+00:00"
+            "completed_at": "2026-06-30T21:25:59.341000+00:00"
           },
           {
-            "quest_id": "315C9F2B55034CC7",
-            "name": "315C9F2B55034CC7",
-            "chapter_title": "fplushies",
+            "quest_id": "1A4FDEDCB07A6CC5",
+            "name": "Do The Panic",
+            "chapter_title": "faccessories",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-05T20:09:19.676000+00:00"
+            "completed_at": "2026-07-06T18:20:13.486000+00:00"
+          },
+          {
+            "quest_id": "3B05A40BC4FE5B16",
+            "name": "Crop Collection",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-01T21:13:05.457000+00:00"
+          },
+          {
+            "quest_id": "5A96B9AFBBB5B7F7",
+            "name": "5A96B9AFBBB5B7F7",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-04T20:44:04.103000+00:00"
+          },
+          {
+            "quest_id": "27A437E0DD31E72C",
+            "name": "27A437E0DD31E72C",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-06-26T21:25:41.138000+00:00"
           }
         ]
       },
@@ -10267,15 +10267,15 @@ window.PLAYER_STATS = {
         ],
         "slowest_quests": [
           {
-            "quest_id": "3E4BA5B190455DE0",
-            "name": "Obtain 16x Raw Cod",
+            "quest_id": "05F78B79F34E7C9B",
+            "name": "Obtain 16x Raw Salmon",
             "chapter_title": "fish",
             "duration_minutes": 10037.2,
             "completed_at": "2026-07-04T15:04:50.060000+00:00"
           },
           {
-            "quest_id": "05F78B79F34E7C9B",
-            "name": "Obtain 16x Raw Salmon",
+            "quest_id": "3E4BA5B190455DE0",
+            "name": "Obtain 16x Raw Cod",
             "chapter_title": "fish",
             "duration_minutes": 10037.2,
             "completed_at": "2026-07-04T15:04:50.060000+00:00"
@@ -10295,8 +10295,8 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-01T00:18:36.583000+00:00"
           },
           {
-            "quest_id": "6ED64B47A81CECA4",
-            "name": "Obtain 16x Diamonds",
+            "quest_id": "42F78B2153D33AA4",
+            "name": "Obtain 128x Coal",
             "chapter_title": "ore_collection",
             "duration_minutes": 2737.9,
             "completed_at": "2026-06-29T13:25:29.321000+00:00"
@@ -10304,39 +10304,39 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
+            "quest_id": "6B32CDBAF2065344",
+            "name": "6B32CDBAF2065344",
+            "chapter_title": "fhats",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-27T15:24:02.287000+00:00"
+            "completed_at": "2026-07-04T15:04:50.059000+00:00"
           },
           {
-            "quest_id": "4B5B12608410AFDB",
-            "name": "Acacia Log",
-            "chapter_title": "logs",
+            "quest_id": "20654B9BFF057B93",
+            "name": "20654B9BFF057B93",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-27T16:27:59.021000+00:00"
+            "completed_at": "2026-07-01T00:45:24.275000+00:00"
           },
           {
-            "quest_id": "4EA5BC2174E48794",
-            "name": "Obtain 512x Oak Log",
-            "chapter_title": "logs",
+            "quest_id": "4B1725376D4AE88F",
+            "name": "4B1725376D4AE88F",
+            "chapter_title": "fhats",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-27T16:31:52.074000+00:00"
+            "completed_at": "2026-07-02T07:58:14.872000+00:00"
           },
           {
-            "quest_id": "2AB7B944E06E9349",
-            "name": "2AB7B944E06E9349",
-            "chapter_title": "ore_collection",
+            "quest_id": "49D89B62AA2696B7",
+            "name": "49D89B62AA2696B7",
+            "chapter_title": "fhats",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-29T13:37:54.053000+00:00"
+            "completed_at": "2026-07-01T11:19:19.210000+00:00"
           },
           {
-            "quest_id": "1F4A0BCCDDB91E26",
-            "name": "Click to learn more!",
-            "chapter_title": "fuseful_tools",
+            "quest_id": "61E19D79AAF97092",
+            "name": "61E19D79AAF97092",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-29T13:57:11.577000+00:00"
+            "completed_at": "2026-07-04T15:09:00.945000+00:00"
           }
         ]
       },
@@ -11067,15 +11067,15 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-04T21:08:27.320000+00:00"
           },
           {
-            "quest_id": "6ED64B47A81CECA4",
-            "name": "Obtain 16x Diamonds",
+            "quest_id": "42F78B2153D33AA4",
+            "name": "Obtain 128x Coal",
             "chapter_title": "ore_collection",
             "duration_minutes": 1599.7,
             "completed_at": "2026-07-04T20:48:55.398000+00:00"
           },
           {
-            "quest_id": "42F78B2153D33AA4",
-            "name": "Obtain 128x Coal",
+            "quest_id": "6ED64B47A81CECA4",
+            "name": "Obtain 16x Diamonds",
             "chapter_title": "ore_collection",
             "duration_minutes": 1599.7,
             "completed_at": "2026-07-04T20:48:55.398000+00:00"
@@ -11090,39 +11090,39 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-02T15:17:43.914000+00:00"
-          },
-          {
-            "quest_id": "4B5B12608410AFDB",
-            "name": "Acacia Log",
-            "chapter_title": "logs",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-02T15:45:49.313000+00:00"
-          },
-          {
-            "quest_id": "4EA5BC2174E48794",
-            "name": "Obtain 512x Oak Log",
-            "chapter_title": "logs",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-02T15:45:53.864000+00:00"
-          },
-          {
-            "quest_id": "79C55614148D74BB",
-            "name": "Found in Warm Biomes.",
-            "chapter_title": "ore_collection",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-03T18:09:12.056000+00:00"
-          },
-          {
-            "quest_id": "6F40D1A39E7939DC",
-            "name": "Adjusts rotational speed or extends contraptions.",
+            "quest_id": "1EEE514C2E5C054A",
+            "name": "A key ingredient for early-game recipes.",
             "chapter_title": "6cfreate",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-04T14:17:11.855000+00:00"
+            "completed_at": "2026-07-04T14:13:37.096000+00:00"
+          },
+          {
+            "quest_id": "26F7BAEBEAD14210",
+            "name": "Spruce Log",
+            "chapter_title": "logs",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-04T19:51:29.415000+00:00"
+          },
+          {
+            "quest_id": "1F4BDE19F5A52CE8",
+            "name": "Acacia Sapling",
+            "chapter_title": "logs",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-02T15:46:26.315000+00:00"
+          },
+          {
+            "quest_id": "1E1329A6592BCAC8",
+            "name": "Oak Sapling",
+            "chapter_title": "logs",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-03T16:44:49.411000+00:00"
+          },
+          {
+            "quest_id": "27A437E0DD31E72C",
+            "name": "27A437E0DD31E72C",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-02T19:29:58.721000+00:00"
           }
         ]
       },
@@ -11487,19 +11487,19 @@ window.PLAYER_STATS = {
             "completion_pct": 7.1
           },
           {
-            "chapter_id": "46EDB9DC0F5AC44C",
-            "chapter_title": "ore_collection",
-            "chapter_group": "Combat, Ores, and Tools",
-            "completed": 12,
-            "total": 260,
-            "completion_pct": 4.6
-          },
-          {
             "chapter_id": "606B8E7912784AC4",
             "chapter_title": "seed_collection",
             "chapter_group": "Agriculture",
             "completed": 10,
             "total": 218,
+            "completion_pct": 4.6
+          },
+          {
+            "chapter_id": "46EDB9DC0F5AC44C",
+            "chapter_title": "ore_collection",
+            "chapter_group": "Combat, Ores, and Tools",
+            "completed": 12,
+            "total": 260,
             "completion_pct": 4.6
           },
           {
@@ -11761,13 +11761,6 @@ window.PLAYER_STATS = {
         ],
         "slowest_quests": [
           {
-            "quest_id": "1E8EA142FD7E52DD",
-            "name": "Obtain 256x Spruce Log",
-            "chapter_title": "logs",
-            "duration_minutes": 1407.9,
-            "completed_at": "2026-07-01T21:07:15.200000+00:00"
-          },
-          {
             "quest_id": "073DD38F0D9B4BD0",
             "name": "Obtain 256x Birch Log",
             "chapter_title": "logs",
@@ -11775,15 +11768,22 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-01T21:07:15.200000+00:00"
           },
           {
-            "quest_id": "6F216314B808D974",
-            "name": "Obtain 64x Coal",
+            "quest_id": "1E8EA142FD7E52DD",
+            "name": "Obtain 256x Spruce Log",
+            "chapter_title": "logs",
+            "duration_minutes": 1407.9,
+            "completed_at": "2026-07-01T21:07:15.200000+00:00"
+          },
+          {
+            "quest_id": "416A2B30A9072E6C",
+            "name": "Click to learn more!",
             "chapter_title": "ore_collection",
             "duration_minutes": 1084.4,
             "completed_at": "2026-07-01T15:37:51.942000+00:00"
           },
           {
-            "quest_id": "416A2B30A9072E6C",
-            "name": "Click to learn more!",
+            "quest_id": "6F216314B808D974",
+            "name": "Obtain 64x Coal",
             "chapter_title": "ore_collection",
             "duration_minutes": 1084.4,
             "completed_at": "2026-07-01T15:37:51.942000+00:00"
@@ -11798,39 +11798,39 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-30T21:23:33.946000+00:00"
-          },
-          {
-            "quest_id": "4B5B12608410AFDB",
-            "name": "Acacia Log",
+            "quest_id": "1F4BDE19F5A52CE8",
+            "name": "Acacia Sapling",
             "chapter_title": "logs",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-30T21:32:11.793000+00:00"
+            "completed_at": "2026-06-30T21:30:08.093000+00:00"
           },
           {
-            "quest_id": "4EA5BC2174E48794",
-            "name": "Obtain 512x Oak Log",
+            "quest_id": "1E1329A6592BCAC8",
+            "name": "Oak Sapling",
             "chapter_title": "logs",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-01T21:07:16.343000+00:00"
+            "completed_at": "2026-07-01T21:29:54.850000+00:00"
           },
           {
-            "quest_id": "444DAB14F91FC035",
-            "name": "444DAB14F91FC035",
-            "chapter_title": "bounty_board",
+            "quest_id": "3B05A40BC4FE5B16",
+            "name": "Crop Collection",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-30T21:37:47.585000+00:00"
+            "completed_at": "2026-07-01T22:22:45.301000+00:00"
           },
           {
-            "quest_id": "665BA010DFD3E46B",
+            "quest_id": "03C89833B5140782",
+            "name": "Otter",
+            "chapter_title": "fwildlife",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-06-30T21:34:04.681000+00:00"
+          },
+          {
+            "quest_id": "3818B3EA7D19FB4B",
             "name": "Chicken",
             "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-01T14:25:24.439000+00:00"
+            "completed_at": "2026-07-01T15:27:51.196000+00:00"
           }
         ]
       },
@@ -12490,13 +12490,6 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-05T15:47:06.281000+00:00"
           },
           {
-            "quest_id": "1F85FCA1E9D7EC0C",
-            "name": "Obtain 128x Emeralds",
-            "chapter_title": "ore_collection",
-            "duration_minutes": 9669.3,
-            "completed_at": "2026-07-05T15:47:06.282000+00:00"
-          },
-          {
             "quest_id": "78338D8C5BA0C5B7",
             "name": "Obtain 64x Diamonds",
             "chapter_title": "ore_collection",
@@ -12504,8 +12497,15 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-05T15:47:06.282000+00:00"
           },
           {
-            "quest_id": "6ED64B47A81CECA4",
-            "name": "Obtain 16x Diamonds",
+            "quest_id": "1F85FCA1E9D7EC0C",
+            "name": "Obtain 128x Emeralds",
+            "chapter_title": "ore_collection",
+            "duration_minutes": 9669.3,
+            "completed_at": "2026-07-05T15:47:06.282000+00:00"
+          },
+          {
+            "quest_id": "42F78B2153D33AA4",
+            "name": "Obtain 128x Coal",
             "chapter_title": "ore_collection",
             "duration_minutes": 1547.2,
             "completed_at": "2026-06-29T15:15:12.514000+00:00"
@@ -12513,39 +12513,39 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
+            "quest_id": "20654B9BFF057B93",
+            "name": "20654B9BFF057B93",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-27T17:00:16.177000+00:00"
+            "completed_at": "2026-06-28T16:46:50.009000+00:00"
           },
           {
-            "quest_id": "4B5B12608410AFDB",
-            "name": "Acacia Log",
+            "quest_id": "0ABF361080FFC001",
+            "name": "Sheep",
+            "chapter_title": "fwildlife",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-06-27T17:28:35.141000+00:00"
+          },
+          {
+            "quest_id": "1F4BDE19F5A52CE8",
+            "name": "Acacia Sapling",
             "chapter_title": "logs",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-27T17:11:29.961000+00:00"
+            "completed_at": "2026-06-27T17:11:45.777000+00:00"
           },
           {
-            "quest_id": "1A3E716CB7317E2D",
-            "name": "1A3E716CB7317E2D",
-            "chapter_title": "fhats",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-28T14:09:52.158000+00:00"
-          },
-          {
-            "quest_id": "2AB7B944E06E9349",
-            "name": "2AB7B944E06E9349",
+            "quest_id": "17EB70714F35E19B",
+            "name": "Combine with Copper to create Bronze!",
             "chapter_title": "ore_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-29T15:24:55.109000+00:00"
+            "completed_at": "2026-06-28T17:01:05.659000+00:00"
           },
           {
-            "quest_id": "79C55614148D74BB",
-            "name": "Found in Warm Biomes.",
-            "chapter_title": "ore_collection",
+            "quest_id": "47CB42E86FA3AF53",
+            "name": "Obtain 1x Cod",
+            "chapter_title": "fish",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-29T15:07:47.115000+00:00"
+            "completed_at": "2026-06-28T01:48:49.003000+00:00"
           }
         ]
       },
@@ -13194,15 +13194,15 @@ window.PLAYER_STATS = {
         ],
         "slowest_quests": [
           {
-            "quest_id": "6F216314B808D974",
-            "name": "Obtain 64x Coal",
+            "quest_id": "416A2B30A9072E6C",
+            "name": "Click to learn more!",
             "chapter_title": "ore_collection",
             "duration_minutes": 817.5,
             "completed_at": "2026-07-27T09:58:16.533000+00:00"
           },
           {
-            "quest_id": "416A2B30A9072E6C",
-            "name": "Click to learn more!",
+            "quest_id": "6F216314B808D974",
+            "name": "Obtain 64x Coal",
             "chapter_title": "ore_collection",
             "duration_minutes": 817.5,
             "completed_at": "2026-07-27T09:58:16.533000+00:00"
@@ -13222,8 +13222,8 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-26T20:51:05.003000+00:00"
           },
           {
-            "quest_id": "39F345A4CDF07972",
-            "name": "Obtain 64x Raw Cod",
+            "quest_id": "551D4036ACAC926D",
+            "name": "Obtain 16x Tropical Fish",
             "chapter_title": "fish",
             "duration_minutes": 19.1,
             "completed_at": "2026-07-27T09:58:16.538000+00:00"
@@ -13231,32 +13231,11 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-26T19:29:44.585000+00:00"
-          },
-          {
-            "quest_id": "4EA5BC2174E48794",
-            "name": "Obtain 512x Oak Log",
-            "chapter_title": "logs",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-26T20:53:03.205000+00:00"
-          },
-          {
-            "quest_id": "7FCE2D65AC550E39",
-            "name": "7FCE2D65AC550E39",
+            "quest_id": "4B1725376D4AE88F",
+            "name": "4B1725376D4AE88F",
             "chapter_title": "fhats",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-27T13:01:23.636000+00:00"
-          },
-          {
-            "quest_id": "0D64E14EFF4193E9",
-            "name": "Snail",
-            "chapter_title": "fwildlife",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-26T20:41:24.659000+00:00"
+            "completed_at": "2026-07-28T08:25:33.670000+00:00"
           },
           {
             "quest_id": "1A4FDEDCB07A6CC5",
@@ -13264,6 +13243,27 @@ window.PLAYER_STATS = {
             "chapter_title": "faccessories",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-27T13:05:34.893000+00:00"
+          },
+          {
+            "quest_id": "0ABF361080FFC001",
+            "name": "Sheep",
+            "chapter_title": "fwildlife",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-26T20:03:53.670000+00:00"
+          },
+          {
+            "quest_id": "392513276CA215ED",
+            "name": "392513276CA215ED",
+            "chapter_title": "bounty_board",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-28T08:32:08.969000+00:00"
+          },
+          {
+            "quest_id": "5A96B9AFBBB5B7F7",
+            "name": "5A96B9AFBBB5B7F7",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-27T12:52:00.035000+00:00"
           }
         ]
       },
@@ -13958,39 +13958,39 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-29T12:14:16.692000+00:00"
-          },
-          {
-            "quest_id": "4B5B12608410AFDB",
-            "name": "Acacia Log",
-            "chapter_title": "logs",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-29T12:19:04.960000+00:00"
-          },
-          {
-            "quest_id": "4EA5BC2174E48794",
-            "name": "Obtain 512x Oak Log",
-            "chapter_title": "logs",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-29T12:19:23.361000+00:00"
-          },
-          {
-            "quest_id": "64B70E832D0FFFF2",
-            "name": "64B70E832D0FFFF2",
+            "quest_id": "4B36B93A3D2162D9",
+            "name": "Carmot can be crafted into armor and tools. It is comparable to Diamond. When crafted into armor, it provides bonus shielding, and when crafted into tools, it provides bonus Fortune.",
             "chapter_title": "ore_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-01T14:27:32.242000+00:00"
+            "completed_at": "2026-07-01T13:36:22.284000+00:00"
           },
           {
-            "quest_id": "2AB7B944E06E9349",
-            "name": "2AB7B944E06E9349",
-            "chapter_title": "ore_collection",
+            "quest_id": "0ABF361080FFC001",
+            "name": "Sheep",
+            "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-29T13:40:38.105000+00:00"
+            "completed_at": "2026-06-29T14:04:09.878000+00:00"
+          },
+          {
+            "quest_id": "1F4BDE19F5A52CE8",
+            "name": "Acacia Sapling",
+            "chapter_title": "logs",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-06-29T12:19:06.062000+00:00"
+          },
+          {
+            "quest_id": "1E1329A6592BCAC8",
+            "name": "Oak Sapling",
+            "chapter_title": "logs",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-06-29T12:23:05.157000+00:00"
+          },
+          {
+            "quest_id": "0C2D8592338AE921",
+            "name": "0C2D8592338AE921",
+            "chapter_title": "fhats",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-01T13:36:56.430000+00:00"
           }
         ]
       },
@@ -14537,13 +14537,6 @@ window.PLAYER_STATS = {
         ],
         "slowest_quests": [
           {
-            "quest_id": "2C6EC52F3852DA3E",
-            "name": "Fuel Capacity: 48000",
-            "chapter_title": "ore_collection",
-            "duration_minutes": 1.1,
-            "completed_at": "2026-06-23T11:47:45.257000+00:00"
-          },
-          {
             "quest_id": "2BF869EBFCB70638",
             "name": "Fuel Capacity: 48000",
             "chapter_title": "ore_collection",
@@ -14551,59 +14544,66 @@ window.PLAYER_STATS = {
             "completed_at": "2026-06-23T11:47:45.257000+00:00"
           },
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-22T13:03:59.969000+00:00"
+            "quest_id": "2C6EC52F3852DA3E",
+            "name": "Fuel Capacity: 48000",
+            "chapter_title": "ore_collection",
+            "duration_minutes": 1.1,
+            "completed_at": "2026-06-23T11:47:45.257000+00:00"
           },
           {
-            "quest_id": "7C44CAB463D94611",
-            "name": "Hats can be crafted together with Shears to create Hat Scraps!",
-            "chapter_title": "fhats",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-26T11:38:11.399000+00:00"
-          },
-          {
-            "quest_id": "07C33308C906A9B8",
-            "name": "Obtain 64x Pufferfish",
+            "quest_id": "688F2EFA4AC65DAF",
+            "name": "Obtain 1x Salmon",
             "chapter_title": "fish",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-26T13:36:45.052000+00:00"
+            "completed_at": "2026-06-26T13:36:45.048000+00:00"
+          },
+          {
+            "quest_id": "04A2C159A872F9B4",
+            "name": "Birch Log",
+            "chapter_title": "logs",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-06-26T14:14:07.644000+00:00"
+          },
+          {
+            "quest_id": "48ECB88BF27AE307",
+            "name": "Obtain 64x Raw Salmon",
+            "chapter_title": "fish",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-06-26T13:36:45.054000+00:00"
           }
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-22T13:03:59.969000+00:00"
-          },
-          {
-            "quest_id": "7C44CAB463D94611",
-            "name": "Hats can be crafted together with Shears to create Hat Scraps!",
-            "chapter_title": "fhats",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-26T11:38:11.399000+00:00"
-          },
-          {
-            "quest_id": "07C33308C906A9B8",
-            "name": "Obtain 64x Pufferfish",
+            "quest_id": "688F2EFA4AC65DAF",
+            "name": "Obtain 1x Salmon",
             "chapter_title": "fish",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-26T13:36:45.052000+00:00"
+            "completed_at": "2026-06-26T13:36:45.048000+00:00"
           },
           {
-            "quest_id": "6FEE6FB1B0A47B90",
-            "name": "Oak Sapling",
+            "quest_id": "04A2C159A872F9B4",
+            "name": "Birch Log",
             "chapter_title": "logs",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-23T12:56:28.303000+00:00"
+            "completed_at": "2026-06-26T14:14:07.644000+00:00"
           },
           {
-            "quest_id": "433AC9E181030F5A",
-            "name": "433AC9E181030F5A",
+            "quest_id": "48ECB88BF27AE307",
+            "name": "Obtain 64x Raw Salmon",
+            "chapter_title": "fish",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-06-26T13:36:45.054000+00:00"
+          },
+          {
+            "quest_id": "2E064732599F34CA",
+            "name": "Obtain 1x Salmon",
+            "chapter_title": "fish",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-06-26T13:36:45.048000+00:00"
+          },
+          {
+            "quest_id": "0C2D8592338AE921",
+            "name": "0C2D8592338AE921",
             "chapter_title": "fhats",
             "duration_minutes": 0.0,
             "completed_at": "2026-06-22T13:09:46.854000+00:00"
@@ -15198,15 +15198,15 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-08T16:08:15.422000+00:00"
           },
           {
-            "quest_id": "6F216314B808D974",
-            "name": "Obtain 64x Coal",
+            "quest_id": "416A2B30A9072E6C",
+            "name": "Click to learn more!",
             "chapter_title": "ore_collection",
             "duration_minutes": 11230.6,
             "completed_at": "2026-07-08T15:46:41.606000+00:00"
           },
           {
-            "quest_id": "416A2B30A9072E6C",
-            "name": "Click to learn more!",
+            "quest_id": "6F216314B808D974",
+            "name": "Obtain 64x Coal",
             "chapter_title": "ore_collection",
             "duration_minutes": 11230.6,
             "completed_at": "2026-07-08T15:46:41.606000+00:00"
@@ -15221,39 +15221,39 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
+            "quest_id": "0ABF361080FFC001",
+            "name": "Sheep",
+            "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-30T20:24:26.119000+00:00"
+            "completed_at": "2026-06-30T21:35:17.937000+00:00"
           },
           {
-            "quest_id": "4B5B12608410AFDB",
-            "name": "Acacia Log",
+            "quest_id": "1F4BDE19F5A52CE8",
+            "name": "Acacia Sapling",
             "chapter_title": "logs",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-30T20:30:42.171000+00:00"
+            "completed_at": "2026-07-08T16:18:58.445000+00:00"
           },
           {
-            "quest_id": "566EB43761C87FBE",
-            "name": "Found in Mineshafts.",
-            "chapter_title": "building_the_portal",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-03T17:55:11.596000+00:00"
-          },
-          {
-            "quest_id": "2AB7B944E06E9349",
-            "name": "2AB7B944E06E9349",
-            "chapter_title": "ore_collection",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-03T18:26:34.359000+00:00"
-          },
-          {
-            "quest_id": "243957C85E49905E",
-            "name": "243957C85E49905E",
+            "quest_id": "1EBB7115FEA49F93",
+            "name": "1EBB7115FEA49F93",
             "chapter_title": "fhats",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T16:09:19.156000+00:00"
+            "completed_at": "2026-07-08T16:27:28.662000+00:00"
+          },
+          {
+            "quest_id": "4721D34C39DEB1F5",
+            "name": "Hamster",
+            "chapter_title": "fwildlife",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-06-30T21:14:39.056000+00:00"
+          },
+          {
+            "quest_id": "3EAEC39431D5A055",
+            "name": "Click to learn more!",
+            "chapter_title": "fwelcome_to_bigchadguys_plus",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-08T16:06:03.306000+00:00"
           }
         ]
       },
@@ -15623,19 +15623,19 @@ window.PLAYER_STATS = {
             "completion_pct": 5.2
           },
           {
-            "chapter_id": "1DA322FC3635C840",
-            "chapter_title": "fuseful_tools",
-            "chapter_group": "Homemaking",
-            "completed": 2,
-            "total": 73,
-            "completion_pct": 2.7
-          },
-          {
             "chapter_id": "12F9750CFC68C73E",
             "chapter_title": "faccessories",
             "chapter_group": "Accessories and Novelties",
             "completed": 6,
             "total": 224,
+            "completion_pct": 2.7
+          },
+          {
+            "chapter_id": "1DA322FC3635C840",
+            "chapter_title": "fuseful_tools",
+            "chapter_group": "Homemaking",
+            "completed": 2,
+            "total": 73,
             "completion_pct": 2.7
           },
           {
@@ -15903,15 +15903,15 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-23T21:37:28.131000+00:00"
           },
           {
-            "quest_id": "6F216314B808D974",
-            "name": "Obtain 64x Coal",
+            "quest_id": "416A2B30A9072E6C",
+            "name": "Click to learn more!",
             "chapter_title": "ore_collection",
             "duration_minutes": 27.4,
             "completed_at": "2026-07-23T21:37:28.131000+00:00"
           },
           {
-            "quest_id": "416A2B30A9072E6C",
-            "name": "Click to learn more!",
+            "quest_id": "6F216314B808D974",
+            "name": "Obtain 64x Coal",
             "chapter_title": "ore_collection",
             "duration_minutes": 27.4,
             "completed_at": "2026-07-23T21:37:28.131000+00:00"
@@ -15926,39 +15926,39 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
+            "quest_id": "5DE9CB832A695BC9",
+            "name": "Shock Pendant",
+            "chapter_title": "faccessories",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-23T20:41:56.836000+00:00"
+            "completed_at": "2026-07-23T21:44:02.839000+00:00"
           },
           {
-            "quest_id": "2AB7B944E06E9349",
-            "name": "2AB7B944E06E9349",
-            "chapter_title": "ore_collection",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-23T21:37:28.131000+00:00"
-          },
-          {
-            "quest_id": "1F4A0BCCDDB91E26",
-            "name": "Click to learn more!",
-            "chapter_title": "fuseful_tools",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-23T20:43:05.298000+00:00"
-          },
-          {
-            "quest_id": "0D64E14EFF4193E9",
-            "name": "Snail",
+            "quest_id": "0ABF361080FFC001",
+            "name": "Sheep",
             "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-23T22:23:43.014000+00:00"
+            "completed_at": "2026-07-23T22:15:53.530000+00:00"
           },
           {
-            "quest_id": "444DAB14F91FC035",
-            "name": "444DAB14F91FC035",
-            "chapter_title": "bounty_board",
+            "quest_id": "76FB4CDB659D1B5D",
+            "name": "76FB4CDB659D1B5D",
+            "chapter_title": "fplushies",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-23T21:11:09.063000+00:00"
+            "completed_at": "2026-07-23T21:18:19.099000+00:00"
+          },
+          {
+            "quest_id": "13410CBABC48E66B",
+            "name": "When placed and then broken, it has a chance to drop 0 to 2 melon slices. (Cooldown range: 120 seconds to 480 seconds)",
+            "chapter_title": "fbackpacks",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-23T21:46:04.272000+00:00"
+          },
+          {
+            "quest_id": "03C89833B5140782",
+            "name": "Otter",
+            "chapter_title": "fwildlife",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-23T20:44:15.366000+00:00"
           }
         ]
       },
@@ -16536,76 +16536,76 @@ window.PLAYER_STATS = {
         ],
         "slowest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
+            "quest_id": "57AC4F287AFCA195",
+            "name": "57AC4F287AFCA195",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-03T18:23:30.395000+00:00"
+            "completed_at": "2026-07-03T18:54:33.808000+00:00"
           },
           {
-            "quest_id": "1CD23FAF2E1E802D",
-            "name": "Find a Leaf Insect",
+            "quest_id": "03C89833B5140782",
+            "name": "Otter",
             "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-03T19:12:13.573000+00:00"
           },
           {
-            "quest_id": "16239A57395BA919",
-            "name": "Finch",
-            "chapter_title": "fwildlife",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-03T19:21:34.066000+00:00"
-          },
-          {
-            "quest_id": "2C094BFE8AF8DF04",
-            "name": "2C094BFE8AF8DF04",
+            "quest_id": "704DF932A070B564",
+            "name": "704DF932A070B564",
             "chapter_title": "ffarmers_delight",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-03T18:23:30.395000+00:00"
           },
           {
-            "quest_id": "2358595FD78776BF",
-            "name": "Found in Aquatic Biomes.",
+            "quest_id": "366A71560B898D88",
+            "name": "Accept Rewards",
+            "chapter_title": "fwildlife",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-03T19:27:00.673000+00:00"
+          },
+          {
+            "quest_id": "5407FE54DC8B03D7",
+            "name": "The fuel source for the Mythril Drill.",
             "chapter_title": "ore_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-03T18:51:14.551000+00:00"
+            "completed_at": "2026-07-03T18:26:33.813000+00:00"
           }
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
+            "quest_id": "57AC4F287AFCA195",
+            "name": "57AC4F287AFCA195",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-03T18:23:30.395000+00:00"
+            "completed_at": "2026-07-03T18:54:33.808000+00:00"
           },
           {
-            "quest_id": "1CD23FAF2E1E802D",
-            "name": "Find a Leaf Insect",
+            "quest_id": "03C89833B5140782",
+            "name": "Otter",
             "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-03T19:12:13.573000+00:00"
           },
           {
-            "quest_id": "16239A57395BA919",
-            "name": "Finch",
-            "chapter_title": "fwildlife",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-03T19:21:34.066000+00:00"
-          },
-          {
-            "quest_id": "2C094BFE8AF8DF04",
-            "name": "2C094BFE8AF8DF04",
+            "quest_id": "704DF932A070B564",
+            "name": "704DF932A070B564",
             "chapter_title": "ffarmers_delight",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-03T18:23:30.395000+00:00"
           },
           {
-            "quest_id": "2358595FD78776BF",
-            "name": "Found in Aquatic Biomes.",
+            "quest_id": "366A71560B898D88",
+            "name": "Accept Rewards",
+            "chapter_title": "fwildlife",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-03T19:27:00.673000+00:00"
+          },
+          {
+            "quest_id": "5407FE54DC8B03D7",
+            "name": "The fuel source for the Mythril Drill.",
             "chapter_title": "ore_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-03T18:51:14.551000+00:00"
+            "completed_at": "2026-07-03T18:26:33.813000+00:00"
           }
         ]
       },
@@ -16864,19 +16864,19 @@ window.PLAYER_STATS = {
             "completion_pct": 4.2
           },
           {
-            "chapter_id": "1E196D2DBA49A7D0",
-            "chapter_title": "fplushies",
-            "chapter_group": "Accessories and Novelties",
-            "completed": 6,
-            "total": 164,
-            "completion_pct": 3.7
-          },
-          {
             "chapter_id": "606B8E7912784AC4",
             "chapter_title": "seed_collection",
             "chapter_group": "Agriculture",
             "completed": 8,
             "total": 218,
+            "completion_pct": 3.7
+          },
+          {
+            "chapter_id": "1E196D2DBA49A7D0",
+            "chapter_title": "fplushies",
+            "chapter_group": "Accessories and Novelties",
+            "completed": 6,
+            "total": 164,
             "completion_pct": 3.7
           },
           {
@@ -17138,76 +17138,76 @@ window.PLAYER_STATS = {
         ],
         "slowest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
+            "quest_id": "060D1685C44406B1",
+            "name": "060D1685C44406B1",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-17T10:51:53.907000+00:00"
+            "completed_at": "2026-07-17T10:55:40.759000+00:00"
           },
           {
-            "quest_id": "1CD23FAF2E1E802D",
-            "name": "Find a Leaf Insect",
+            "quest_id": "34E67DC4199E30D4",
+            "name": "34E67DC4199E30D4",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-17T10:58:37.157000+00:00"
+          },
+          {
+            "quest_id": "1F4A0BCCDDB91E26",
+            "name": "Click to learn more!",
+            "chapter_title": "fuseful_tools",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-17T10:58:46.763000+00:00"
+          },
+          {
+            "quest_id": "57AC4F287AFCA195",
+            "name": "57AC4F287AFCA195",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-17T10:55:42.058000+00:00"
+          },
+          {
+            "quest_id": "3167E18DC5D7A799",
+            "name": "Salmon",
             "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-17T11:05:10.532000+00:00"
-          },
-          {
-            "quest_id": "16A999A8ACC251C5",
-            "name": "16A999A8ACC251C5",
-            "chapter_title": "fplushies",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-17T11:19:59.814000+00:00"
-          },
-          {
-            "quest_id": "0C0A7B9BEED869BC",
-            "name": "Wolf",
-            "chapter_title": "fwildlife",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-17T11:08:56.921000+00:00"
-          },
-          {
-            "quest_id": "5C4BEEDBCD6AFFD5",
-            "name": "5C4BEEDBCD6AFFD5",
-            "chapter_title": "bounty_board",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-17T11:06:14.148000+00:00"
+            "completed_at": "2026-07-23T21:04:35.605000+00:00"
           }
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
+            "quest_id": "060D1685C44406B1",
+            "name": "060D1685C44406B1",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-17T10:51:53.907000+00:00"
+            "completed_at": "2026-07-17T10:55:40.759000+00:00"
           },
           {
-            "quest_id": "1CD23FAF2E1E802D",
-            "name": "Find a Leaf Insect",
+            "quest_id": "34E67DC4199E30D4",
+            "name": "34E67DC4199E30D4",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-17T10:58:37.157000+00:00"
+          },
+          {
+            "quest_id": "1F4A0BCCDDB91E26",
+            "name": "Click to learn more!",
+            "chapter_title": "fuseful_tools",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-17T10:58:46.763000+00:00"
+          },
+          {
+            "quest_id": "57AC4F287AFCA195",
+            "name": "57AC4F287AFCA195",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-17T10:55:42.058000+00:00"
+          },
+          {
+            "quest_id": "3167E18DC5D7A799",
+            "name": "Salmon",
             "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-17T11:05:10.532000+00:00"
-          },
-          {
-            "quest_id": "16A999A8ACC251C5",
-            "name": "16A999A8ACC251C5",
-            "chapter_title": "fplushies",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-17T11:19:59.814000+00:00"
-          },
-          {
-            "quest_id": "0C0A7B9BEED869BC",
-            "name": "Wolf",
-            "chapter_title": "fwildlife",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-17T11:08:56.921000+00:00"
-          },
-          {
-            "quest_id": "5C4BEEDBCD6AFFD5",
-            "name": "5C4BEEDBCD6AFFD5",
-            "chapter_title": "bounty_board",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-17T11:06:14.148000+00:00"
+            "completed_at": "2026-07-23T21:04:35.605000+00:00"
           }
         ]
       },
@@ -17729,76 +17729,76 @@ window.PLAYER_STATS = {
         ],
         "slowest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
+            "quest_id": "0ABF361080FFC001",
+            "name": "Sheep",
+            "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T21:40:36.001000+00:00"
+            "completed_at": "2026-07-08T23:40:15.410000+00:00"
           },
           {
-            "quest_id": "1CD23FAF2E1E802D",
-            "name": "Find a Leaf Insect",
+            "quest_id": "173DBC55D5B3B370",
+            "name": "173DBC55D5B3B370",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-08T23:42:44.726000+00:00"
+          },
+          {
+            "quest_id": "03C89833B5140782",
+            "name": "Otter",
             "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-08T23:06:08.436000+00:00"
           },
           {
-            "quest_id": "2C094BFE8AF8DF04",
-            "name": "2C094BFE8AF8DF04",
+            "quest_id": "704DF932A070B564",
+            "name": "704DF932A070B564",
             "chapter_title": "ffarmers_delight",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-08T21:40:36.005000+00:00"
           },
           {
-            "quest_id": "6A255A06E9B677F4",
-            "name": "6A255A06E9B677F4",
-            "chapter_title": "seed_collection",
+            "quest_id": "366A71560B898D88",
+            "name": "Accept Rewards",
+            "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T23:36:04.306000+00:00"
-          },
-          {
-            "quest_id": "6A38DC6A16C2E3A2",
-            "name": "6A38DC6A16C2E3A2",
-            "chapter_title": "fplushies",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T22:05:21.516000+00:00"
+            "completed_at": "2026-07-08T23:03:52.732000+00:00"
           }
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
+            "quest_id": "0ABF361080FFC001",
+            "name": "Sheep",
+            "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T21:40:36.001000+00:00"
+            "completed_at": "2026-07-08T23:40:15.410000+00:00"
           },
           {
-            "quest_id": "1CD23FAF2E1E802D",
-            "name": "Find a Leaf Insect",
+            "quest_id": "173DBC55D5B3B370",
+            "name": "173DBC55D5B3B370",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-08T23:42:44.726000+00:00"
+          },
+          {
+            "quest_id": "03C89833B5140782",
+            "name": "Otter",
             "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-08T23:06:08.436000+00:00"
           },
           {
-            "quest_id": "2C094BFE8AF8DF04",
-            "name": "2C094BFE8AF8DF04",
+            "quest_id": "704DF932A070B564",
+            "name": "704DF932A070B564",
             "chapter_title": "ffarmers_delight",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-08T21:40:36.005000+00:00"
           },
           {
-            "quest_id": "6A255A06E9B677F4",
-            "name": "6A255A06E9B677F4",
-            "chapter_title": "seed_collection",
+            "quest_id": "366A71560B898D88",
+            "name": "Accept Rewards",
+            "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T23:36:04.306000+00:00"
-          },
-          {
-            "quest_id": "6A38DC6A16C2E3A2",
-            "name": "6A38DC6A16C2E3A2",
-            "chapter_title": "fplushies",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T22:05:21.516000+00:00"
+            "completed_at": "2026-07-08T23:03:52.732000+00:00"
           }
         ]
       },
@@ -18108,19 +18108,19 @@ window.PLAYER_STATS = {
             "completion_pct": 3.8
           },
           {
-            "chapter_id": "3731A9890D5811CC",
-            "chapter_title": "bounty_board",
-            "chapter_group": "Combat, Ores, and Tools",
-            "completed": 6,
-            "total": 191,
-            "completion_pct": 3.1
-          },
-          {
             "chapter_id": "1671ED82A03930F0",
             "chapter_title": "fbrewery",
             "chapter_group": "Food and Drink",
             "completed": 2,
             "total": 64,
+            "completion_pct": 3.1
+          },
+          {
+            "chapter_id": "3731A9890D5811CC",
+            "chapter_title": "bounty_board",
+            "chapter_group": "Combat, Ores, and Tools",
+            "completed": 6,
+            "total": 191,
             "completion_pct": 3.1
           },
           {
@@ -18410,8 +18410,8 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-04T19:34:49.561000+00:00"
           },
           {
-            "quest_id": "6F216314B808D974",
-            "name": "Obtain 64x Coal",
+            "quest_id": "416A2B30A9072E6C",
+            "name": "Click to learn more!",
             "chapter_title": "ore_collection",
             "duration_minutes": 6.0,
             "completed_at": "2026-07-04T19:24:41.551000+00:00"
@@ -18419,39 +18419,39 @@ window.PLAYER_STATS = {
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
+            "quest_id": "2E5C315A52C10BBE",
+            "name": "Combine with Iron to create Steel!",
+            "chapter_title": "ore_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-04T19:12:49.247000+00:00"
+            "completed_at": "2026-07-04T19:24:41.550000+00:00"
           },
           {
-            "quest_id": "08ED1EC05BB7E64B",
-            "name": "08ED1EC05BB7E64B",
-            "chapter_title": "fplushies",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-04T20:03:58.892000+00:00"
-          },
-          {
-            "quest_id": "1CD23FAF2E1E802D",
-            "name": "Find a Leaf Insect",
+            "quest_id": "6A25A6037823770D",
+            "name": "Rabbit",
             "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-04T19:14:45.286000+00:00"
+            "completed_at": "2026-07-04T20:01:00.362000+00:00"
           },
           {
-            "quest_id": "7B78619C08E34A19",
-            "name": "7B78619C08E34A19",
-            "chapter_title": "bounty_board",
+            "quest_id": "617370CCBD517938",
+            "name": "617370CCBD517938",
+            "chapter_title": "fbrewery",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-04T19:34:46.845000+00:00"
+            "completed_at": "2026-07-04T19:55:28.092000+00:00"
           },
           {
-            "quest_id": "5C4BEEDBCD6AFFD5",
-            "name": "5C4BEEDBCD6AFFD5",
-            "chapter_title": "bounty_board",
+            "quest_id": "57AC4F287AFCA195",
+            "name": "57AC4F287AFCA195",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-04T19:42:15.961000+00:00"
+            "completed_at": "2026-07-04T19:53:36.689000+00:00"
+          },
+          {
+            "quest_id": "30D92BF7703C2019",
+            "name": "Cherry Sapling",
+            "chapter_title": "logs",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-04T19:15:04.150000+00:00"
           }
         ]
       },
@@ -18987,76 +18987,76 @@ window.PLAYER_STATS = {
         ],
         "slowest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-26T19:59:49.553000+00:00"
-          },
-          {
-            "quest_id": "162F85C4430A8790",
-            "name": "162F85C4430A8790",
+            "quest_id": "03062E7FE7545DC6",
+            "name": "03062E7FE7545DC6",
             "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-30T19:23:53.721000+00:00"
+            "completed_at": "2026-06-26T20:48:07.646000+00:00"
           },
           {
-            "quest_id": "5C4BEEDBCD6AFFD5",
-            "name": "5C4BEEDBCD6AFFD5",
-            "chapter_title": "bounty_board",
+            "quest_id": "04A2C159A872F9B4",
+            "name": "Birch Log",
+            "chapter_title": "logs",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-30T19:17:22.923000+00:00"
+            "completed_at": "2026-06-26T20:45:00.643000+00:00"
           },
           {
-            "quest_id": "13A16EAD436FCE24",
-            "name": "13A16EAD436FCE24",
+            "quest_id": "173DBC55D5B3B370",
+            "name": "173DBC55D5B3B370",
             "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-30T19:23:53.721000+00:00"
+            "completed_at": "2026-06-26T20:50:29.748000+00:00"
           },
           {
-            "quest_id": "34481B0189DB421D",
-            "name": "Panda",
+            "quest_id": "39A892C85026901B",
+            "name": "Firefly",
             "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-30T19:31:23.295000+00:00"
+            "completed_at": "2026-06-26T20:46:12.352000+00:00"
+          },
+          {
+            "quest_id": "57AC4F287AFCA195",
+            "name": "57AC4F287AFCA195",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-06-26T20:50:29.749000+00:00"
           }
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-26T19:59:49.553000+00:00"
-          },
-          {
-            "quest_id": "162F85C4430A8790",
-            "name": "162F85C4430A8790",
+            "quest_id": "03062E7FE7545DC6",
+            "name": "03062E7FE7545DC6",
             "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-30T19:23:53.721000+00:00"
+            "completed_at": "2026-06-26T20:48:07.646000+00:00"
           },
           {
-            "quest_id": "5C4BEEDBCD6AFFD5",
-            "name": "5C4BEEDBCD6AFFD5",
-            "chapter_title": "bounty_board",
+            "quest_id": "04A2C159A872F9B4",
+            "name": "Birch Log",
+            "chapter_title": "logs",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-30T19:17:22.923000+00:00"
+            "completed_at": "2026-06-26T20:45:00.643000+00:00"
           },
           {
-            "quest_id": "13A16EAD436FCE24",
-            "name": "13A16EAD436FCE24",
+            "quest_id": "173DBC55D5B3B370",
+            "name": "173DBC55D5B3B370",
             "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-30T19:23:53.721000+00:00"
+            "completed_at": "2026-06-26T20:50:29.748000+00:00"
           },
           {
-            "quest_id": "34481B0189DB421D",
-            "name": "Panda",
+            "quest_id": "39A892C85026901B",
+            "name": "Firefly",
             "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-06-30T19:31:23.295000+00:00"
+            "completed_at": "2026-06-26T20:46:12.352000+00:00"
+          },
+          {
+            "quest_id": "57AC4F287AFCA195",
+            "name": "57AC4F287AFCA195",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-06-26T20:50:29.749000+00:00"
           }
         ]
       },
@@ -19551,76 +19551,76 @@ window.PLAYER_STATS = {
         ],
         "slowest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
+            "quest_id": "6A25A6037823770D",
+            "name": "Rabbit",
+            "chapter_title": "fwildlife",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-01T17:56:37.343000+00:00"
+          },
+          {
+            "quest_id": "44175DA89394A054",
+            "name": "44175DA89394A054",
             "chapter_title": "fplushies",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-01T17:29:12.739000+00:00"
+            "completed_at": "2026-07-01T17:34:18.976000+00:00"
           },
           {
-            "quest_id": "1CD23FAF2E1E802D",
-            "name": "Find a Leaf Insect",
+            "quest_id": "0ABF361080FFC001",
+            "name": "Sheep",
             "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-01T17:46:10.012000+00:00"
+            "completed_at": "2026-07-01T17:56:55.354000+00:00"
           },
           {
-            "quest_id": "5B84E17D3C06F533",
-            "name": "Jungle Sapling",
-            "chapter_title": "logs",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-01T17:54:45.474000+00:00"
-          },
-          {
-            "quest_id": "16239A57395BA919",
-            "name": "Finch",
+            "quest_id": "4721D34C39DEB1F5",
+            "name": "Hamster",
             "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-01T17:52:23.757000+00:00"
+            "completed_at": "2026-07-01T17:45:01.623000+00:00"
           },
           {
-            "quest_id": "6488C151847FEF8F",
-            "name": "Jungle Sapling",
-            "chapter_title": "logs",
+            "quest_id": "6D1EEB010460FBB0",
+            "name": "6D1EEB010460FBB0",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-01T17:54:45.474000+00:00"
+            "completed_at": "2026-07-01T17:47:52.021000+00:00"
           }
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
+            "quest_id": "6A25A6037823770D",
+            "name": "Rabbit",
+            "chapter_title": "fwildlife",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-01T17:56:37.343000+00:00"
+          },
+          {
+            "quest_id": "44175DA89394A054",
+            "name": "44175DA89394A054",
             "chapter_title": "fplushies",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-01T17:29:12.739000+00:00"
+            "completed_at": "2026-07-01T17:34:18.976000+00:00"
           },
           {
-            "quest_id": "1CD23FAF2E1E802D",
-            "name": "Find a Leaf Insect",
+            "quest_id": "0ABF361080FFC001",
+            "name": "Sheep",
             "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-01T17:46:10.012000+00:00"
+            "completed_at": "2026-07-01T17:56:55.354000+00:00"
           },
           {
-            "quest_id": "5B84E17D3C06F533",
-            "name": "Jungle Sapling",
-            "chapter_title": "logs",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-01T17:54:45.474000+00:00"
-          },
-          {
-            "quest_id": "16239A57395BA919",
-            "name": "Finch",
+            "quest_id": "4721D34C39DEB1F5",
+            "name": "Hamster",
             "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-01T17:52:23.757000+00:00"
+            "completed_at": "2026-07-01T17:45:01.623000+00:00"
           },
           {
-            "quest_id": "6488C151847FEF8F",
-            "name": "Jungle Sapling",
-            "chapter_title": "logs",
+            "quest_id": "6D1EEB010460FBB0",
+            "name": "6D1EEB010460FBB0",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-01T17:54:45.474000+00:00"
+            "completed_at": "2026-07-01T17:47:52.021000+00:00"
           }
         ]
       },
@@ -20166,76 +20166,76 @@ window.PLAYER_STATS = {
         ],
         "slowest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
+            "quest_id": "2E5C315A52C10BBE",
+            "name": "Combine with Iron to create Steel!",
+            "chapter_title": "ore_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T21:49:49.458000+00:00"
+            "completed_at": "2026-07-08T22:13:06.702000+00:00"
           },
           {
-            "quest_id": "2938BFAB1575A8B5",
-            "name": "2938BFAB1575A8B5",
-            "chapter_title": "fhats",
+            "quest_id": "04A2C159A872F9B4",
+            "name": "Birch Log",
+            "chapter_title": "logs",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T22:15:53.980000+00:00"
+            "completed_at": "2026-07-08T23:36:59.021000+00:00"
           },
           {
-            "quest_id": "1CD23FAF2E1E802D",
-            "name": "Find a Leaf Insect",
+            "quest_id": "0ABF361080FFC001",
+            "name": "Sheep",
             "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T23:40:24.078000+00:00"
+            "completed_at": "2026-07-08T23:38:33.113000+00:00"
           },
           {
-            "quest_id": "7B78619C08E34A19",
-            "name": "7B78619C08E34A19",
+            "quest_id": "17EB70714F35E19B",
+            "name": "Combine with Copper to create Bronze!",
+            "chapter_title": "ore_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-08T22:13:06.702000+00:00"
+          },
+          {
+            "quest_id": "444DAB14F91FC035",
+            "name": "444DAB14F91FC035",
             "chapter_title": "bounty_board",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-08T23:42:58.671000+00:00"
-          },
-          {
-            "quest_id": "6FEE6FB1B0A47B90",
-            "name": "Oak Sapling",
-            "chapter_title": "logs",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T21:53:47.287000+00:00"
           }
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
+            "quest_id": "2E5C315A52C10BBE",
+            "name": "Combine with Iron to create Steel!",
+            "chapter_title": "ore_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T21:49:49.458000+00:00"
+            "completed_at": "2026-07-08T22:13:06.702000+00:00"
           },
           {
-            "quest_id": "2938BFAB1575A8B5",
-            "name": "2938BFAB1575A8B5",
-            "chapter_title": "fhats",
+            "quest_id": "04A2C159A872F9B4",
+            "name": "Birch Log",
+            "chapter_title": "logs",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T22:15:53.980000+00:00"
+            "completed_at": "2026-07-08T23:36:59.021000+00:00"
           },
           {
-            "quest_id": "1CD23FAF2E1E802D",
-            "name": "Find a Leaf Insect",
+            "quest_id": "0ABF361080FFC001",
+            "name": "Sheep",
             "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T23:40:24.078000+00:00"
+            "completed_at": "2026-07-08T23:38:33.113000+00:00"
           },
           {
-            "quest_id": "7B78619C08E34A19",
-            "name": "7B78619C08E34A19",
+            "quest_id": "17EB70714F35E19B",
+            "name": "Combine with Copper to create Bronze!",
+            "chapter_title": "ore_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-08T22:13:06.702000+00:00"
+          },
+          {
+            "quest_id": "444DAB14F91FC035",
+            "name": "444DAB14F91FC035",
             "chapter_title": "bounty_board",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-08T23:42:58.671000+00:00"
-          },
-          {
-            "quest_id": "6FEE6FB1B0A47B90",
-            "name": "Oak Sapling",
-            "chapter_title": "logs",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T21:53:47.287000+00:00"
           }
         ]
       },
@@ -20527,11 +20527,11 @@ window.PLAYER_STATS = {
             "completion_pct": 1.2
           },
           {
-            "chapter_id": "76AB52FE499A836F",
-            "chapter_title": "logs",
-            "chapter_group": "Agriculture",
-            "completed": 2,
-            "total": 350,
+            "chapter_id": "10227DDB3E33B428",
+            "chapter_title": "fhats",
+            "chapter_group": "Accessories and Novelties",
+            "completed": 4,
+            "total": 619,
             "completion_pct": 0.6
           },
           {
@@ -20543,11 +20543,11 @@ window.PLAYER_STATS = {
             "completion_pct": 0.6
           },
           {
-            "chapter_id": "10227DDB3E33B428",
-            "chapter_title": "fhats",
-            "chapter_group": "Accessories and Novelties",
-            "completed": 4,
-            "total": 619,
+            "chapter_id": "76AB52FE499A836F",
+            "chapter_title": "logs",
+            "chapter_group": "Agriculture",
+            "completed": 2,
+            "total": 350,
             "completion_pct": 0.6
           },
           {
@@ -20793,13 +20793,6 @@ window.PLAYER_STATS = {
         ],
         "slowest_quests": [
           {
-            "quest_id": "6F216314B808D974",
-            "name": "Obtain 64x Coal",
-            "chapter_title": "ore_collection",
-            "duration_minutes": 17.0,
-            "completed_at": "2026-07-04T19:42:32.565000+00:00"
-          },
-          {
             "quest_id": "416A2B30A9072E6C",
             "name": "Click to learn more!",
             "chapter_title": "ore_collection",
@@ -20807,62 +20800,69 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-04T19:42:32.565000+00:00"
           },
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-04T18:57:56.453000+00:00"
+            "quest_id": "6F216314B808D974",
+            "name": "Obtain 64x Coal",
+            "chapter_title": "ore_collection",
+            "duration_minutes": 17.0,
+            "completed_at": "2026-07-04T19:42:32.565000+00:00"
           },
           {
-            "quest_id": "7B78619C08E34A19",
-            "name": "7B78619C08E34A19",
-            "chapter_title": "bounty_board",
+            "quest_id": "2E5C315A52C10BBE",
+            "name": "Combine with Iron to create Steel!",
+            "chapter_title": "ore_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-04T19:43:16.174000+00:00"
+            "completed_at": "2026-07-04T19:44:58.597000+00:00"
           },
           {
-            "quest_id": "6FEE6FB1B0A47B90",
-            "name": "Oak Sapling",
-            "chapter_title": "logs",
+            "quest_id": "3B29A0D77E13DBC9",
+            "name": "3B29A0D77E13DBC9",
+            "chapter_title": "fhats",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-04T19:23:42.345000+00:00"
+            "completed_at": "2026-07-04T19:45:15.256000+00:00"
+          },
+          {
+            "quest_id": "0ABF361080FFC001",
+            "name": "Sheep",
+            "chapter_title": "fwildlife",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-04T19:40:57.087000+00:00"
           }
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
+            "quest_id": "2E5C315A52C10BBE",
+            "name": "Combine with Iron to create Steel!",
+            "chapter_title": "ore_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-04T18:57:56.453000+00:00"
+            "completed_at": "2026-07-04T19:44:58.597000+00:00"
           },
           {
-            "quest_id": "7B78619C08E34A19",
-            "name": "7B78619C08E34A19",
+            "quest_id": "3B29A0D77E13DBC9",
+            "name": "3B29A0D77E13DBC9",
+            "chapter_title": "fhats",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-04T19:45:15.256000+00:00"
+          },
+          {
+            "quest_id": "0ABF361080FFC001",
+            "name": "Sheep",
+            "chapter_title": "fwildlife",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-04T19:40:57.087000+00:00"
+          },
+          {
+            "quest_id": "444DAB14F91FC035",
+            "name": "444DAB14F91FC035",
             "chapter_title": "bounty_board",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-04T19:43:16.174000+00:00"
           },
           {
-            "quest_id": "6FEE6FB1B0A47B90",
-            "name": "Oak Sapling",
-            "chapter_title": "logs",
+            "quest_id": "17EB70714F35E19B",
+            "name": "Combine with Copper to create Bronze!",
+            "chapter_title": "ore_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-04T19:23:42.345000+00:00"
-          },
-          {
-            "quest_id": "5C4BEEDBCD6AFFD5",
-            "name": "5C4BEEDBCD6AFFD5",
-            "chapter_title": "bounty_board",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-04T19:42:59.373000+00:00"
-          },
-          {
-            "quest_id": "2C094BFE8AF8DF04",
-            "name": "2C094BFE8AF8DF04",
-            "chapter_title": "ffarmers_delight",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-04T18:57:56.453000+00:00"
+            "completed_at": "2026-07-04T19:44:58.597000+00:00"
           }
         ]
       },
@@ -21148,19 +21148,19 @@ window.PLAYER_STATS = {
             "completion_pct": 2.3
           },
           {
-            "chapter_id": "55D01CEB1D098B67",
-            "chapter_title": "fwildlife",
-            "chapter_group": "Agriculture",
-            "completed": 6,
-            "total": 336,
-            "completion_pct": 1.8
-          },
-          {
             "chapter_id": "606B8E7912784AC4",
             "chapter_title": "seed_collection",
             "chapter_group": "Agriculture",
             "completed": 4,
             "total": 218,
+            "completion_pct": 1.8
+          },
+          {
+            "chapter_id": "55D01CEB1D098B67",
+            "chapter_title": "fwildlife",
+            "chapter_group": "Agriculture",
+            "completed": 6,
+            "total": 336,
             "completion_pct": 1.8
           },
           {
@@ -21430,13 +21430,6 @@ window.PLAYER_STATS = {
         ],
         "slowest_quests": [
           {
-            "quest_id": "73DF7544D5DB8475",
-            "name": "Obtain 64x Acacia Log",
-            "chapter_title": "logs",
-            "duration_minutes": 3.4,
-            "completed_at": "2026-07-08T22:15:05.484000+00:00"
-          },
-          {
             "quest_id": "67C7A755FB7FFAD1",
             "name": "Obtain 64x Cherry Log",
             "chapter_title": "logs",
@@ -21444,62 +21437,69 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-08T22:15:05.484000+00:00"
           },
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T22:04:39.032000+00:00"
+            "quest_id": "73DF7544D5DB8475",
+            "name": "Obtain 64x Acacia Log",
+            "chapter_title": "logs",
+            "duration_minutes": 3.4,
+            "completed_at": "2026-07-08T22:15:05.484000+00:00"
           },
           {
-            "quest_id": "0C0A7B9BEED869BC",
-            "name": "Wolf",
-            "chapter_title": "fwildlife",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T22:10:02.559000+00:00"
-          },
-          {
-            "quest_id": "6FEE6FB1B0A47B90",
-            "name": "Oak Sapling",
+            "quest_id": "04A2C159A872F9B4",
+            "name": "Birch Log",
             "chapter_title": "logs",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T22:05:28.526000+00:00"
+            "completed_at": "2026-07-08T22:15:57.713000+00:00"
+          },
+          {
+            "quest_id": "173DBC55D5B3B370",
+            "name": "173DBC55D5B3B370",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-08T22:30:51.529000+00:00"
+          },
+          {
+            "quest_id": "704DF932A070B564",
+            "name": "704DF932A070B564",
+            "chapter_title": "ffarmers_delight",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-08T22:04:39.037000+00:00"
           }
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
+            "quest_id": "04A2C159A872F9B4",
+            "name": "Birch Log",
+            "chapter_title": "logs",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T22:04:39.032000+00:00"
+            "completed_at": "2026-07-08T22:15:57.713000+00:00"
           },
           {
-            "quest_id": "0C0A7B9BEED869BC",
-            "name": "Wolf",
+            "quest_id": "173DBC55D5B3B370",
+            "name": "173DBC55D5B3B370",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-08T22:30:51.529000+00:00"
+          },
+          {
+            "quest_id": "704DF932A070B564",
+            "name": "704DF932A070B564",
+            "chapter_title": "ffarmers_delight",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-08T22:04:39.037000+00:00"
+          },
+          {
+            "quest_id": "366A71560B898D88",
+            "name": "Accept Rewards",
             "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T22:10:02.559000+00:00"
+            "completed_at": "2026-07-08T22:23:47.189000+00:00"
           },
           {
-            "quest_id": "6FEE6FB1B0A47B90",
+            "quest_id": "090F991B968EC6CA",
             "name": "Oak Sapling",
             "chapter_title": "logs",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-08T22:05:28.526000+00:00"
-          },
-          {
-            "quest_id": "0D64E14EFF4193E9",
-            "name": "Snail",
-            "chapter_title": "fwildlife",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T22:10:02.559000+00:00"
-          },
-          {
-            "quest_id": "2C094BFE8AF8DF04",
-            "name": "2C094BFE8AF8DF04",
-            "chapter_title": "ffarmers_delight",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T22:04:39.037000+00:00"
           }
         ]
       },
@@ -22035,13 +22035,6 @@ window.PLAYER_STATS = {
         ],
         "slowest_quests": [
           {
-            "quest_id": "079CE0B41582B4BB",
-            "name": "Obtain 64x Dark Oak Log",
-            "chapter_title": "logs",
-            "duration_minutes": 1.6,
-            "completed_at": "2026-07-25T22:12:30.790000+00:00"
-          },
-          {
             "quest_id": "74328EE4673A69D6",
             "name": "Obtain 64x Acacia Log",
             "chapter_title": "logs",
@@ -22049,62 +22042,69 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-25T22:12:30.790000+00:00"
           },
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-25T22:00:36.611000+00:00"
+            "quest_id": "079CE0B41582B4BB",
+            "name": "Obtain 64x Dark Oak Log",
+            "chapter_title": "logs",
+            "duration_minutes": 1.6,
+            "completed_at": "2026-07-25T22:12:30.790000+00:00"
           },
           {
-            "quest_id": "08EA19E9C40ABEC0",
-            "name": "Welcome to TontoSMP V2.0",
-            "chapter_title": "tontosmp",
+            "quest_id": "060D1685C44406B1",
+            "name": "060D1685C44406B1",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-25T22:06:11.855000+00:00"
+            "completed_at": "2026-07-25T22:12:30.790000+00:00"
           },
           {
-            "quest_id": "4B5B12608410AFDB",
-            "name": "Acacia Log",
+            "quest_id": "0FE29F6C80713EE7",
+            "name": "Axolotl",
+            "chapter_title": "fwildlife",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-25T22:08:05.320000+00:00"
+          },
+          {
+            "quest_id": "04A2C159A872F9B4",
+            "name": "Birch Log",
             "chapter_title": "logs",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-25T22:10:52.396000+00:00"
+            "completed_at": "2026-07-25T22:13:20.958000+00:00"
           }
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
+            "quest_id": "060D1685C44406B1",
+            "name": "060D1685C44406B1",
+            "chapter_title": "seed_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-25T22:00:36.611000+00:00"
+            "completed_at": "2026-07-25T22:12:30.790000+00:00"
           },
           {
-            "quest_id": "08EA19E9C40ABEC0",
-            "name": "Welcome to TontoSMP V2.0",
-            "chapter_title": "tontosmp",
+            "quest_id": "0FE29F6C80713EE7",
+            "name": "Axolotl",
+            "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-25T22:06:11.855000+00:00"
+            "completed_at": "2026-07-25T22:08:05.320000+00:00"
           },
           {
-            "quest_id": "4B5B12608410AFDB",
-            "name": "Acacia Log",
+            "quest_id": "04A2C159A872F9B4",
+            "name": "Birch Log",
             "chapter_title": "logs",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-25T22:10:52.396000+00:00"
+            "completed_at": "2026-07-25T22:13:20.958000+00:00"
           },
           {
-            "quest_id": "5A0042D69396D055",
-            "name": "How to get Joecoin",
-            "chapter_title": "tontosmp",
+            "quest_id": "2DC766B7676250A9",
+            "name": "Click to learn more!",
+            "chapter_title": "fwildlife",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-25T22:06:15.960000+00:00"
+            "completed_at": "2026-07-25T22:12:29.260000+00:00"
           },
           {
-            "quest_id": "7B78619C08E34A19",
-            "name": "7B78619C08E34A19",
-            "chapter_title": "bounty_board",
+            "quest_id": "1F4BDE19F5A52CE8",
+            "name": "Acacia Sapling",
+            "chapter_title": "logs",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-25T22:14:14.507000+00:00"
+            "completed_at": "2026-07-25T22:11:19.660000+00:00"
           }
         ]
       },
@@ -22649,32 +22649,11 @@ window.PLAYER_STATS = {
         ],
         "slowest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
+            "quest_id": "2E5C315A52C10BBE",
+            "name": "Combine with Iron to create Steel!",
+            "chapter_title": "ore_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T22:03:37.181000+00:00"
-          },
-          {
-            "quest_id": "7B78619C08E34A19",
-            "name": "7B78619C08E34A19",
-            "chapter_title": "bounty_board",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T22:27:26.034000+00:00"
-          },
-          {
-            "quest_id": "6FEE6FB1B0A47B90",
-            "name": "Oak Sapling",
-            "chapter_title": "logs",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T22:05:16.908000+00:00"
-          },
-          {
-            "quest_id": "2C094BFE8AF8DF04",
-            "name": "2C094BFE8AF8DF04",
-            "chapter_title": "ffarmers_delight",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T22:03:37.181000+00:00"
+            "completed_at": "2026-07-08T22:13:20.100000+00:00"
           },
           {
             "quest_id": "04A2C159A872F9B4",
@@ -22682,36 +22661,36 @@ window.PLAYER_STATS = {
             "chapter_title": "logs",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-08T22:10:25.008000+00:00"
+          },
+          {
+            "quest_id": "17EB70714F35E19B",
+            "name": "Combine with Copper to create Bronze!",
+            "chapter_title": "ore_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-08T22:13:20.100000+00:00"
+          },
+          {
+            "quest_id": "6D1EEB010460FBB0",
+            "name": "6D1EEB010460FBB0",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-08T22:21:34.402000+00:00"
+          },
+          {
+            "quest_id": "444DAB14F91FC035",
+            "name": "444DAB14F91FC035",
+            "chapter_title": "bounty_board",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-08T22:27:26.034000+00:00"
           }
         ],
         "fastest_quests": [
           {
-            "quest_id": "202B7E82CCCCD329",
-            "name": "Not Sponsored by EA!",
-            "chapter_title": "fplushies",
+            "quest_id": "2E5C315A52C10BBE",
+            "name": "Combine with Iron to create Steel!",
+            "chapter_title": "ore_collection",
             "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T22:03:37.181000+00:00"
-          },
-          {
-            "quest_id": "7B78619C08E34A19",
-            "name": "7B78619C08E34A19",
-            "chapter_title": "bounty_board",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T22:27:26.034000+00:00"
-          },
-          {
-            "quest_id": "6FEE6FB1B0A47B90",
-            "name": "Oak Sapling",
-            "chapter_title": "logs",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T22:05:16.908000+00:00"
-          },
-          {
-            "quest_id": "2C094BFE8AF8DF04",
-            "name": "2C094BFE8AF8DF04",
-            "chapter_title": "ffarmers_delight",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-08T22:03:37.181000+00:00"
+            "completed_at": "2026-07-08T22:13:20.100000+00:00"
           },
           {
             "quest_id": "04A2C159A872F9B4",
@@ -22719,6 +22698,27 @@ window.PLAYER_STATS = {
             "chapter_title": "logs",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-08T22:10:25.008000+00:00"
+          },
+          {
+            "quest_id": "17EB70714F35E19B",
+            "name": "Combine with Copper to create Bronze!",
+            "chapter_title": "ore_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-08T22:13:20.100000+00:00"
+          },
+          {
+            "quest_id": "6D1EEB010460FBB0",
+            "name": "6D1EEB010460FBB0",
+            "chapter_title": "seed_collection",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-08T22:21:34.402000+00:00"
+          },
+          {
+            "quest_id": "444DAB14F91FC035",
+            "name": "444DAB14F91FC035",
+            "chapter_title": "bounty_board",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-08T22:27:26.034000+00:00"
           }
         ]
       },
@@ -23209,8 +23209,8 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-18T20:59:29.467000+00:00"
           },
           {
-            "quest_id": "2C094BFE8AF8DF04",
-            "name": "2C094BFE8AF8DF04",
+            "quest_id": "704DF932A070B564",
+            "name": "704DF932A070B564",
             "chapter_title": "ffarmers_delight",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-18T20:59:29.467000+00:00"
@@ -23223,8 +23223,8 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-18T20:59:29.467000+00:00"
           },
           {
-            "quest_id": "704DF932A070B564",
-            "name": "704DF932A070B564",
+            "quest_id": "2C094BFE8AF8DF04",
+            "name": "2C094BFE8AF8DF04",
             "chapter_title": "ffarmers_delight",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-18T20:59:29.467000+00:00"
@@ -23239,8 +23239,8 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-18T20:59:29.467000+00:00"
           },
           {
-            "quest_id": "2C094BFE8AF8DF04",
-            "name": "2C094BFE8AF8DF04",
+            "quest_id": "704DF932A070B564",
+            "name": "704DF932A070B564",
             "chapter_title": "ffarmers_delight",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-18T20:59:29.467000+00:00"
@@ -23253,8 +23253,8 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-18T20:59:29.467000+00:00"
           },
           {
-            "quest_id": "704DF932A070B564",
-            "name": "704DF932A070B564",
+            "quest_id": "2C094BFE8AF8DF04",
+            "name": "2C094BFE8AF8DF04",
             "chapter_title": "ffarmers_delight",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-18T20:59:29.467000+00:00"
@@ -23669,6 +23669,13 @@ window.PLAYER_STATS = {
             "completed_at": "2026-06-30T13:29:00.778000+00:00"
           },
           {
+            "quest_id": "704DF932A070B564",
+            "name": "704DF932A070B564",
+            "chapter_title": "ffarmers_delight",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-06-30T13:29:00.781000+00:00"
+          },
+          {
             "quest_id": "0EEA6A244D9CD21A",
             "name": "Click to learn more!",
             "chapter_title": "fplushies",
@@ -23678,13 +23685,6 @@ window.PLAYER_STATS = {
           {
             "quest_id": "2C094BFE8AF8DF04",
             "name": "2C094BFE8AF8DF04",
-            "chapter_title": "ffarmers_delight",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-30T13:29:00.781000+00:00"
-          },
-          {
-            "quest_id": "704DF932A070B564",
-            "name": "704DF932A070B564",
             "chapter_title": "ffarmers_delight",
             "duration_minutes": 0.0,
             "completed_at": "2026-06-30T13:29:00.781000+00:00"
@@ -23699,6 +23699,13 @@ window.PLAYER_STATS = {
             "completed_at": "2026-06-30T13:29:00.778000+00:00"
           },
           {
+            "quest_id": "704DF932A070B564",
+            "name": "704DF932A070B564",
+            "chapter_title": "ffarmers_delight",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-06-30T13:29:00.781000+00:00"
+          },
+          {
             "quest_id": "0EEA6A244D9CD21A",
             "name": "Click to learn more!",
             "chapter_title": "fplushies",
@@ -23708,13 +23715,6 @@ window.PLAYER_STATS = {
           {
             "quest_id": "2C094BFE8AF8DF04",
             "name": "2C094BFE8AF8DF04",
-            "chapter_title": "ffarmers_delight",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-06-30T13:29:00.781000+00:00"
-          },
-          {
-            "quest_id": "704DF932A070B564",
-            "name": "704DF932A070B564",
             "chapter_title": "ffarmers_delight",
             "duration_minutes": 0.0,
             "completed_at": "2026-06-30T13:29:00.781000+00:00"
@@ -24129,6 +24129,13 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-01T16:30:59.188000+00:00"
           },
           {
+            "quest_id": "704DF932A070B564",
+            "name": "704DF932A070B564",
+            "chapter_title": "ffarmers_delight",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-01T16:30:59.189000+00:00"
+          },
+          {
             "quest_id": "0EEA6A244D9CD21A",
             "name": "Click to learn more!",
             "chapter_title": "fplushies",
@@ -24138,13 +24145,6 @@ window.PLAYER_STATS = {
           {
             "quest_id": "2C094BFE8AF8DF04",
             "name": "2C094BFE8AF8DF04",
-            "chapter_title": "ffarmers_delight",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-01T16:30:59.189000+00:00"
-          },
-          {
-            "quest_id": "704DF932A070B564",
-            "name": "704DF932A070B564",
             "chapter_title": "ffarmers_delight",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-01T16:30:59.189000+00:00"
@@ -24159,6 +24159,13 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-01T16:30:59.188000+00:00"
           },
           {
+            "quest_id": "704DF932A070B564",
+            "name": "704DF932A070B564",
+            "chapter_title": "ffarmers_delight",
+            "duration_minutes": 0.0,
+            "completed_at": "2026-07-01T16:30:59.189000+00:00"
+          },
+          {
             "quest_id": "0EEA6A244D9CD21A",
             "name": "Click to learn more!",
             "chapter_title": "fplushies",
@@ -24168,13 +24175,6 @@ window.PLAYER_STATS = {
           {
             "quest_id": "2C094BFE8AF8DF04",
             "name": "2C094BFE8AF8DF04",
-            "chapter_title": "ffarmers_delight",
-            "duration_minutes": 0.0,
-            "completed_at": "2026-07-01T16:30:59.189000+00:00"
-          },
-          {
-            "quest_id": "704DF932A070B564",
-            "name": "704DF932A070B564",
             "chapter_title": "ffarmers_delight",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-01T16:30:59.189000+00:00"
@@ -24589,8 +24589,8 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-01T22:38:03.873000+00:00"
           },
           {
-            "quest_id": "2C094BFE8AF8DF04",
-            "name": "2C094BFE8AF8DF04",
+            "quest_id": "704DF932A070B564",
+            "name": "704DF932A070B564",
             "chapter_title": "ffarmers_delight",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-01T22:38:03.873000+00:00"
@@ -24603,8 +24603,8 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-01T22:38:03.873000+00:00"
           },
           {
-            "quest_id": "704DF932A070B564",
-            "name": "704DF932A070B564",
+            "quest_id": "2C094BFE8AF8DF04",
+            "name": "2C094BFE8AF8DF04",
             "chapter_title": "ffarmers_delight",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-01T22:38:03.873000+00:00"
@@ -24619,8 +24619,8 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-01T22:38:03.873000+00:00"
           },
           {
-            "quest_id": "2C094BFE8AF8DF04",
-            "name": "2C094BFE8AF8DF04",
+            "quest_id": "704DF932A070B564",
+            "name": "704DF932A070B564",
             "chapter_title": "ffarmers_delight",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-01T22:38:03.873000+00:00"
@@ -24633,8 +24633,8 @@ window.PLAYER_STATS = {
             "completed_at": "2026-07-01T22:38:03.873000+00:00"
           },
           {
-            "quest_id": "704DF932A070B564",
-            "name": "704DF932A070B564",
+            "quest_id": "2C094BFE8AF8DF04",
+            "name": "2C094BFE8AF8DF04",
             "chapter_title": "ffarmers_delight",
             "duration_minutes": 0.0,
             "completed_at": "2026-07-01T22:38:03.873000+00:00"
